@@ -1,0 +1,77 @@
+.meet-dr-tarkesh {
+  min-height: calc(100vh - 100px);
+  padding: clamp(64px, 9vw, 120px) clamp(22px, 6vw, 96px) clamp(80px, 10vw, 132px);
+  background: var(--brand-white, #fff);
+}
+
+.meet-dr-tarkesh__intro {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meet-dr-tarkesh__eyebrow {
+  margin: 0 0 18px;
+  color: var(--brand-gold, #b49a63);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.meet-dr-tarkesh__title {
+  margin: 0;
+  color: var(--brand-navy, #0a2246);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.4rem, 5vw, 4.6rem);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+.meet-dr-tarkesh__description {
+  max-width: 540px;
+  margin: 24px auto 0;
+  color: var(--brand-gray, #66706d);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.meet-dr-tarkesh__videos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 42px);
+  width: min(100%, 1180px);
+  margin: clamp(52px, 7vw, 88px) auto 0;
+}
+
+.meet-dr-tarkesh__video-card {
+  overflow: hidden;
+  border: 1px solid rgb(10 34 70 / 14%);
+  border-radius: 4px;
+  background: #f4f2ed;
+  box-shadow: 0 12px 30px rgb(10 34 70 / 8%);
+}
+
+.meet-dr-tarkesh__video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 680px) {
+  .meet-dr-tarkesh {
+    min-height: calc(100vh - 84px);
+    padding-top: 56px;
+  }
+
+  .meet-dr-tarkesh__title {
+    font-size: clamp(2.15rem, 11vw, 3.5rem);
+  }
+
+  .meet-dr-tarkesh__videos {
+    grid-template-columns: 1fr;
+    margin-top: 48px;
+  }
+}

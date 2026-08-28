@@ -185,6 +185,7 @@
   border-radius: 2px;
   background: var(--brand-navy);
   color: var(--brand-white);
+  font-family: inherit;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.025em;
