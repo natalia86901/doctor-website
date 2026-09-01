@@ -4,7 +4,7 @@ import videoTwo from '../../assets/videos/video2.mp4'
 
 function MeetDrTarkesh() {
   return (
-    <main className="meet-dr-tarkesh">
+    <section id="meet-dr-tarkesh" className="meet-dr-tarkesh">
       <section className="meet-dr-tarkesh__intro" aria-labelledby="meet-dr-tarkesh-title">
         <p className="meet-dr-tarkesh__eyebrow">Why Dr. Tarkesh</p>
         <h1 id="meet-dr-tarkesh-title" className="meet-dr-tarkesh__title">
@@ -40,7 +40,7 @@ function MeetDrTarkesh() {
           </video>
         </article>
       </section>
-    </main>
+    </section>
   )
 }
 

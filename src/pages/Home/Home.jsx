@@ -1,4 +1,5 @@
 import Hero from '../../components/Hero/Hero'
+import MethodResultsSection from '../../components/MethodResultsSection/MethodResultsSection'
 import TreatmentPromiseBanner from '../../components/TreatmentPromiseBanner/TreatmentPromiseBanner'
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <>
       <Hero />
       <TreatmentPromiseBanner />
+      <MethodResultsSection />
     </>
   )
 }

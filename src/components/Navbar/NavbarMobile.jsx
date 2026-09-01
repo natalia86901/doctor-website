@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import logoStacked from '../../assets/brand/logo_stacked.svg'
+import logo from '../../assets/brand/LOGO.svg'
 import { navItems } from './navConfig'
 
 function NavbarMobile() {
@@ -44,7 +44,7 @@ function NavbarMobile() {
         >
           <img
             className="mobile-header__brand-logo"
-            src={logoStacked}
+            src={logo}
             alt="Bakersfield Dentures and Implants logo"
           />
         </Link>

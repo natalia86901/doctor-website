@@ -1,7 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { navItems } from './navConfig'
-import logoHorizontal from '../../assets/brand/logo_horizontal.svg';
+import logo from '../../assets/brand/LOGO.svg'
 
 function NavbarDesktop() {
   const [openPath, setOpenPath] = useState(null)
@@ -28,7 +28,7 @@ function NavbarDesktop() {
       <div className="desktop-header__inner">
         <Link className="desktop-header__brand" to="/" aria-label="Bakersfield Dentures and Implants home">
          <img
-         src={logoHorizontal} alt="Bakersfield Dentures and Implants logo"
+         src={logo} alt="Bakersfield Dentures and Implants logo"
          className="desktop-header__brand-logo"
           />
         </Link>
