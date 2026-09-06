@@ -1,0 +1,227 @@
+.practice-benefits {
+  background: #f7f4ed;
+  color: var(--brand-navy);
+}
+
+.practice-benefits__inner {
+  width: min(100% - 48px, 1260px);
+  margin: 0 auto;
+  padding: clamp(38px, 4vw, 56px) 0 clamp(42px, 4.5vw, 62px);
+}
+
+.practice-benefits__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 5vw, 76px);
+}
+
+.practice-benefits__item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: clamp(14px, 1.7vw, 24px);
+}
+
+.practice-benefits__icon {
+  display: block;
+  width: clamp(56px, 5.1vw, 76px);
+  height: clamp(56px, 5.1vw, 76px);
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.practice-benefits__content {
+  min-width: 0;
+}
+
+.practice-benefits__item-title {
+  margin: 0;
+  color: var(--brand-navy);
+  font-size: clamp(0.9rem, 1.15vw, 1.12rem);
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.practice-benefits__item-description {
+  max-width: 220px;
+  margin: 7px 0 0;
+  color: var(--brand-gray);
+  font-size: clamp(0.82rem, 1vw, 0.98rem);
+  line-height: 1.45;
+}
+
+.practice-benefits__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: clamp(32px, 3.5vw, 46px);
+}
+
+.practice-benefits__primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 430px);
+  min-height: 56px;
+  padding: 0 24px;
+  border: 1px solid var(--brand-navy);
+  border-radius: 2px;
+  background: var(--brand-navy);
+  color: var(--brand-white);
+  font: inherit;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+}
+
+.practice-benefits__secondary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 7px;
+  margin-top: 13px;
+  padding: 4px 6px;
+  color: var(--brand-navy);
+  font-size: clamp(0.72rem, 0.9vw, 0.86rem);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.practice-benefits__arrow {
+  color: var(--brand-gold);
+  font-size: 1.25em;
+  letter-spacing: 0;
+  line-height: 1;
+  transition: transform 0.16s ease;
+}
+
+.practice-benefits__primary-cta:focus-visible,
+.practice-benefits__secondary-link:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .practice-benefits__primary-cta:hover {
+    border-color: var(--brand-gray);
+    background: var(--brand-gray);
+  }
+
+  .practice-benefits__secondary-link:hover .practice-benefits__arrow {
+    transform: translateX(4px);
+  }
+}
+
+.practice-benefits__primary-cta:active {
+  border-color: var(--brand-gold);
+  background: var(--brand-gold);
+  color: var(--brand-navy);
+}
+
+@media (max-width: 900px) {
+  .practice-benefits__inner {
+    padding-top: 38px;
+    padding-bottom: 56px;
+  }
+
+  .practice-benefits__items {
+    gap: 18px;
+  }
+
+  .practice-benefits__item {
+    gap: 12px;
+  }
+
+  .practice-benefits__item-description {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .practice-benefits__inner {
+    width: min(100% - 40px, 500px);
+    padding-top: 32px;
+    padding-bottom: 50px;
+  }
+
+  .practice-benefits__items {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+
+  .practice-benefits__item {
+    justify-content: flex-start;
+    gap: 17px;
+  }
+
+  .practice-benefits__icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .practice-benefits__item-title {
+    font-size: 0.98rem;
+  }
+
+  .practice-benefits__item-description {
+    max-width: 270px;
+    margin-top: 5px;
+    font-size: 0.88rem;
+  }
+
+  .practice-benefits__actions {
+    margin-top: 34px;
+  }
+
+  .practice-benefits__primary-cta {
+    width: 100%;
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 360px) {
+  .practice-benefits__inner {
+    width: min(100% - 32px, 500px);
+  }
+
+  .practice-benefits__item {
+    gap: 13px;
+  }
+
+  .practice-benefits__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .practice-benefits__item-title {
+    font-size: 0.9rem;
+  }
+
+  .practice-benefits__item-description {
+    font-size: 0.82rem;
+  }
+
+  .practice-benefits__secondary-link {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .practice-benefits__primary-cta,
+  .practice-benefits__arrow {
+    transition: none;
+  }
+}
