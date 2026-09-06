@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import "./TreatmentSolutionsSection.css";
 
-import implantsBackground from "../../assets/TreatmentSolutions/implantsBackground.png";
-import complexCasesIcon from "../../assets/TreatmentSolutions/complexCases.png";
-import longTermSolutionsIcon from "../../assets/TreatmentSolutions/longTermSolutions.png";
-import oneDayTeethIcon from "../../assets/TreatmentSolutions/oneDayTeeth.png";
-import treatmentSolutionImage1 from "../../assets/TreatmentSolutions/treatmentSolutions.image 1.png";
-import treatmentSolutionImage2 from "../../assets/TreatmentSolutions/treatmentSolution.image 2.png";
-import treatmentSolutionImage3 from "../../assets/TreatmentSolutions/treatmentSolution.image 3.png";
+import implantsBackground from "../../assets/treatmentSolutions/implantsBackground.png";
+import complexCasesIcon from "../../assets/treatmentSolutions/complexCases.png";
+import longTermSolutionsIcon from "../../assets/treatmentSolutions/longTermSolutions.png";
+import oneDayTeethIcon from "../../assets/treatmentSolutions/oneDayTeeth.png";
+import treatmentSolutionImage1 from "../../assets/treatmentSolutions/treatmentSolutions.image 1.png";
+import treatmentSolutionImage2 from "../../assets/treatmentSolutions/treatmentSolution.image 2.png";
+import treatmentSolutionImage3 from "../../assets/treatmentSolutions/treatmentSolution.image 3.png";
 
 const treatments = [
   {

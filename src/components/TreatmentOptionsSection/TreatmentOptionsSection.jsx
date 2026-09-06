@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./TreatmentOptionsSection.css";
 
-import treatmentOptionsImage1 from "../../assets/TreatmentOptionsSection/treatmentOptionsImage1.png";
-import treatmentOptionsImage2 from "../../assets/TreatmentOptionsSection/treatmentoptionImage2.png";
-import treatmentOptionsImage3 from "../../assets/TreatmentOptionsSection/treatmentoptionImage3.png";
+import treatmentOptionsImage1 from "../../assets/treatmentOptionsSection/treatmentOptionsImage1.png";
+import treatmentOptionsImage2 from "../../assets/treatmentOptionsSection/treatmentoptionImage2.png";
+import treatmentOptionsImage3 from "../../assets/treatmentOptionsSection/treatmentoptionImage3.png";
 
 const treatmentOptions = [
   {
