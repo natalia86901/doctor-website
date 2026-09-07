@@ -28,8 +28,8 @@
   color: var(--brand-navy);
   font-size: clamp(1.9rem, 3vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.04;
+  letter-spacing: -0.03em;
+  word-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -45,7 +45,9 @@
 }
 
 .treatment-process__step + .treatment-process__step {
-  border-left: 1px solid rgb(195 154 75 / 28%);
+  padding-top: 28px;
+  border-top: 1px solid rgb(195 154 75 / 28%);
+  border-left: 0;
 }
 
 .treatment-process__step-top {

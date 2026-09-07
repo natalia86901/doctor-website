@@ -1,152 +1,254 @@
 .financing-options {
-  background: #f7f4ed;
-  color: var(--brand-navy);
+  background: var(--brand-navy);
+  color: var(--brand-white);
 }
 
 .financing-options__inner {
   width: min(100% - 48px, 1260px);
   margin: 0 auto;
-  padding: clamp(18px, 1vw, 26px) 0 clamp(48px, 5vw, 68px);
+  padding: clamp(54px, 5vw, 72px) 0 clamp(48px, 5vw, 68px);
 }
 
 .financing-options__header {
   text-align: center;
 }
 
+.financing-options__eyebrow-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .financing-options__eyebrow {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 2vw, 28px);
   margin: 0;
   color: var(--brand-gold);
-  font-size: clamp(0.72rem, 0.85vw, 0.88rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-size: clamp(0.72rem, 0.9vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.22em;
   line-height: 1.4;
   text-transform: uppercase;
 }
 
+.financing-options__eyebrow::before,
+.financing-options__eyebrow::after {
+  content: "";
+  display: block;
+  width: clamp(76px, 8vw, 130px);
+  height: 1px;
+  background: var(--brand-gold);
+}
+
 .financing-options__title {
-  margin: 3px 0 0;
-  color: var(--brand-navy);
-  font-size: clamp(1.9rem, 3vw, 3rem);
+  margin: 26px 0 0;
+  color: var(--brand-white);
+  font-size: clamp(3rem, 5.2vw, 5rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 1.04;
-  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  line-height: 0.96;
 }
 
-.financing-options__intro {
-  max-width: 620px;
-  margin: 10px auto 0;
-  color: var(--brand-gray);
-  font-size: clamp(0.88rem, 1.1vw, 1.05rem);
-  line-height: 1.5;
-}
-
-.financing-options__cards {
+.financing-options__primary-card {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 2vw, 28px);
-  width: min(100%, 900px);
-  margin: clamp(26px, 3vw, 36px) auto 0;
+  grid-template-columns: minmax(190px, 240px) minmax(0, 1fr);
+  align-items: center;
+  width: min(100%, 1080px);
+  margin: clamp(30px, 3vw, 42px) auto 0;
+  padding: clamp(20px, 2.3vw, 30px) clamp(24px, 2.8vw, 42px);
+  border-radius: 22px;
+  background: #f5f2ed;
+  color: var(--brand-navy);
 }
 
-.financing-options__card {
+.financing-options__primary-icon-area {
   display: flex;
   align-items: center;
-  min-width: 0;
-  padding: clamp(22px, 2.4vw, 30px);
-  border: 1px solid #e7e0d4;
-  border-radius: 10px;
-  background: rgb(255 255 255 / 90%);
-  box-shadow: 0 10px 22px rgb(10 34 70 / 6%);
-  gap: clamp(18px, 2vw, 26px);
+  justify-content: center;
+  min-height: 180px;
+  padding-right: clamp(18px, 2vw, 30px);
 }
 
-.financing-options__icon {
+.financing-options__primary-icon {
   display: block;
-  width: clamp(60px, 5.4vw, 76px);
-  height: clamp(60px, 5.4vw, 76px);
-  flex: 0 0 auto;
+  width: clamp(120px, 11vw, 155px);
+  height: auto;
+  max-height: 155px;
   object-fit: contain;
 }
 
-.financing-options__card-content {
+.financing-options__primary-content {
   min-width: 0;
+  padding-left: clamp(22px, 2vw, 36px);
+  border-left: 1px solid rgb(10 34 70 / 18%);
 }
 
-.financing-options__card-title {
+.financing-options__primary-title {
   margin: 0;
   color: var(--brand-navy);
-  font-size: clamp(0.84rem, 1.05vw, 1.02rem);
+  font-size: clamp(1.35rem, 2vw, 2rem);
   font-weight: 800;
-  letter-spacing: 0.025em;
-  line-height: 1.25;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
   text-transform: uppercase;
 }
 
-.financing-options__card-description {
-  margin: 9px 0 0;
-  color: var(--brand-gray);
-  font-size: clamp(0.84rem, 1vw, 0.98rem);
-  line-height: 1.45;
+.financing-options__primary-description {
+  margin: 14px 0 0;
+  color: rgb(20 35 59 / 74%);
+  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+  line-height: 1.38;
 }
 
 .financing-options__note {
-  margin: 13px 0 0;
-  color: var(--brand-gray);
-  font-size: clamp(0.68rem, 0.8vw, 0.78rem);
-  line-height: 1.35;
+  margin: 16px 0 0;
+  color: rgb(20 35 59 / 68%);
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 1.4;
+}
+
+.financing-options__divider {
+  width: min(100%, 1080px);
+  height: 1px;
+  margin: 30px auto 0;
+  background: rgb(255 255 255 / 16%);
+}
+
+.financing-options__insurance {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  align-items: center;
+  width: min(100%, 820px);
+  margin: 28px auto 0;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.financing-options__insurance-icon-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(72px, 7vw, 92px);
+  height: clamp(72px, 7vw, 92px);
+  margin: 0 auto;
+}
+
+.financing-options__insurance-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.financing-options__insurance-content {
+  padding-left: clamp(18px, 2vw, 30px);
+  border-left: 1px solid rgb(255 255 255 / 28%);
+}
+
+.financing-options__insurance-title {
+  margin: 0;
+  color: var(--brand-white);
+  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.financing-options__insurance-description {
+  margin: 10px 0 0;
+  color: rgb(255 255 255 / 72%);
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
   .financing-options__inner {
-    padding-top: 38px;
-    padding-bottom: 58px;
+    padding-top: 52px;
+    padding-bottom: 60px;
   }
 
-  .financing-options__cards {
-    gap: 18px;
+  .financing-options__primary-card {
+    grid-template-columns: minmax(150px, 200px) minmax(0, 1fr);
   }
 
-  .financing-options__card {
-    gap: 16px;
-    padding: 20px;
+  .financing-options__primary-icon-area {
+    min-height: 150px;
   }
 
-  .financing-options__icon {
-    width: 62px;
-    height: 62px;
+  .financing-options__primary-title {
+    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
   }
 }
 
 @media (max-width: 680px) {
   .financing-options__inner {
     width: min(100% - 40px, 500px);
-    padding-top: 0px;
-    padding-bottom: 54px;
-  }
-
-  .financing-options__title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
-    line-height: 1.05;
+    padding-top: 42px;
+    padding-bottom: 48px;
   }
 
   .financing-options__eyebrow {
+    gap: 12px;
     letter-spacing: 0.14em;
   }
 
-  .financing-options__intro {
-    max-width: 430px;
-    margin-top: 9px;
+  .financing-options__eyebrow::before,
+  .financing-options__eyebrow::after {
+    width: clamp(34px, 12vw, 60px);
   }
 
-  .financing-options__cards {
+  .financing-options__title {
+    margin-top: 18px;
+    font-size: clamp(2.25rem, 9vw, 3.25rem);
+    line-height: 1.04;
+  }
+
+  .financing-options__primary-card {
     grid-template-columns: 1fr;
-    gap: 18px;
-    margin-top: 26px;
+    align-items: start;
+    margin-top: 28px;
+    padding: 26px 22px 24px;
+    text-align: left;
   }
 
-  .financing-options__card {
-    padding: 22px 20px;
+  .financing-options__primary-icon-area {
+    justify-content: center;
+    min-height: auto;
+    padding-right: 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgb(10 34 70 / 18%);
+  }
+
+  .financing-options__primary-content {
+    padding-left: 0;
+    padding-top: 18px;
+    border-left: 0;
+  }
+
+  .financing-options__primary-title {
+    font-size: clamp(1.35rem, 5vw, 1.9rem);
+  }
+
+  .financing-options__primary-description {
+    margin-top: 12px;
+    font-size: clamp(1.05rem, 4vw, 1.3rem);
+  }
+
+  .financing-options__divider {
+    margin-top: 22px;
+  }
+
+  .financing-options__insurance {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .financing-options__insurance-content {
+    padding-left: 0;
+    border-left: 0;
   }
 }
 
@@ -155,21 +257,29 @@
     width: min(100% - 32px, 500px);
   }
 
-  .financing-options__card {
-    gap: 14px;
-    padding: 18px 14px;
+  .financing-options__eyebrow {
+    gap: 10px;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
   }
 
-  .financing-options__icon {
-    width: 54px;
-    height: 54px;
+  .financing-options__title {
+    font-size: clamp(2rem, 12vw, 2.7rem);
   }
 
-  .financing-options__card-title {
-    font-size: 0.82rem;
+  .financing-options__primary-card {
+    padding: 20px 16px 18px;
   }
 
-  .financing-options__card-description {
-    font-size: 0.82rem;
+  .financing-options__primary-description {
+    font-size: 1rem;
+  }
+
+  .financing-options__insurance-title {
+    font-size: 1.15rem;
+  }
+
+  .financing-options__insurance-description {
+    font-size: 0.92rem;
   }
 }

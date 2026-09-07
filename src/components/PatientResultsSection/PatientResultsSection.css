@@ -28,7 +28,8 @@
   color: var(--brand-navy);
   font-size: clamp(1.9rem, 3vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.03em;
+  word-spacing: 0.12em;
   line-height: 1.04;
   text-transform: uppercase;
 }

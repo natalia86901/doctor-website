@@ -96,7 +96,7 @@ function Hero() {
           <h1 id="hero-heading">
             <span>THEY SAID IT WAS</span>
             <span>IMPOSSIBLE.</span>
-            <span>WE PROVED IT WASN’T.</span>
+            <span>WE PROVED IT IS POSSIBLE.</span>
           </h1>
 
           <p className="hero__description">
