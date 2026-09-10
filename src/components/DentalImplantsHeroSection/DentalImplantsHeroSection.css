@@ -1,0 +1,230 @@
+.dental-implants-hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  min-height: clamp(560px, calc(100vh - 100px), 720px);
+  background: #f7f4ed;
+}
+
+.dental-implants-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(56px, 7vw, 96px) clamp(48px, 6vw, 90px);
+}
+
+.dental-implants-hero__title {
+  max-width: 600px;
+  margin: 0;
+
+  color: var(--brand-navy);
+
+  font-family: inherit;
+  font-size: clamp(2.6rem, 4.3vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.dental-implants-hero__description {
+  max-width: 510px;
+  margin: clamp(24px, 3vw, 36px) 0 0;
+
+  color: var(--brand-gray);
+
+  font-family: inherit;
+  font-size: clamp(0.95rem, 1.15vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.dental-implants-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(28px, 3vw, 40px);
+}
+
+.dental-implants-hero__primary-cta,
+.dental-implants-hero__secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 22px;
+
+  border: 1px solid var(--brand-navy);
+  border-radius: 2px;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+}
+
+.dental-implants-hero__primary-cta {
+  background: var(--brand-navy);
+  color: var(--brand-white);
+}
+
+.dental-implants-hero__secondary-cta {
+  background: transparent;
+  color: var(--brand-navy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dental-implants-hero__primary-cta:hover {
+    border-color: var(--brand-gray);
+    background: var(--brand-gray);
+    color: var(--brand-white);
+  }
+
+  .dental-implants-hero__secondary-cta:hover {
+    border-color: var(--brand-navy);
+    background: var(--brand-navy);
+    color: var(--brand-white);
+  }
+}
+
+.dental-implants-hero__primary-cta:active,
+.dental-implants-hero__secondary-cta:active {
+  border-color: var(--brand-gold);
+  background: var(--brand-gold);
+  color: var(--brand-navy);
+}
+
+.dental-implants-hero__primary-cta:focus-visible,
+.dental-implants-hero__secondary-cta:focus-visible {
+  outline: 3px solid var(--brand-navy);
+  outline-offset: 4px;
+}
+
+.dental-implants-hero__primary-cta[aria-disabled="true"],
+.dental-implants-hero__secondary-cta[aria-disabled="true"] {
+  border-color: var(--brand-gray);
+  background: var(--brand-gray);
+  color: var(--brand-white);
+
+  cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.dental-implants-hero__media {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.dental-implants-hero__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 1000px) {
+  .dental-implants-hero__content {
+    padding-inline: clamp(32px, 5vw, 56px);
+  }
+
+  .dental-implants-hero__title {
+    font-size: clamp(2.3rem, 4.8vw, 3.5rem);
+    line-height: 1.06;
+  }
+
+  .dental-implants-hero__description {
+    font-size: 1rem;
+  }
+
+  .dental-implants-hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .dental-implants-hero {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .dental-implants-hero__media {
+    order: 1;
+
+    height: clamp(300px, 82vw, 470px);
+    min-height: 0;
+  }
+
+  .dental-implants-hero__image {
+    min-height: 0;
+    object-position: center 30%;
+  }
+
+  .dental-implants-hero__content {
+    order: 2;
+    padding: 44px clamp(20px, 7vw, 38px) 56px;
+  }
+
+  .dental-implants-hero__title {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+  }
+
+  .dental-implants-hero__description {
+    margin-top: 22px;
+
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .dental-implants-hero__actions {
+    align-items: stretch;
+    margin-top: 28px;
+  }
+
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta {
+    width: 100%;
+    min-height: 54px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dental-implants-hero__content {
+    padding-inline: 16px;
+  }
+
+  .dental-implants-hero__title {
+    font-size: 2.05rem;
+  }
+
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta {
+    padding-inline: 12px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta {
+    transition: none;
+  }
+}

@@ -18,7 +18,7 @@ function FinancingOptionsSection() {
           </div>
 
           <h2 id="financing-options-heading" className="financing-options__title">
-            Flexible ways for you.
+            Flexible ways for you
           </h2>
         </header>
 

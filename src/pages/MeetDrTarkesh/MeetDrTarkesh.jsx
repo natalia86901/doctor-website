@@ -1,8 +1,31 @@
+import { useEffect } from 'react'
 import './MeetDrTarkesh.css'
 import videoOne from '../../assets/videos/video1.mp4'
 import videoTwo from '../../assets/videos/video2.mp4'
 
 function MeetDrTarkesh() {
+  useEffect(() => {
+    if (window.location.hash !== '#patient-story-video') {
+      return undefined
+    }
+
+    const videoSection = document.getElementById('patient-story-video')
+
+    if (!videoSection) {
+      return undefined
+    }
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const frameId = window.requestAnimationFrame(() => {
+      videoSection.scrollIntoView({
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
+    })
+
+    return () => window.cancelAnimationFrame(frameId)
+  }, [])
+
   return (
     <section id="meet-dr-tarkesh" className="meet-dr-tarkesh">
       <section className="meet-dr-tarkesh__intro" aria-labelledby="meet-dr-tarkesh-title">
@@ -16,7 +39,11 @@ function MeetDrTarkesh() {
         </p>
       </section>
 
-      <section className="meet-dr-tarkesh__videos" aria-label="Meet Dr. Tarkesh videos">
+      <section
+        id="patient-story-video"
+        className="meet-dr-tarkesh__videos"
+        aria-label="Meet Dr. Tarkesh videos"
+      >
         <article className="meet-dr-tarkesh__video-card">
           <video
             className="meet-dr-tarkesh__video"

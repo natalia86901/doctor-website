@@ -1,0 +1,419 @@
+.denture-comparison {
+  --denture-cream: #f7f4ed;
+  background: var(--denture-cream);
+  color: var(--brand-navy);
+  overflow: hidden;
+}
+
+.denture-comparison__inner {
+  width: min(100% - 48px, 1260px);
+  margin: 0 auto;
+  padding: clamp(52px, 5vw, 78px) 0 clamp(56px, 5vw, 76px);
+}
+
+.denture-comparison__header {
+  text-align: center;
+}
+
+.denture-comparison__title,
+.denture-comparison__subtitle,
+.denture-comparison__label h3,
+.denture-comparison__label p,
+.denture-comparison__feature-title,
+.denture-comparison__feature-copy,
+.denture-comparison__conclusion h3,
+.denture-comparison__conclusion p {
+  font-family: inherit;
+}
+
+.denture-comparison__title {
+  margin: 0;
+  font-size: clamp(2rem, 2.7vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+
+.denture-comparison__subtitle {
+  margin: 8px 0 0;
+  color: var(--brand-navy);
+  font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.denture-comparison__subtitle strong {
+  color: var(--brand-gold);
+  font-weight: 600;
+}
+
+.denture-comparison__labels {
+  position: relative;
+  min-height: 59px;
+  margin: clamp(32px, 3.4vw, 48px) auto 0;
+}
+
+.denture-comparison__label {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  transition: left 450ms cubic-bezier(0.22, 1, 0.36, 1), transform 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 350ms ease, visibility 350ms ease;
+}
+
+.denture-comparison__label--traditional {
+  left: 0;
+  text-align: left;
+}
+
+.denture-comparison__label--palate-free {
+  right: 0;
+  text-align: right;
+}
+
+.denture-comparison--palateFree .denture-comparison__label--palate-free,
+.denture-comparison--traditional .denture-comparison__label--traditional {
+  right: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.denture-comparison__label--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.denture-comparison__label h3 {
+  margin: 0;
+  color: var(--brand-navy);
+  font-size: clamp(0.85rem, 1.25vw, 1.18rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.denture-comparison__label--palate-free h3 {
+  color: var(--brand-gold);
+}
+
+.denture-comparison__label p {
+  margin: 4px 0 0;
+  color: var(--brand-navy);
+  font-size: clamp(0.78rem, 0.95vw, 0.96rem);
+  line-height: 1.3;
+}
+
+.denture-comparison__stage {
+  position: relative;
+  aspect-ratio: 2.2;
+  max-width: 1060px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.denture-comparison__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: clip-path 500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 400ms ease;
+}
+
+.denture-comparison__image--traditional {
+  clip-path: inset(0 50% 0 0);
+}
+
+.denture-comparison__image--palate-free {
+  clip-path: inset(0 0 0 50%);
+}
+
+.denture-comparison--traditional .denture-comparison__image--traditional {
+  clip-path: inset(0);
+}
+
+.denture-comparison--traditional .denture-comparison__image--palate-free {
+  clip-path: inset(0 0 0 100%);
+  opacity: 0;
+}
+
+.denture-comparison--palateFree .denture-comparison__image--traditional {
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+}
+
+.denture-comparison--palateFree .denture-comparison__image--palate-free {
+  clip-path: inset(0);
+}
+
+.denture-comparison__divider {
+  position: absolute;
+  top: 4%;
+  bottom: 4%;
+  left: 50%;
+  width: 2px;
+  background: rgb(10 34 70 / 62%);
+  transform: translateX(-50%);
+  transition: opacity 350ms ease;
+}
+
+.denture-comparison--traditional .denture-comparison__divider,
+.denture-comparison--palateFree .denture-comparison__divider {
+  opacity: 0;
+}
+
+.denture-comparison__controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgb(10 34 70 / 15%);
+  border-radius: 50%;
+  background: var(--brand-white);
+  box-shadow: 0 4px 12px rgb(10 34 70 / 12%);
+  transform: translate(-50%, -50%);
+}
+
+.denture-comparison__controls button {
+  display: grid;
+  width: 26px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brand-navy);
+  cursor: pointer;
+  font-size: 1.65rem;
+  line-height: 1;
+  place-items: center;
+}
+
+.denture-comparison__controls button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid rgb(195 154 75 / 60%);
+  outline-offset: 2px;
+}
+
+.denture-comparison__features {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 64px);
+  margin: clamp(12px, 1.5vw, 20px) auto 0;
+}
+
+.denture-comparison--traditional .denture-comparison__features,
+.denture-comparison--palateFree .denture-comparison__features {
+  gap: 0;
+}
+
+.denture-comparison__feature-group {
+  width: 50%;
+  min-width: 0;
+  transition: width 450ms cubic-bezier(0.22, 1, 0.36, 1), opacity 350ms ease, transform 450ms cubic-bezier(0.22, 1, 0.36, 1), visibility 350ms ease;
+}
+
+.denture-comparison__feature-group--hidden {
+  width: 0;
+  min-width: 0;
+  max-width: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+.denture-comparison--palateFree .denture-comparison__feature-group--palate-free,
+.denture-comparison--traditional .denture-comparison__feature-group--traditional {
+  width: min(100%, 780px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.denture-comparison__feature-title {
+  display: none;
+}
+
+.denture-comparison__feature-list {
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.denture-comparison__feature {
+  display: flex;
+  align-items: flex-start;
+  min-width: 0;
+  gap: 11px;
+}
+
+.denture-comparison__icon-badge {
+  display: grid;
+  flex: 0 0 30px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--brand-white);
+  place-items: center;
+}
+
+.denture-comparison__feature-group--traditional .denture-comparison__icon-badge {
+  background: var(--brand-navy);
+}
+
+.denture-comparison__feature-group--palate-free .denture-comparison__icon-badge {
+  background: var(--brand-gold);
+}
+
+.denture-comparison__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.denture-comparison__feature-copy {
+  margin: 0;
+  color: var(--brand-navy);
+  font-size: clamp(0.78rem, 1vw, 0.97rem);
+  line-height: 1.35;
+}
+
+.denture-comparison__feature-copy strong {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.denture-comparison__conclusion {
+  margin: clamp(38px, 4vw, 58px) auto 0;
+  text-align: center;
+}
+
+.denture-comparison__conclusion h3 {
+  margin: 0;
+  color: var(--brand-navy);
+  font-size: clamp(1rem, 1.45vw, 1.42rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  line-height: 1.18;
+  text-transform: uppercase;
+}
+
+.denture-comparison__conclusion p {
+  margin: 8px 0 0;
+  color: var(--brand-gray);
+  font-size: clamp(0.85rem, 1.1vw, 1.08rem);
+  line-height: 1.4;
+}
+
+@media (max-width: 760px) {
+  .denture-comparison__inner {
+    width: min(100% - 40px, 560px);
+    padding-top: 42px;
+    padding-bottom: 56px;
+  }
+
+  .denture-comparison__title {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  .denture-comparison__subtitle {
+    font-size: clamp(0.92rem, 4vw, 1.3rem);
+    letter-spacing: 0.1em;
+  }
+
+  .denture-comparison__labels {
+    min-height: 78px;
+    margin-top: 28px;
+  }
+
+  .denture-comparison__label {
+    width: 52%;
+  }
+
+  .denture-comparison__label h3 {
+    font-size: 0.78rem;
+  }
+
+  .denture-comparison__label p {
+    max-width: 150px;
+    font-size: 0.76rem;
+  }
+
+  .denture-comparison__stage {
+    aspect-ratio: 1.18;
+  }
+
+  .denture-comparison__controls {
+    width: 54px;
+    height: 54px;
+  }
+
+  .denture-comparison__features {
+    display: block;
+    margin-top: 18px;
+  }
+
+  .denture-comparison__feature-group,
+  .denture-comparison--palateFree .denture-comparison__feature-group--palate-free,
+  .denture-comparison--traditional .denture-comparison__feature-group--traditional {
+    width: 100%;
+  }
+
+  .denture-comparison__feature-group + .denture-comparison__feature-group {
+    margin-top: 28px;
+  }
+
+  .denture-comparison__feature-group--hidden {
+    display: none;
+  }
+
+  .denture-comparison__feature-title {
+    display: block;
+    margin: 0 0 12px;
+    color: var(--brand-navy);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .denture-comparison__feature-group--palate-free .denture-comparison__feature-title {
+    color: var(--brand-gold);
+  }
+}
+
+@media (max-width: 360px) {
+  .denture-comparison__inner {
+    width: min(100% - 32px, 560px);
+  }
+
+  .denture-comparison__label {
+    width: 55%;
+  }
+
+  .denture-comparison__feature {
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .denture-comparison__label,
+  .denture-comparison__image,
+  .denture-comparison__divider,
+  .denture-comparison__feature-group {
+    transition: none;
+  }
+}

@@ -45,9 +45,7 @@
 }
 
 .treatment-process__step + .treatment-process__step {
-  padding-top: 28px;
-  border-top: 1px solid rgb(195 154 75 / 28%);
-  border-left: 0;
+  border-left: 1px solid rgb(195 154 75 / 28%);
 }
 
 .treatment-process__step-top {
@@ -155,6 +153,7 @@
   .treatment-process__step + .treatment-process__step {
     padding-top: 28px;
     border-top: 1px solid rgb(195 154 75 / 28%);
+    border-left: 0;
   }
 
   .treatment-process__step-top {

@@ -1,0 +1,447 @@
+.dental-implants-expertise {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(420px, 1fr);
+  min-height: clamp(540px, 43vw, 680px);
+}
+
+.dental-implants-expertise__media {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(540px, 43vw, 680px);
+  overflow: hidden;
+}
+
+.dental-implants-expertise__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.dental-implants-expertise__callouts {
+  position: absolute;
+  inset: 0;
+}
+
+.dental-implants-expertise__callout {
+  position: absolute;
+  z-index: 1;
+  color: var(--brand-navy);
+}
+
+.dental-implants-expertise__connector {
+  position: absolute;
+  display: block;
+  background: var(--brand-gold);
+}
+
+.dental-implants-expertise__connector::after {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--brand-gold);
+  content: "";
+}
+
+.dental-implants-expertise__callout--planning {
+  top: 8%;
+  left: 15%;
+  width: min(300px, 30%);
+}
+
+.dental-implants-expertise__callout--planning
+  .dental-implants-expertise__connector {
+  top: 8px;
+  left: -30px;
+  width: 1px;
+  height: clamp(90px, 10vw, 130px);
+}
+
+.dental-implants-expertise__callout--planning
+  .dental-implants-expertise__connector::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 1px;
+  background: var(--brand-gold);
+  content: "";
+}
+
+.dental-implants-expertise__callout--planning
+  .dental-implants-expertise__connector::after {
+  right: -4px;
+  bottom: -4px;
+}
+
+.dental-implants-expertise__callout--clinical {
+  top: 38%;
+  left: 43%;
+  width: min(260px, 30%);
+}
+
+.dental-implants-expertise__callout--clinical
+  .dental-implants-expertise__connector {
+  top: -48px;
+  left: 15%;
+  width: clamp(90px, 11vw, 145px);
+  height: 1px;
+}
+
+.dental-implants-expertise__callout--clinical
+  .dental-implants-expertise__connector::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 18px;
+  background: var(--brand-gold);
+  content: "";
+}
+
+.dental-implants-expertise__callout--clinical
+  .dental-implants-expertise__connector::after {
+  top: -4px;
+  right: -4px;
+}
+
+.dental-implants-expertise__callout--craftsmanship {
+  bottom: 16%;
+  left: 29%;
+  width: min(300px, 38%);
+  color: var(--brand-white);
+}
+
+.dental-implants-expertise__callout--craftsmanship
+  .dental-implants-expertise__connector {
+  bottom: calc(100% + 6px);
+  left: -43px;
+  width: 1px;
+  height: clamp(82px, 10vw, 120px);
+}
+
+.dental-implants-expertise__callout--craftsmanship
+  .dental-implants-expertise__connector::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 43px;
+  height: 1px;
+  background: var(--brand-gold);
+  content: "";
+}
+
+.dental-implants-expertise__callout--craftsmanship
+  .dental-implants-expertise__connector::after {
+  top: -4px;
+  left: -4px;
+}
+
+.dental-implants-expertise__callout-title {
+  margin: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+  font-weight: 800;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.dental-implants-expertise__callout-number {
+  color: var(--brand-gold);
+}
+
+.dental-implants-expertise__callout-description {
+  max-width: 270px;
+  margin: 9px 0 0 31px;
+  color: inherit;
+  font-family: inherit;
+  font-size: clamp(0.84rem, 0.95vw, 1rem);
+  line-height: 1.35;
+}
+
+.dental-implants-expertise__callout--craftsmanship
+  .dental-implants-expertise__callout-title,
+.dental-implants-expertise__callout--craftsmanship
+  .dental-implants-expertise__callout-description {
+  text-shadow: 0 1px 2px rgb(0 0 0 / 30%);
+}
+
+.dental-implants-expertise__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+  padding: clamp(48px, 4.5vw, 76px) clamp(44px, 4vw, 68px);
+  background: var(--brand-navy);
+  color: var(--brand-white);
+}
+
+.dental-implants-expertise__eyebrow {
+  max-width: 470px;
+  margin: 0;
+  color: var(--brand-gold);
+  font-family: inherit;
+  font-size: clamp(1.15rem, 1.45vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.dental-implants-expertise__title {
+  max-width: 510px;
+  margin: clamp(20px, 2.2vw, 30px) 0 0;
+  color: var(--brand-white);
+  font-family: inherit;
+  font-size: clamp(2.35rem, 3.15vw, 3.65rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.02;
+  text-transform: uppercase;
+  word-spacing: 0.12em;
+}
+
+.dental-implants-expertise__body {
+  display: grid;
+  gap: 24px;
+  max-width: 510px;
+  margin-top: clamp(28px, 2.8vw, 38px);
+}
+
+.dental-implants-expertise__paragraph {
+  margin: 0;
+  color: rgb(255 255 255 / 84%);
+  font-family: inherit;
+  font-size: clamp(1rem, 1.08vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.dental-implants-expertise__quote {
+  align-self: center;
+  margin: clamp(22px, 2.4vw, 32px) 0 0;
+  color: rgb(255 255 255 / 92%);
+  font-family: inherit;
+  font-size: clamp(1.05rem, 1.15vw, 1.2rem);
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.dental-implants-expertise__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 58px;
+  margin-top: clamp(24px, 2.6vw, 34px);
+  padding: 0 24px;
+  border: 1px solid var(--brand-gold);
+  border-radius: 2px;
+  background: linear-gradient(
+    110deg,
+    #b98a38 0%,
+    #cda54f 38%,
+    #d9b665 52%,
+    #c79b46 72%,
+    #b98937 100%
+  );
+  color: var(--brand-white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 0.16s ease,
+    background-color 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .dental-implants-expertise__cta:hover {
+    border-color: var(--brand-gray);
+    background: var(--brand-gray);
+    color: var(--brand-white);
+  }
+}
+
+.dental-implants-expertise__cta:active {
+  border-color: var(--brand-white);
+  background: var(--brand-white);
+  color: var(--brand-navy);
+}
+
+.dental-implants-expertise__cta:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  .dental-implants-expertise {
+    grid-template-columns: minmax(0, 1.4fr) minmax(360px, 1fr);
+    min-height: 540px;
+  }
+
+  .dental-implants-expertise__media {
+    min-height: 540px;
+  }
+
+  .dental-implants-expertise__callout--planning {
+    left: 17%;
+  }
+
+  .dental-implants-expertise__callout--clinical {
+    left: 38%;
+    width: 38%;
+  }
+
+  .dental-implants-expertise__callout--craftsmanship {
+    left: 30%;
+    width: 38%;
+  }
+
+  .dental-implants-expertise__content {
+    padding: 38px clamp(28px, 4vw, 44px);
+  }
+
+  .dental-implants-expertise__title {
+    font-size: clamp(2.05rem, 3.8vw, 3rem);
+  }
+}
+
+@media (max-width: 760px) {
+  .dental-implants-expertise {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .dental-implants-expertise__media {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0 clamp(20px, 7vw, 38px) 38px;
+    background: #f7f4ed;
+  }
+
+  .dental-implants-expertise__image {
+    width: calc(100% + (2 * clamp(20px, 7vw, 38px)));
+    height: clamp(280px, 72vw, 420px);
+    min-height: 0;
+    margin: 0 calc(-1 * clamp(20px, 7vw, 38px)) 36px;
+  }
+
+  .dental-implants-expertise__callouts {
+    position: relative;
+    display: grid;
+    gap: 28px;
+  }
+
+  .dental-implants-expertise__callout,
+  .dental-implants-expertise__callout--planning,
+  .dental-implants-expertise__callout--clinical,
+  .dental-implants-expertise__callout--craftsmanship {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    color: var(--brand-navy);
+  }
+
+  .dental-implants-expertise__connector,
+  .dental-implants-expertise__connector::before,
+  .dental-implants-expertise__connector::after {
+    display: none;
+  }
+
+  .dental-implants-expertise__callout-description {
+    max-width: 100%;
+    margin: 7px 0 0;
+    font-size: 0.92rem;
+  }
+
+  .dental-implants-expertise__callout--craftsmanship
+    .dental-implants-expertise__callout-title,
+  .dental-implants-expertise__callout--craftsmanship
+    .dental-implants-expertise__callout-description {
+    text-shadow: none;
+  }
+
+  .dental-implants-expertise__content {
+    padding: 42px clamp(20px, 7vw, 38px) 48px;
+  }
+
+  .dental-implants-expertise__eyebrow {
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+  }
+
+  .dental-implants-expertise__title {
+    margin-top: 18px;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    letter-spacing: -0.03em;
+    word-spacing: 0.07em;
+  }
+
+  .dental-implants-expertise__body {
+    gap: 18px;
+    margin-top: 26px;
+  }
+
+  .dental-implants-expertise__quote {
+    align-self: stretch;
+    margin-top: 22px;
+  }
+
+  .dental-implants-expertise__cta {
+    min-height: 56px;
+    margin-top: 26px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dental-implants-expertise__media {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .dental-implants-expertise__image {
+    width: calc(100% + 32px);
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+
+  .dental-implants-expertise__content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .dental-implants-expertise__eyebrow {
+    font-size: 0.95rem;
+  }
+
+  .dental-implants-expertise__title {
+    font-size: 1.9rem;
+  }
+
+  .dental-implants-expertise__cta {
+    padding-inline: 12px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dental-implants-expertise__cta {
+    transition: none;
+  }
+}
