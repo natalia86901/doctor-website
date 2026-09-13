@@ -30,22 +30,15 @@
   width: 100%;
   margin: 0;
   color: var(--brand-white);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-
-  font-size: clamp(1.75rem, 2.6vw, 3rem);
-  font-weight: 600;
-  letter-spacing: 0.025em;
-  line-height: 1.05;
   text-align: center;
-  text-transform: uppercase;
   white-space: nowrap;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 
@@ -61,18 +54,11 @@
 .treatment-promise__separator {
   display: inline-block;
   color: var(--brand-gold);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
   font-size: 1.08em;
-  font-weight: 500;
   line-height: 1;
   transform: skewX(-8deg);
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
 }
 
 
@@ -92,20 +78,14 @@
   z-index: 2;
   margin: 0;
   color: var(--brand-gold);
-  font-family:
-    Inter,
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    sans-serif;
-  font-size: clamp(0.72rem, 1vw, 0.95rem);
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  line-height: 1.35;
   text-align: center;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body-small);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 
@@ -276,8 +256,6 @@
 
   .treatment-promise__title {
     gap: 14px;
-    font-size: clamp(1.45rem, 3.6vw, 2.2rem);
-    letter-spacing: 0.018em;
   }
 
   .treatment-promise__title-group {
@@ -307,10 +285,6 @@
     align-items: center;
     gap: 13px;
     width: 100%;
-    font-size: clamp(1.55rem, 7.5vw, 2.15rem);
-    font-weight: 600;
-    letter-spacing: 0.015em;
-    line-height: 1.05;
     white-space: normal;
   }
 
@@ -335,8 +309,6 @@
   }
 
   .treatment-promise__subtitle {
-    font-size: clamp(0.6rem, 2.8vw, 0.72rem);
-    letter-spacing: 0.14em;
     white-space: nowrap;
   }
 
@@ -412,16 +384,7 @@
     padding-left: 16px;
   }
 
-  .treatment-promise__title {
-    font-size: clamp(1.4rem, 7.2vw, 1.85rem);
-  }
-
   .treatment-promise__title-group {
     gap: 7px;
-  }
-
-  .treatment-promise__subtitle {
-    font-size: 0.58rem;
-    letter-spacing: 0.11em;
   }
 }

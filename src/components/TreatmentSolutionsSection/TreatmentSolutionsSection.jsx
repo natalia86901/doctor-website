@@ -11,7 +11,7 @@ import treatmentSolutionImage3 from "../../assets/treatmentSolutions/treatmentSo
 
 const treatments = [
   {
-    title: "ONE-DAY TEETH",
+    title: "One-Day Teeth",
     description:
       "Rediscover confidence immediately with our full-arch, immediate restoration dental solution.",
     image: treatmentSolutionImage1,
@@ -20,7 +20,7 @@ const treatments = [
     path: "/dentures-and-implants/full-partial-dentures",
   },
   {
-    title: "LONG-TERM SOLUTIONS",
+    title: "Long-Term Solutions",
     description: "Durable implants tailored for you.",
     image: treatmentSolutionImage2,
     imageAlt: "Long-term dental implant solution",
@@ -28,7 +28,7 @@ const treatments = [
     path: "/dentures-and-implants/dental-implants",
   },
   {
-    title: "COMPLEX CASES & SECOND OPINIONS",
+    title: "Complex Cases & Second Opinions",
     description:
       "Expert diagnosis and treatment solutions designed for challenging and advanced cases.",
     image: treatmentSolutionImage3,
@@ -137,7 +137,7 @@ function TreatmentSolutionsSection() {
                   className="treatment-solutions__card-link"
                   to={treatment.path}
                 >
-                  LEARN MORE
+                  Learn More
                   <span
                     className="treatment-solutions__card-arrow"
                     aria-hidden="true"

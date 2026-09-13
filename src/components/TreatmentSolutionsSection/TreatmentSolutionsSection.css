@@ -33,10 +33,12 @@
 .treatment-solutions__heading {
   margin: 0;
   color: var(--brand-navy);
-  font-size: clamp(0.7rem, 0.9vw, 0.9rem);
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
   line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
@@ -67,6 +69,13 @@
 .treatment-solutions__stat-label {
   grid-area: label;
   margin-left: 10px;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
+  text-transform: uppercase;
 }
 
 .treatment-solutions__stat + .treatment-solutions__stat {
@@ -88,11 +97,6 @@
 
 .treatment-solutions__stat-label {
   color: var(--brand-gray);
-  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  line-height: 1.3;
-  text-transform: uppercase;
 }
 
 .treatment-solutions__cards {
@@ -162,19 +166,26 @@
   max-width: 270px;
   margin: 0;
   color: var(--brand-navy);
-  font-size: clamp(0.92rem, 1.2vw, 1.15rem);
-  font-weight: 700;
-  letter-spacing: 0.045em;
-  line-height: 1.3;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-solutions__card-description {
   max-width: 275px;
   margin: 13px 0 0;
   color: var(--brand-gray);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-solutions__card-link {
@@ -184,11 +195,14 @@
   margin-top: auto;
   padding-top: 19px;
   color: var(--brand-navy);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
   text-decoration: none;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-body-small);
+  line-height: 1.4;
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-solutions__card-arrow {
@@ -225,10 +239,6 @@
     padding-right: 16px;
     padding-left: 16px;
   }
-
-  .treatment-solutions__card-description {
-    font-size: 0.82rem;
-  }
 }
 
 @media (max-width: 680px) {
@@ -242,10 +252,6 @@
   .treatment-solutions__inner {
     width: min(100% - 40px, 500px);
     padding: 54px 0 68px;
-  }
-
-  .treatment-solutions__heading {
-    letter-spacing: 0.13em;
   }
 
   .treatment-solutions__stats {
@@ -272,8 +278,6 @@
   }
 
   .treatment-solutions__stat-label {
-  font-size: clamp(0.58rem, 2.4vw, 0.68rem);
-  letter-spacing: 0.1em;
   white-space: nowrap;
 }
 
@@ -289,10 +293,6 @@
 
   .treatment-solutions__card-body {
     padding: 18px 24px 25px;
-  }
-
-  .treatment-solutions__card-title {
-    font-size: 1rem;
   }
 }
 

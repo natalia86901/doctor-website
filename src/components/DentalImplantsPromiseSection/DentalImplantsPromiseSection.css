@@ -24,43 +24,51 @@
 .dental-implants-promise__eyebrow {
   margin: 0;
   color: var(--brand-gold);
-  font-family: inherit;
-  font-size: clamp(1rem, 1.35vw, 1.3rem);
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  line-height: 1.2;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
 .dental-implants-promise__title {
   margin: clamp(20px, 2vw, 28px) 0 0;
   color: #f7f4ed;
-  font-family: inherit;
-  font-size: clamp(3rem, 5vw, 5rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-promise__lead {
   max-width: 650px;
   margin: clamp(24px, 2.6vw, 36px) 0 0;
   color: #f7f4ed;
-  font-family: inherit;
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 400;
-  line-height: 1.45;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-lead);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-promise__description {
   max-width: 600px;
   margin: clamp(24px, 2.8vw, 38px) 0 0;
   color: rgb(247 244 237 / 88%);
-  font-family: inherit;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
-  font-weight: 400;
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-promise__media {
@@ -86,10 +94,6 @@
 
   .dental-implants-promise__media {
     padding-left: 24px;
-  }
-
-  .dental-implants-promise__title {
-    font-size: clamp(2.8rem, 5vw, 4.2rem);
   }
 }
 
@@ -124,28 +128,17 @@
     padding-bottom: 48px;
   }
 
-  .dental-implants-promise__eyebrow {
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-  }
-
   .dental-implants-promise__title {
     margin-top: 18px;
-    font-size: clamp(2.2rem, 10vw, 3.2rem);
-    letter-spacing: -0.01em;
-    word-spacing: 0.2em;
-    line-height: 1.05;
   }
 
 
   .dental-implants-promise__lead {
     margin-top: 24px;
-    font-size: clamp(1.25rem, 5.4vw, 1.65rem);
   }
 
   .dental-implants-promise__description {
     margin-top: 24px;
-    font-size: 1rem;
   }
 }
 

@@ -5,15 +5,15 @@ export const navItems = [
     children: [
       { label: 'Dentures', path: '/services/dentures' },
       { label: 'Implants', path: '/services/implants' },
-      { label: 'Complex cases', path: '/services/complex-cases' },
-      { label: 'Iv sedation', path: '/services/iv-sedation' },
+      { label: 'Complex Cases', path: '/services/complex-cases' },
+      { label: 'IV Sedation', path: '/services/iv-sedation' },
     ],
   },
   {
-    label: 'Smile gallery',
+    label: 'Smile Gallery',
     path: '/smile-gallery',
     children: [
-      { label: 'View patient results', path: '/smile-gallery/patient-results' },
+      { label: 'View Patient Results', path: '/smile-gallery/patient-results' },
     ],
   },
   {
@@ -21,7 +21,7 @@ export const navItems = [
     path: '/why-dr-tarkesh',
     children: [
       { label: 'Meet Dr. Tarkesh', path: '/why-dr-tarkesh/meet-dr-tarkesh' },
-      { label: 'Our approach', path: '/why-dr-tarkesh/our-approach' },
+      { label: 'Our Approach', path: '/why-dr-tarkesh/our-approach' },
     ],
   },
   {

@@ -7,17 +7,17 @@ import sameDayTeethIcon from "../../assets/practiceBenefits/sameDayTeethIcon.svg
 
 const practiceBenefits = [
   {
-    title: "ONE LOCATION",
+    title: "One Location",
     description: "Everything under one roof.",
     icon: oneLocationIcon,
   },
   {
-    title: "LOCAL DOCTORS",
+    title: "Local Doctors",
     description: "Experience you can trust, right here at home.",
     icon: localDoctorsIcon,
   },
   {
-    title: "SAME-DAY TEETH",
+    title: "Same-Day Teeth",
     description: "Leave with a confident smile the same day.",
     icon: sameDayTeethIcon,
   },
@@ -58,7 +58,7 @@ function PracticeBenefitsSection() {
             className="practice-benefits__secondary-link"
             to="/dentures-and-implants/dental-implants"
           >
-            <span>HOW SAME-DAY TEETH WORK</span>
+            <span>How Same-Day Teeth Work</span>
             <span className="practice-benefits__arrow" aria-hidden="true">
               →
             </span>

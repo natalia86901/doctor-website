@@ -7,6 +7,11 @@
 .route-placeholder h1 {
   margin: 0;
   color: #0a2246;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 500;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h1);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }

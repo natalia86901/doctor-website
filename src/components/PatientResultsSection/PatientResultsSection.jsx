@@ -38,7 +38,7 @@ function PatientResultsSection() {
         <header className="patient-results__header">
           <p className="patient-results__eyebrow">PATIENT RESULTS</p>
           <h2 id="patient-results-heading" className="patient-results__title">
-            REAL PATIENTS. MEANINGFUL CHANGE.
+            Real Patients. Meaningful Change.
           </h2>
         </header>
 

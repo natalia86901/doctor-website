@@ -14,11 +14,11 @@ function DentalImplantsPromiseSection() {
             id="dental-implants-promise-heading"
             className="dental-implants-promise__title"
           >
-            YOUR SMILE
+            Your Smile
             <br />
-            DOESN&apos;T HAVE
+            Doesn&apos;t Have
             <br />
-            TO WAIT.
+            to Wait.
           </h2>
           <p className="dental-implants-promise__lead">
             Leave with a beautiful, comfortable smile from day one — even when

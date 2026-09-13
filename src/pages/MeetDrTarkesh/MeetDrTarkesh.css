@@ -13,29 +13,38 @@
 .meet-dr-tarkesh__eyebrow {
   margin: 0 0 18px;
   color: var(--brand-gold, #b49a63);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
 .meet-dr-tarkesh__title {
   margin: 0;
   color: var(--brand-navy, #0a2246);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 5vw, 4.6rem);
-  font-weight: 400;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h1);
+  line-height: var(--leading-headline);
   letter-spacing: 0;
-  line-height: 1;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .meet-dr-tarkesh__description {
   max-width: 540px;
   margin: 24px auto 0;
   color: var(--brand-gray, #66706d);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .meet-dr-tarkesh__videos {
@@ -64,10 +73,6 @@
   .meet-dr-tarkesh {
     min-height: calc(100vh - 84px);
     padding-top: 56px;
-  }
-
-  .meet-dr-tarkesh__title {
-    font-size: clamp(2.15rem, 11vw, 3.5rem);
   }
 
   .meet-dr-tarkesh__videos {

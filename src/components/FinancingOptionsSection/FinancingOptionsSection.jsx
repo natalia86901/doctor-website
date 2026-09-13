@@ -18,7 +18,7 @@ function FinancingOptionsSection() {
           </div>
 
           <h2 id="financing-options-heading" className="financing-options__title">
-            Flexible ways for you
+            Flexible Ways for You
           </h2>
         </header>
 
@@ -34,7 +34,7 @@ function FinancingOptionsSection() {
 
           <div className="financing-options__primary-content">
             <h3 className="financing-options__primary-title">
-              FLEXIBLE MONTHLY PAYMENTS
+              Flexible Monthly Payments
             </h3>
             <p className="financing-options__primary-description">
               Reasonable payments to fit your budget.
@@ -57,7 +57,7 @@ function FinancingOptionsSection() {
 
           <div className="financing-options__insurance-content">
             <h3 className="financing-options__insurance-title">
-              Using dental insurance?
+              Using Dental Insurance?
             </h3>
             <p className="financing-options__insurance-description">
               Our team can help you understand your available benefits.

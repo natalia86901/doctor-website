@@ -94,9 +94,9 @@ function Hero() {
       >
         <div className="hero__content">
           <h1 id="hero-heading">
-            <span>THEY SAID IT WAS</span>
-            <span>IMPOSSIBLE.</span>
-            <span>WE PROVED IT IS POSSIBLE.</span>
+            <span>They Said It Was</span>
+            <span>Impossible.</span>
+            <span>We Proved It Is Possible.</span>
           </h1>
 
           <p className="hero__description">
@@ -126,7 +126,7 @@ function Hero() {
               <PlayIcon />
             </span>
 
-            <span>MEET DR. TARKESH</span>
+            <span>Meet Dr. Tarkesh</span>
           </button>
         </div>
       </section>

@@ -4,19 +4,19 @@ import fixedFullArch from '../../assets/dentalImplants/teethOptionsComparison/fi
 import './TeethOptionsComparisonSection.css'
 
 const removableFeatures = [
-  'SECURE',
-  'IMPROVED COMFORT',
-  'REMOVABLE',
-  'PERSONALIZED',
-  'A MAJOR UPGRADE FROM DENTURES',
+  'Secure',
+  'Improved comfort',
+  'Removable',
+  'Personalized',
+  'A major upgrade from dentures',
 ]
 
 const fixedFeatures = [
-  'MAXIMUM STABILITY',
-  'CLOSEST TO NATURAL TEETH',
-  'FIXED',
-  'FULLY CUSTOMIZED',
-  'DESIGNED TO FEEL LIKE YOUR OWN SMILE',
+  'Maximum stability',
+  'Closest to natural teeth',
+  'Fixed',
+  'Fully customized',
+  'Designed to feel like your own smile',
 ]
 
 function OptionCard({
@@ -74,9 +74,9 @@ function TeethOptionsComparisonSection() {
             id="teeth-options-comparison-heading"
             className="teeth-options-comparison__title"
           >
-            CHOOSE HOW YOU WANT YOUR
+            Choose How You Want Your
             <br />
-            NEW TEETH TO FEEL
+            New Teeth to Feel
           </h2>
           <p className="teeth-options-comparison__intro">
             Both options are supported by implants. The difference is in
@@ -88,7 +88,7 @@ function TeethOptionsComparisonSection() {
         <div className="teeth-options-comparison__options">
           <OptionCard
             badge="IMPLANT-SUPPORTED"
-            title={<>IMPLANT-STABILIZED<br />REMOVABLE TEETH</>}
+            title={<>Implant-Stabilized<br />Removable Teeth</>}
             description="More secure. More comfortable. More confidence than a traditional denture."
             features={removableFeatures}
             image={implantsStabilizedRemovable}
@@ -99,9 +99,9 @@ function TeethOptionsComparisonSection() {
           />
           <OptionCard
             badge="FIXED FULL-ARCH"
-            title={<>FIXED FULL-ARCH<br />FIXED TEETH</>}
+            title={<>Fixed Full-Arch<br />Fixed Teeth</>}
             description="Designed to feel more stable, more natural and more like your own teeth"
-            emphasis="THE CLOSEST EXPERIENCE TO NATURAL TEETH"
+            emphasis="The closest experience to natural teeth"
             features={fixedFeatures}
             image={fixedFullArch}
             imageAlt="Fixed full-arch upper implant-supported prosthetic teeth"

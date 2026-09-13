@@ -8,28 +8,28 @@ import finalRestorationIcon from "../../assets/treatmentProcess/finalRestoration
 const treatmentSteps = [
   {
     number: "01",
-    title: "CONSULTATION",
+    title: "Consultation",
     description:
       "We listen, evaluate, and take the time to understand your needs and goals.",
     icon: consultationIcon,
   },
   {
     number: "02",
-    title: "DIGITAL PLANNING",
+    title: "Digital Planning",
     description:
       "3D and 4D imaging support precise, personalized treatment planning.",
     icon: digitalPlanningIcon,
   },
   {
     number: "03",
-    title: "TREATMENT DAY",
+    title: "Treatment Day",
     description:
       "From the moment you arrive, we focus on your comfort and safety. You will understand what is happening, why it is happening, and feel supported throughout your treatment.",
     icon: treatmentDayIcon,
   },
   {
     number: "04",
-    title: "FINAL RESTORATION",
+    title: "Final Restoration",
     description: "For full-arch healing and long-term care.",
     icon: finalRestorationIcon,
   },
@@ -51,7 +51,7 @@ function TreatmentProcessSection() {
             id="treatment-process-heading"
             className="treatment-process__title"
           >
-            A CLEAR PATH FORWARD
+            A Clear Path Forward
           </h2>
         </header>
 

@@ -32,9 +32,9 @@ function DentalImplantsPatientStorySection() {
             id="dental-implants-patient-story-heading"
             className="dental-implants-patient-story__title"
           >
-            REAL RESULTS.
+            Real Results.
             <br />
-            REAL CONFIDENCE.
+            Real Confidence.
           </h2>
           <p className="dental-implants-patient-story__description">
             See how treatment can change not only a smile, but the way a patient

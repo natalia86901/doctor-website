@@ -27,11 +27,12 @@
   gap: clamp(18px, 2vw, 28px);
   margin: 0;
   color: var(--brand-gold);
-  font-family: inherit;
-  font-size: clamp(0.72rem, 0.85vw, 0.88rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
   line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
@@ -47,12 +48,13 @@
 .financing-options__title {
   margin: 12px 0 0;
   color: var(--brand-white);
-  font-family: inherit;
-  font-size: clamp(2rem, 2.7vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1.02;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .financing-options__primary-card {
@@ -92,30 +94,37 @@
 .financing-options__primary-title {
   margin: 0;
   color: var(--brand-navy);
-  font-family: inherit;
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card-large);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .financing-options__primary-description {
   margin: 14px 0 0;
   color: rgb(20 35 59 / 74%);
-  font-family: inherit;
-  font-size: clamp(1.15rem, 1.6vw, 1.55rem);
-  font-weight: 400;
-  line-height: 1.38;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-lead);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .financing-options__note {
   margin: 16px 0 0;
   color: rgb(20 35 59 / 68%);
-  font-family: inherit;
-  font-size: clamp(0.85rem, 1vw, 1rem);
-  font-weight: 400;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-caption);
   line-height: 1.4;
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .financing-options__divider {
@@ -158,19 +167,25 @@
 .financing-options__insurance-title {
   margin: 0;
   color: var(--brand-white);
-  font-family: inherit;
-  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card-large);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .financing-options__insurance-description {
   margin: 10px 0 0;
   color: rgb(255 255 255 / 72%);
-  font-family: inherit;
-  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
-  font-weight: 400;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 @media (max-width: 900px) {
@@ -179,20 +194,12 @@
     padding-bottom: 60px;
   }
 
-  .financing-options__title {
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-  }
-
   .financing-options__primary-card {
     grid-template-columns: minmax(150px, 200px) minmax(0, 1fr);
   }
 
   .financing-options__primary-icon-area {
     min-height: 150px;
-  }
-
-  .financing-options__primary-title {
-    font-size: clamp(1.25rem, 2.2vw, 1.8rem);
   }
 }
 
@@ -205,8 +212,6 @@
 
   .financing-options__eyebrow {
     gap: 12px;
-    font-size: 0.75rem;
-    letter-spacing: 0.14em;
   }
 
   .financing-options__eyebrow::before,
@@ -216,7 +221,6 @@
 
   .financing-options__title {
     margin-top: 8px;
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
   }
 
   .financing-options__primary-card {
@@ -241,13 +245,8 @@
     border-left: 0;
   }
 
-  .financing-options__primary-title {
-    font-size: clamp(1.35rem, 5vw, 1.9rem);
-  }
-
   .financing-options__primary-description {
     margin-top: 12px;
-    font-size: clamp(1.05rem, 4vw, 1.3rem);
   }
 
   .financing-options__divider {
@@ -274,27 +273,9 @@
 
   .financing-options__eyebrow {
     gap: 10px;
-    font-size: 0.62rem;
-    letter-spacing: 0.12em;
-  }
-
-  .financing-options__title {
-    letter-spacing: -0.04em;
   }
 
   .financing-options__primary-card {
     padding: 20px 16px 18px;
-  }
-
-  .financing-options__primary-description {
-    font-size: 1rem;
-  }
-
-  .financing-options__insurance-title {
-    font-size: 1.15rem;
-  }
-
-  .financing-options__insurance-description {
-    font-size: 0.92rem;
   }
 }

@@ -11,8 +11,8 @@ function ComplexCasesBanner() {
           id="complex-cases-banner-heading"
           className="complex-cases-banner__title"
         >
-          <span>WE SOLVE THE CASES OTHERS</span>
-          <span>CALL IMPOSSIBLE.</span>
+          <span>We Solve the Cases Others</span>
+          <span>Call Impossible.</span>
         </h2>
 
         <p className="complex-cases-banner__description">

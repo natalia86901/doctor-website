@@ -31,7 +31,7 @@ function MeetDrTarkesh() {
       <section className="meet-dr-tarkesh__intro" aria-labelledby="meet-dr-tarkesh-title">
         <p className="meet-dr-tarkesh__eyebrow">Why Dr. Tarkesh</p>
         <h1 id="meet-dr-tarkesh-title" className="meet-dr-tarkesh__title">
-          MEET DR. TARKESH
+          Meet Dr. Tarkesh
         </h1>
         <p className="meet-dr-tarkesh__description">
           A thoughtful approach to advanced dentistry, grounded in experience,

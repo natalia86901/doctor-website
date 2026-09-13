@@ -4,22 +4,22 @@ import traditionalFullCoverage from '../../assets/dentalImplants/dentureComparis
 import './DentureDesignComparisonSection.css'
 
 const traditionalFeatures = [
-  { icon: 'taste', label: 'TASTE & FOOD', description: 'Food may feel less natural.' },
-  { icon: 'temperature', label: 'TEMPERATURE', description: 'Less direct sensation of hot and cold.' },
-  { icon: 'texture', label: 'TEXTURE', description: 'Acrylic separates food from the palate.' },
-  { icon: 'feel', label: 'FEEL IN MOUTH', description: 'More material inside the mouth.' },
-  { icon: 'speech', label: 'SPEECH', description: 'May require more time to adapt.' },
-  { icon: 'gag', label: 'GAG REFLEX', description: 'Palate coverage may trigger sensitivity in some patients.' },
+  { icon: 'taste', label: 'Taste & Food', description: 'Food may feel less natural.' },
+  { icon: 'temperature', label: 'Temperature', description: 'Less direct sensation of hot and cold.' },
+  { icon: 'texture', label: 'Texture', description: 'Acrylic separates food from the palate.' },
+  { icon: 'feel', label: 'Feel in Mouth', description: 'More material inside the mouth.' },
+  { icon: 'speech', label: 'Speech', description: 'May require more time to adapt.' },
+  { icon: 'gag', label: 'Gag Reflex', description: 'Palate coverage may trigger sensitivity in some patients.' },
 ]
 
 const palateFreeFeatures = [
-  { icon: 'taste', label: 'TASTE & FOOD', description: 'More natural eating experience.' },
-  { icon: 'temperature', label: 'TEMPERATURE', description: 'Palate can feel temperature directly.' },
-  { icon: 'texture', label: 'TEXTURE', description: 'More direct sensation of food texture.' },
-  { icon: 'feel', label: 'FEEL IN MOUTH', description: 'Less bulk. More open and natural feeling.' },
-  { icon: 'speech', label: 'SPEECH', description: 'Often feels more natural for the tongue.' },
-  { icon: 'gag', label: 'GAG REFLEX', description: 'No material covering the palate.' },
-  { icon: 'design', label: 'DESIGN', description: 'Horseshoe-shaped. Palate remains open.' },
+  { icon: 'taste', label: 'Taste & Food', description: 'More natural eating experience.' },
+  { icon: 'temperature', label: 'Temperature', description: 'Palate can feel temperature directly.' },
+  { icon: 'texture', label: 'Texture', description: 'More direct sensation of food texture.' },
+  { icon: 'feel', label: 'Feel in Mouth', description: 'Less bulk. More open and natural feeling.' },
+  { icon: 'speech', label: 'Speech', description: 'Often feels more natural for the tongue.' },
+  { icon: 'gag', label: 'Gag Reflex', description: 'No material covering the palate.' },
+  { icon: 'design', label: 'Design', description: 'Horseshoe-shaped. Palate remains open.' },
 ]
 
 function FeatureIcon({ type }) {
@@ -71,21 +71,21 @@ function DentureDesignComparisonSection() {
       <div className="denture-comparison__inner">
         <header className="denture-comparison__header">
           <h2 id="denture-design-comparison-heading" className="denture-comparison__title">
-            ONE DENTURE. TWO DESIGNS.
+            One Denture. Two Designs.
           </h2>
           <p className="denture-comparison__subtitle">
-            <span>DIFFERENT FEEL.</span> <strong>SAME GOAL.</strong>
+            <span>Different feel.</span> <strong>Same goal.</strong>
           </p>
         </header>
 
         <div className="denture-comparison__labels" aria-live="polite">
           <div className={`denture-comparison__label denture-comparison__label--traditional ${activeDesign === 'palateFree' ? 'denture-comparison__label--hidden' : ''}`} aria-hidden={activeDesign === 'palateFree'}>
-            <h3>TRADITIONAL FULL COVERAGE</h3>
-            <p>Traditional Full Coverage</p>
+            <h3>Traditional Full Coverage</h3>
+            <p>Traditional full coverage</p>
           </div>
           <div className={`denture-comparison__label denture-comparison__label--palate-free ${activeDesign === 'traditional' ? 'denture-comparison__label--hidden' : ''}`} aria-hidden={activeDesign === 'traditional'}>
-            <h3>WITHOUT PALATE COVERAGE</h3>
-            <p>Palate-Free (Horseshoe Design)</p>
+            <h3>Without Palate Coverage</h3>
+            <p>Palate-free (horseshoe design)</p>
           </div>
         </div>
 
@@ -119,7 +119,7 @@ function DentureDesignComparisonSection() {
         </div>
 
         <footer className="denture-comparison__conclusion">
-          <h3>BOTH OPTIONS ARE SECURELY SUPPORTED BY IMPLANTS<br />AND CUSTOMIZED FOR YOUR NEEDS.</h3>
+          <h3>Both options are securely supported by implants<br />and customized for your needs.</h3>
           <p>Our goal is the same: to help you eat, speak, and smile with confidence and comfort.</p>
         </footer>
       </div>

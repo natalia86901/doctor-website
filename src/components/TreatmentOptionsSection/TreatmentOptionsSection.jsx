@@ -7,19 +7,19 @@ import treatmentOptionsImage3 from "../../assets/treatmentOptionsSection/treatme
 
 const treatmentOptions = [
   {
-    title: "DENTURES",
+    title: "Dentures",
     image: treatmentOptionsImage1,
     imageAlt: "Full denture restoration",
     path: "/dentures-and-implants/full-partial-dentures",
   },
   {
-    title: "IMPLANTS",
+    title: "Implants",
     image: treatmentOptionsImage2,
     imageAlt: "Full-arch implant-supported restoration",
     path: "/dentures-and-implants/dental-implants",
   },
   {
-    title: "COMPLEX CASES",
+    title: "Complex Cases",
     image: treatmentOptionsImage3,
     imageAlt: "Complex dental implant reconstruction",
     path: "/patient-results/complex-cases",
@@ -38,7 +38,7 @@ function TreatmentOptionsSection() {
             id="treatment-options-heading"
             className="treatment-options__title"
           >
-            OPTIONS DESIGNED AROUND YOUR NEEDS
+            Options Designed Around Your Needs
           </h2>
 
           <p className="treatment-options__eyebrow">EXPLORE YOUR OPTIONS</p>

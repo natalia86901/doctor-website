@@ -26,7 +26,7 @@ function DentalImplantsExpertiseSection() {
               <span className="dental-implants-expertise__callout-number">
                 01 —
               </span>{' '}
-              DIGITAL PLANNING
+              Digital Planning
             </h3>
 
             <p className="dental-implants-expertise__callout-description">
@@ -46,7 +46,7 @@ function DentalImplantsExpertiseSection() {
               <span className="dental-implants-expertise__callout-number">
                 02 —
               </span>{' '}
-              CLINICAL EXPERTISE
+              Clinical Expertise
             </h3>
 
             <p className="dental-implants-expertise__callout-description">
@@ -66,7 +66,7 @@ function DentalImplantsExpertiseSection() {
               <span className="dental-implants-expertise__callout-number">
                 03 —
               </span>{' '}
-              CUSTOM CRAFTSMANSHIP
+              Custom Craftsmanship
             </h3>
 
             <p className="dental-implants-expertise__callout-description">
@@ -80,18 +80,18 @@ function DentalImplantsExpertiseSection() {
 
       <div className="dental-implants-expertise__content">
         <p className="dental-implants-expertise__eyebrow">
-          THE BIGGEST COMPLAINT
+          The biggest complaint
           <br />
-          WE HEAR FROM OUR PATIENTS:
+          we hear from our patients:
         </p>
 
         <h2
           id="dental-implants-expertise-heading"
           className="dental-implants-expertise__title"
         >
-          WHY DIDN’T I
+          Why Didn’t I
           <br />
-          DO THIS SOONER?
+          Do This Sooner?
         </h2>
 
         <div className="dental-implants-expertise__body">

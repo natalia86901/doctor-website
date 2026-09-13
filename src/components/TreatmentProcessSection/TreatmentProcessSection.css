@@ -16,21 +16,25 @@
 .treatment-process__eyebrow {
   margin: 0;
   color: var(--brand-gold);
-  font-size: clamp(0.72rem, 0.85vw, 0.88rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
   line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
 .treatment-process__title {
   margin: 3px 0 0;
   color: var(--brand-navy);
-  font-size: clamp(1.9rem, 3vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  word-spacing: 0.14em;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-process__steps {
@@ -57,11 +61,11 @@
 
 .treatment-process__number {
   color: var(--brand-gold);
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.8rem, 4.5vw, 4.5rem);
-  font-weight: 400;
-  letter-spacing: -0.04em;
   line-height: 0.9;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0;
 }
 
 .treatment-process__icon {
@@ -74,18 +78,25 @@
 .treatment-process__step-title {
   margin: 18px 0 0;
   color: var(--brand-navy);
-  font-size: clamp(0.9rem, 1.15vw, 1.12rem);
-  font-weight: 800;
-  letter-spacing: 0.025em;
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-process__description {
   margin: 8px 0 0;
   color: var(--brand-gray);
-  font-size: clamp(0.82rem, 1vw, 0.98rem);
-  line-height: 1.48;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 @media (max-width: 1000px) {
@@ -96,10 +107,6 @@
 
   .treatment-process__step-top {
     gap: 10px;
-  }
-
-  .treatment-process__description {
-    font-size: 0.82rem;
   }
 }
 
@@ -125,15 +132,6 @@
     width: min(100% - 40px, 500px);
     padding-top: 5px;
     padding-bottom: 58px;
-  }
-
-  .treatment-process__title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
-    line-height: 1.05;
-  }
-
-  .treatment-process__eyebrow {
-    letter-spacing: 0.14em;
   }
 
   .treatment-process__steps {
@@ -171,13 +169,11 @@
 
   .treatment-process__step-title {
     margin-top: 14px;
-    font-size: 0.98rem;
   }
 
   .treatment-process__description {
     max-width: 430px;
     margin-top: 7px;
-    font-size: 0.88rem;
   }
 }
 

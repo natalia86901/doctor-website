@@ -143,12 +143,13 @@
 .dental-implants-expertise__callout-title {
   margin: 0;
   color: inherit;
-  font-family: inherit;
-  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
-  font-weight: 800;
-  letter-spacing: 0.025em;
-  line-height: 1.2;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__callout-number {
@@ -159,9 +160,13 @@
   max-width: 270px;
   margin: 9px 0 0 31px;
   color: inherit;
-  font-family: inherit;
-  font-size: clamp(0.84rem, 0.95vw, 1rem);
-  line-height: 1.35;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body-small);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__callout--craftsmanship
@@ -185,25 +190,26 @@
   max-width: 470px;
   margin: 0;
   color: var(--brand-gold);
-  font-family: inherit;
-  font-size: clamp(1.15rem, 1.45vw, 1.55rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  line-height: 1.3;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-lead);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__title {
   max-width: 510px;
   margin: clamp(20px, 2.2vw, 30px) 0 0;
   color: var(--brand-white);
-  font-family: inherit;
-  font-size: clamp(2.35rem, 3.15vw, 3.65rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1.02;
-  text-transform: uppercase;
-  word-spacing: 0.12em;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__body {
@@ -216,21 +222,28 @@
 .dental-implants-expertise__paragraph {
   margin: 0;
   color: rgb(255 255 255 / 84%);
-  font-family: inherit;
-  font-size: clamp(1rem, 1.08vw, 1.15rem);
-  font-weight: 400;
-  line-height: 1.55;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__quote {
   align-self: center;
   margin: clamp(22px, 2.4vw, 32px) 0 0;
   color: rgb(255 255 255 / 92%);
-  font-family: inherit;
-  font-size: clamp(1.05rem, 1.15vw, 1.2rem);
   font-style: italic;
-  line-height: 1.4;
   text-align: center;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-lead);
+  line-height: var(--leading-body);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .dental-implants-expertise__cta {
@@ -252,19 +265,20 @@
     #b98937 100%
   );
   color: var(--brand-white);
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.075em;
-  line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   transition:
     background 0.16s ease,
     background-color 0.16s ease,
     border-color 0.16s ease,
     color 0.16s ease;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-cta);
+  line-height: var(--leading-cta);
+  letter-spacing: var(--tracking-cta);
+  word-spacing: normal;
+  text-transform: uppercase;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -312,10 +326,6 @@
 
   .dental-implants-expertise__content {
     padding: 38px clamp(28px, 4vw, 44px);
-  }
-
-  .dental-implants-expertise__title {
-    font-size: clamp(2.05rem, 3.8vw, 3rem);
   }
 }
 
@@ -366,7 +376,6 @@
   .dental-implants-expertise__callout-description {
     max-width: 100%;
     margin: 7px 0 0;
-    font-size: 0.92rem;
   }
 
   .dental-implants-expertise__callout--craftsmanship
@@ -380,16 +389,8 @@
     padding: 42px clamp(20px, 7vw, 38px) 48px;
   }
 
-  .dental-implants-expertise__eyebrow {
-    font-size: 1.05rem;
-    letter-spacing: 0.03em;
-  }
-
   .dental-implants-expertise__title {
     margin-top: 18px;
-    font-size: clamp(2rem, 9vw, 2.8rem);
-    letter-spacing: -0.03em;
-    word-spacing: 0.07em;
   }
 
   .dental-implants-expertise__body {
@@ -405,7 +406,6 @@
   .dental-implants-expertise__cta {
     min-height: 56px;
     margin-top: 26px;
-    font-size: 13px;
   }
 }
 
@@ -426,17 +426,8 @@
     padding-left: 16px;
   }
 
-  .dental-implants-expertise__eyebrow {
-    font-size: 0.95rem;
-  }
-
-  .dental-implants-expertise__title {
-    font-size: 1.9rem;
-  }
-
   .dental-implants-expertise__cta {
     padding-inline: 12px;
-    font-size: 12px;
   }
 }
 

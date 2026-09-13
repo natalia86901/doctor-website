@@ -16,20 +16,24 @@
 .treatment-options__title {
   margin: 0;
   color: var(--brand-navy);
-  font-size: clamp(2rem, 2.7vw, 3.2rem);
-  font-weight: 800;
-  letter-spacing: -0.05em;
-  line-height: 1.02;
-  text-transform: uppercase;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--type-h2);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-options__eyebrow {
   margin: 8px 0 0;
   color: var(--brand-gold);
-  font-size: clamp(0.72rem, 0.85vw, 0.88rem);
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
   line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
   text-transform: uppercase;
 }
 
@@ -71,14 +75,16 @@
   gap: 9px;
   padding: 18px 12px 20px;
   color: var(--brand-navy);
-  font-size: clamp(0.9rem, 1vw, 1.1rem);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   transition: color 0.2s ease;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-card);
+  line-height: var(--leading-card);
+  letter-spacing: 0;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .treatment-options__arrow {
@@ -110,10 +116,6 @@
     padding-bottom: 60px;
   }
 
-  .treatment-options__title {
-    font-size: clamp(1.7rem, 4vw, 2.5rem);
-  }
-
   .treatment-options__cards {
     gap: 18px;
     margin-top: 28px;
@@ -127,13 +129,8 @@
     padding-bottom: 52px;
   }
 
-  .treatment-options__title {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
-  }
-
   .treatment-options__eyebrow {
     margin-top: 10px;
-    letter-spacing: 0.14em;
   }
 
   .treatment-options__cards {
@@ -153,18 +150,12 @@
   .treatment-options__inner {
     width: min(100% - 32px, 500px);
   }
-
-  .treatment-options__title {
-    letter-spacing: -0.04em;
-  }
-
-  .treatment-options__eyebrow {
-    letter-spacing: 0.12em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .treatment-options__card-link,
+  .treatment-options__card-link {
+    transition: none;
+  }
   .treatment-options__arrow {
     transition: none;
   }

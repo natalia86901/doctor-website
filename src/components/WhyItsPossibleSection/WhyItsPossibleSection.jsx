@@ -13,7 +13,7 @@ const whyItsPossibleCards = [
     image: whyItsPossibleImage1,
     imageAlt: "Dental professionals reviewing a full-arch restoration in an in-house lab",
     icon: inhouseLabIcon,
-    title: "IN-HOUSE LAB",
+    title: "In-House Lab",
     description:
       "Designed, refined and controlled under one roof. Close collaboration means greater precision and fewer compromises.",
   },
@@ -22,7 +22,7 @@ const whyItsPossibleCards = [
     image: whyItsPossibleImage2,
     imageAlt: "Modern dental treatment chair in a comfortable operatory",
     icon: sedationIcon,
-    title: "ORAL & IV SEDATION",
+    title: "Oral & IV Sedation",
     description:
       "A difficult case deserves a careful second look—even if you’ve been told there isn’t enough bone or that implants aren’t possible.",
   },
@@ -31,7 +31,7 @@ const whyItsPossibleCards = [
     image: whyItsPossibleImage3,
     imageAlt: "Dentist presenting advanced implant imaging to colleagues",
     icon: advancedTrainingIcon,
-    title: "ADVANCED TRAINING",
+    title: "Advanced Training",
     description:
       "Trained in the United States and internationally, with a focus on full-arch implants and complex cases, Dr. Tarkesh also helps educate and mentor fellow dentists.",
   },
@@ -50,7 +50,7 @@ function WhyItsPossibleSection() {
             id="why-its-possible-heading"
             className="why-its-possible__title"
           >
-            WHAT MAKES THE DIFFERENCE
+            What Makes the Difference
           </h2>
         </header>
 

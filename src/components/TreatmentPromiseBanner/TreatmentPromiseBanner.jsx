@@ -50,7 +50,7 @@ function TreatmentPromiseBanner() {
           className="treatment-promise__title"
         >
           <span className="treatment-promise__title-group">
-            <span>ONE APPOINTMENT</span>
+            <span>One Appointment</span>
 
             <span
               className="treatment-promise__separator"
@@ -61,7 +61,7 @@ function TreatmentPromiseBanner() {
           </span>
 
           <span className="treatment-promise__title-group">
-            <span>ONE DAY</span>
+            <span>One Day</span>
 
             <span
               className="treatment-promise__separator"
@@ -72,7 +72,7 @@ function TreatmentPromiseBanner() {
           </span>
 
           <span className="treatment-promise__title-group">
-            <span>ONE DOCTOR</span>
+            <span>One Doctor</span>
           </span>
         </h2>
 
@@ -82,7 +82,7 @@ function TreatmentPromiseBanner() {
         />
 
         <p className="treatment-promise__subtitle">
-          IT&apos;S REAL. WE GUARANTEE IT.
+          It&apos;s real. We guarantee it.
         </p>
       </div>
     </section>
