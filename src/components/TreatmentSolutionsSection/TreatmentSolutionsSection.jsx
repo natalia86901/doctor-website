@@ -46,6 +46,7 @@ function TreatmentSolutionsSection() {
     >
       <img
         className="treatment-solutions__background"
+          width="2172" height="724"
         src={implantsBackground}
         alt="background of dental implants"
         aria-hidden="true"

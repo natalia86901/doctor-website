@@ -24,14 +24,6 @@ const quickLinks = [
 function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const handleHomeClick = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
-
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
@@ -50,7 +42,7 @@ function Footer() {
             <div className="site-footer__logo-frame">
               <img
                 className="site-footer__logo"
-                src={logo}
+                src={logo} width="2172" height="724"
                 alt="Bakersfield Dentures and Implants"
               />
             </div>
@@ -125,7 +117,6 @@ function Footer() {
                   <Link
                     className="site-footer__link"
                     to={path}
-                    onClick={path === '/' ? handleHomeClick : undefined}
                   >
                     {label}
                   </Link>

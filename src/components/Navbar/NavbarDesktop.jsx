@@ -28,7 +28,7 @@ function NavbarDesktop() {
       <div className="desktop-header__inner">
         <Link className="desktop-header__brand" to="/" aria-label="Bakersfield Dentures and Implants home">
          <img
-         src={logo} alt="Bakersfield Dentures and Implants logo"
+         src={logo} width="580" height="174" alt="Bakersfield Dentures and Implants logo"
          className="desktop-header__brand-logo"
           />
         </Link>

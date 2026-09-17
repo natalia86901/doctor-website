@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import heroImage from "../../assets/hero.jpg";
 import video1 from "../../assets/videos/video1.mp4";
@@ -19,7 +19,10 @@ function PlayIcon() {
 function Hero() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  useEffect(() => {
+  const modalContentRef = useRef(null);
+  const modalCloseRef = useRef(null);
+
+  useLayoutEffect(() => {
     if (!isVideoOpen) {
       return undefined;
     }
@@ -28,8 +31,24 @@ function Hero() {
       if (event.key === "Escape") {
         setIsVideoOpen(false);
       }
+      if (event.key === "Tab") {
+        const video = modalContentRef.current?.querySelector("video");
+        if (!event.shiftKey && document.activeElement === video) {
+          event.preventDefault();
+          modalCloseRef.current?.focus({ preventScroll: true });
+        } else if (event.shiftKey && document.activeElement === modalCloseRef.current) {
+          event.preventDefault();
+          video?.focus({ preventScroll: true });
+        }
+      }
     };
 
+    const previousFocus = document.activeElement;
+    const keepFocusInside = (event) => {
+      if (!modalContentRef.current?.contains(event.target)) modalCloseRef.current?.focus({ preventScroll: true });
+    };
+    modalCloseRef.current?.focus({ preventScroll: true });
+    document.addEventListener("focusin", keepFocusInside);
     const previousOverflow = document.body.style.overflow;
 
     document.body.style.overflow = "hidden";
@@ -38,6 +57,8 @@ function Hero() {
     return () => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("focusin", keepFocusInside);
+      if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
     };
   }, [isVideoOpen]);
 
@@ -57,10 +78,12 @@ function Hero() {
         />
 
         <div
+          ref={modalContentRef}
           className="hero__video-modal-content"
           onClick={(event) => event.stopPropagation()}
         >
           <button
+            ref={modalCloseRef}
             className="hero__video-modal-close"
             type="button"
             aria-label="Close video"

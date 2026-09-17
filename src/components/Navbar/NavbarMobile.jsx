@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useLayoutEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import logo from '../../assets/brand/LOGO.svg'
 import { navItems } from './navConfig'
@@ -16,7 +16,7 @@ function NavbarMobile() {
     if (restoreFocus) menuButtonRef.current?.focus()
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!menuOpen) return undefined
 
     const previousOverflow = document.body.style.overflow
@@ -26,10 +26,14 @@ function NavbarMobile() {
       if (event.key === 'Escape') closeMenu(true)
     }
 
+    const desktop = window.matchMedia('(min-width: 1181px)')
+    const closeOnDesktop = () => { if (desktop.matches) closeMenu() }
+    desktop.addEventListener('change', closeOnDesktop)
     document.addEventListener('keydown', closeOnEscape)
     return () => {
       document.body.style.overflow = previousOverflow
       document.removeEventListener('keydown', closeOnEscape)
+      desktop.removeEventListener('change', closeOnDesktop)
     }
   }, [menuOpen])
 
@@ -44,7 +48,7 @@ function NavbarMobile() {
         >
           <img
             className="mobile-header__brand-logo"
-            src={logo}
+            src={logo} width="580" height="174"
             alt="Bakersfield Dentures and Implants logo"
           />
         </Link>
