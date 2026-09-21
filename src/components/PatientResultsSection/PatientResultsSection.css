@@ -52,24 +52,200 @@
   border-left: 1px solid rgb(10 34 70 / 16%);
 }
 
-.patient-results__comparison {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(8px, 1vw, 14px);
-}
-
-.patient-results__figure {
-  min-width: 0;
-  margin: 0;
+.patient-results__surface {
+  position: relative;
+  aspect-ratio: 1600 / 1068;
+  overflow: hidden;
+  border: 1px solid #ded8cd;
+  user-select: none;
 }
 
 .patient-results__image {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  aspect-ratio: 1;
-  border: 1px solid #ded8cd;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   object-position: center;
+  pointer-events: none;
+}
+
+/* Fade out first, then reveal the next image: no overlapping facial features. */
+.patient-results__image {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.patient-results__image[data-active="true"] {
+  opacity: 1;
+  transition-delay: 120ms;
+}
+
+.patient-results__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 88px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  touch-action: pan-y pinch-zoom;
+}
+
+/* The circle is smaller than the two separate 44px-wide touch targets. */
+.patient-results__handle::before {
+  content: "";
+  position: absolute;
+  inset: 0 18px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--brand-navy);
+  box-shadow: 0 0 0 1px var(--brand-navy);
+  pointer-events: none;
+}
+
+.patient-results__arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 44px;
+  height: 52px;
+  padding: 0 5px 0 0;
+  border: 0;
+  border-radius: 26px 0 0 26px;
+  background: transparent;
+  color: white;
+  touch-action: pan-y pinch-zoom;
+  cursor: pointer;
+}
+
+.patient-results__arrow:last-child {
+  justify-content: flex-start;
+  padding: 0 0 0 5px;
+  border-radius: 0 26px 26px 0;
+}
+
+.patient-results__arrow:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+.patient-results__arrow:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: -3px;
+}
+
+.patient-results__arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.patient-results__comparison[data-mode="after"] .patient-results__handle {
+  left: 23px;
+  width: 44px;
+}
+
+.patient-results__comparison[data-mode="before"] .patient-results__handle {
+  left: calc(100% - 23px);
+  width: 44px;
+}
+
+.patient-results__comparison[data-mode="after"] .patient-results__handle::before {
+  inset: 0;
+  border-radius: 0 26px 26px 0;
+}
+
+.patient-results__comparison[data-mode="before"] .patient-results__handle::before {
+  inset: 0;
+  border-radius: 26px 0 0 26px;
+}
+
+.patient-results__arrow[aria-hidden="true"] {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.patient-results__comparison:not([data-mode="comparison"]) .patient-results__arrow {
+  justify-content: center;
+  padding: 0;
+}
+
+.patient-results__labels {
+  position: relative;
+  height: calc(7px + var(--type-label) * 1.4);
+}
+
+.patient-results__label {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.patient-results__label:nth-child(2) {
+  left: 75%;
+}
+
+.patient-results__comparison[data-mode="after"] .patient-results__label:nth-child(2),
+.patient-results__comparison[data-mode="before"] .patient-results__label:first-child {
+  left: 50%;
+}
+
+.patient-results__comparison[data-mode="after"] .patient-results__label:first-child,
+.patient-results__comparison[data-mode="before"] .patient-results__label:nth-child(2) {
+  opacity: 0;
+}
+
+.patient-results__handle {
+  transition: left 240ms ease, width 240ms ease;
+}
+
+.patient-results__handle::before {
+  transition: inset 240ms ease, border-radius 240ms ease;
+}
+
+.patient-results__label {
+  transition: left 240ms ease, opacity 240ms ease;
+}
+
+.patient-results__compare {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 28px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--brand-navy);
+  font-family: var(--font-sans);
+  font-size: var(--type-label);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.patient-results__compare[aria-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.patient-results__compare:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patient-results__comparison *,
+  .patient-results__comparison *::before {
+    transition: none;
+  }
 }
 
 .patient-results__label {
@@ -181,10 +357,6 @@
 @media (max-width: 360px) {
   .patient-results__inner {
     width: min(100% - 32px, 500px);
-  }
-
-  .patient-results__comparison {
-    gap: 6px;
   }
 
   .patient-results__quote {
