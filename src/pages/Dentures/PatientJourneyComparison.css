@@ -1,0 +1,260 @@
+.dentures-journey__surface {
+  position: relative;
+  user-select: none;
+}
+
+.dentures-journey__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  pointer-events: none;
+}
+
+.dentures-journey__handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 88px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  touch-action: pan-y pinch-zoom;
+}
+
+/* The circle is smaller than the two separate 44px-wide touch targets. */
+.dentures-journey__handle::before {
+  content: "";
+  position: absolute;
+  inset: 0 18px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--brand-navy);
+  box-shadow: 0 0 0 1px var(--brand-navy);
+  pointer-events: none;
+}
+
+.dentures-journey__arrow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 0 0 44px;
+  height: 52px;
+  padding: 0 5px 0 0;
+  border: 0;
+  border-radius: 26px 0 0 26px;
+  background: transparent;
+  color: white;
+  touch-action: pan-y pinch-zoom;
+  cursor: pointer;
+}
+
+.dentures-journey__arrow:last-child {
+  justify-content: flex-start;
+  padding: 0 0 0 5px;
+  border-radius: 0 26px 26px 0;
+}
+
+.dentures-journey__arrow:hover {
+  background: rgb(255 255 255 / 15%);
+}
+
+.dentures .dentures-journey__arrow:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: -3px;
+}
+
+.dentures-journey__arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* 22px half-width + 1px outer shadow aligns the visible edge exactly. */
+.dentures-journey__comparison[data-mode="after"] .dentures-journey__handle {
+  left: 23px;
+  width: 44px;
+}
+
+.dentures-journey__comparison[data-mode="before"] .dentures-journey__handle {
+  left: calc(100% - 23px);
+  width: 44px;
+}
+
+.dentures-journey__comparison[data-mode="after"] .dentures-journey__handle::before {
+  inset: 0;
+  border-radius: 0 26px 26px 0;
+}
+
+.dentures-journey__comparison[data-mode="before"] .dentures-journey__handle::before {
+  inset: 0;
+  border-radius: 26px 0 0 26px;
+}
+
+.dentures-journey__arrow[aria-hidden="true"] {
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dentures-journey__comparison:not([data-mode="comparison"]) .dentures-journey__arrow {
+  justify-content: center;
+  padding: 0;
+}
+
+.dentures-journey__labels {
+  position: relative;
+}
+
+.dentures-journey__label {
+  position: absolute;
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.dentures-journey__label:nth-child(2) {
+  left: 75%;
+}
+
+.dentures-journey__comparison[data-mode="after"] .dentures-journey__label:nth-child(2),
+.dentures-journey__comparison[data-mode="before"] .dentures-journey__label:first-child {
+  left: 50%;
+}
+
+.dentures-journey__comparison[data-mode="after"] .dentures-journey__label:first-child,
+.dentures-journey__comparison[data-mode="before"] .dentures-journey__label:nth-child(2) {
+  opacity: 0;
+}
+
+.dentures-journey__handle {
+  transition: left 240ms ease, width 240ms ease;
+}
+
+.dentures-journey__handle::before {
+  transition: inset 240ms ease, border-radius 240ms ease;
+}
+
+.dentures-journey__label {
+  transition: left 240ms ease, opacity 240ms ease;
+}
+
+.dentures-journey__compare {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 28px;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: var(--brand-navy);
+  font-family: var(--font-sans);
+  font-size: var(--type-label);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.dentures-journey__compare[aria-hidden="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.dentures .dentures-journey__compare:focus-visible {
+  outline: 2px solid var(--brand-gold);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dentures-journey__comparison *,
+  .dentures-journey__comparison *::before {
+    transition: none;
+  }
+}
+
+.dentures-journey__comparison {
+  min-width: 0;
+  aspect-ratio: 1448 / 1086;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  padding: 1.65% 1.65% 0;
+  background: white;
+  border-radius: 0;
+}
+.dentures-journey__surface {
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+}
+.dentures-journey__split {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  visibility: hidden;
+}
+.dentures-journey__split[data-active="true"] { visibility: visible; }
+.dentures-journey__half { position: relative; width: 50%; overflow: hidden; }
+.dentures-journey__half + .dentures-journey__half { border-left: 2px solid white; }
+.dentures-journey__half img {
+  position: absolute;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--before-position, center);
+  border-radius: 0;
+  transform: scale(1.04);
+}
+.dentures-journey__half--after img { right: 0; object-position: var(--after-position, center); }
+/* Swap photographs without blending unrelated frames. Animate only the controls and labels. */
+.dentures-journey__image { visibility: hidden; }
+.dentures-journey__image[data-active="true"] { visibility: visible; }
+.dentures-journey__labels {
+  height: clamp(32px, 3.2vw, 44px);
+  margin-bottom: 28px;
+  background: linear-gradient(to right, #484b4d 50%, #b89556 50%);
+  border-radius: 0 0 6px 6px;
+}
+.dentures-journey__label {
+  top: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+.dentures-journey__comparison[data-mode="before"] .dentures-journey__labels { background: #484b4d; }
+.dentures-journey__comparison[data-mode="after"] .dentures-journey__labels { background: #b89556; }
+.dentures-journey__compare { top: 100%; min-height: 28px; }
+@media (max-width: 680px) {
+  .dentures-journey__labels { height: 36px; }
+  .dentures-journey__label { font-size: 18px; }
+}
+
+/* Fill the same grid column as the label bar; cover crops without distortion.
+   Only photographs are clipped. The control and its hit area remain unclipped. */
+.dentures-journey__photo-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 0;
+}
+.dentures-journey__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  /* Trim ~1.92% per edge to exclude the rounded corners baked into the files. */
+  transform: scale(1.04);
+}

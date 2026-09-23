@@ -12,7 +12,9 @@ Generated with the built-in imagegen tool for this page. These are illustrative 
 Reused without copying:
 - ../../assets/dentalImplants/teethOptionsComparison/fixedFullArch.png
 - ../../assets/dentalImplants/teethOptionsComparison/implantsStabilizedRemovable.png
-- ../../assets/patientResults/Before1.png through Before3.png and After1.png through After3.png
+
+Patient journey photographs:
+- actualPatientJourney/Before1.png through Before3.png and After1.png through After3.png
 
 Review notes:
 - Only six reference files were attached. The free-exam banner reference (4.png) is missing; its layout and supporting copy are provisional.

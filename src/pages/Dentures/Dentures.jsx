@@ -14,10 +14,21 @@ import fixedComparison from '../../assets/dentures/allOn4FixedArch.png'
 import softFoods from '../../assets/dentures/soft-foods.png'
 import sandwich from '../../assets/dentures/sandwich.png'
 import steak from '../../assets/dentures/steak-apple.png'
-import beforeAfter1 from '../../assets/patientResults/beforeAfter1.png'
-import beforeAfter2 from '../../assets/patientResults/beforeAfter2.png'
-import beforeAfter3 from '../../assets/patientResults/beforeAfter3.png'
+import PatientComparison from './PatientJourneyComparison'
 import './Dentures.css'
+
+import before1 from "../../assets/dentures/actualPatientJourney/Before1.png";
+import after1 from "../../assets/dentures/actualPatientJourney/After1.png";
+import before2 from "../../assets/dentures/actualPatientJourney/Before2.png";
+import after2 from "../../assets/dentures/actualPatientJourney/After2.png";
+import before3 from "../../assets/dentures/actualPatientJourney/Before3.png";
+import after3 from "../../assets/dentures/actualPatientJourney/After3.png";
+
+const journeyPatients = [
+  { id: 1, beforeImage: before1, afterImage: after1, beforePosition: '50% 60%', afterPosition: '50% 65%' },
+  { id: 2, beforeImage: before2, afterImage: after2, beforePosition: '50% 45%', afterPosition: '50% 50%' },
+  { id: 3, beforeImage: before3, afterImage: after3, beforePosition: '50% 60%', afterPosition: '50% 60%' },
+];
 
 const officeContact = navItems.find(({ path }) => path === '/contact').children.find(({ href }) => href?.startsWith('tel:')).href
 
@@ -137,16 +148,10 @@ function SmileTimeline() {
   </div></section>
 }
 
-function PatientComparison({ image, number }) {
-  return <figure className="dentures__patient">
-    <img src={image} alt={'Patient ' + number + ' before and after treatment'} loading="lazy" width="1448" height="1086" />
-  </figure>
-}
-
 function PatientJourney() {
   return <section className="dentures__section dentures__journey" aria-labelledby="dentures-journey-title"><div className="dentures__inner">
     <SectionHeading id="dentures-journey-title" title="Actual Patient Journey." />
-    <div className="dentures__three">{[beforeAfter1, beforeAfter2, beforeAfter3].map((image, i) => <PatientComparison key={image} image={image} number={i + 1} />)}</div>
+    <div className="dentures__three">{journeyPatients.map((result) => <PatientComparison key={result.id} result={result} />)}</div>
     <div className="dentures__actions"><Consultation /></div>
   </div></section>
 }
