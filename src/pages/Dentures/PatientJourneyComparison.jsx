@@ -25,40 +25,35 @@ function PatientComparison({ result }) {
   }, [mode]);
 
   const images = [
-    { mode: 'before', src: result.beforeImage },
-    { mode: 'after', src: result.afterImage },
+    { mode: "comparison", src: result.comparisonImage, width: 1536, height: 1024,
+      alt: `Before and after dental treatment comparison, patient result ${result.id}` },
+    { mode: "after", src: result.afterImage, width: 1600, height: 1068,
+      alt: `Teeth after dental treatment, patient result ${result.id}` },
+    { mode: "before", src: result.beforeImage, width: 1600, height: 1068,
+      alt: `Teeth before dental treatment, patient result ${result.id}` },
   ];
 
   return (
     <div className="dentures-journey__comparison" data-mode={mode}
-      style={{ "--before-position": result.beforePosition, "--after-position": result.afterPosition }}
       role="group" aria-label={`Before and after treatment, patient ${result.id}`}>
       <div className="dentures-journey__surface">
-        <div className="dentures-journey__photo-frame">
-          <div className="dentures-journey__split" data-active={mode === 'comparison'} aria-hidden={mode !== 'comparison'}>
-            {images.map((image) => <div className={`dentures-journey__half dentures-journey__half--${image.mode}`} key={image.mode}>
-              <img src={image.src} alt={`Patient ${result.id} ${image.mode} treatment`} loading="lazy" draggable="false" />
-            </div>)}
-          </div>
-          {images.map((image) => (
-            <div key={image.mode} className="dentures-journey__image"
-              data-active={mode === image.mode} aria-hidden={mode !== image.mode}>
-              <img src={image.src} alt={`Patient ${result.id} ${image.mode} treatment`}
-                loading="lazy" draggable="false" />
-            </div>
-          ))}
-          <div className="dentures-journey__handle">
-            <button type="button" className="dentures-journey__arrow"
-              ref={afterButtonRef} tabIndex={mode === "after" ? -1 : 0}
-              aria-hidden={mode === "after"} aria-label="Show full After image" onClick={() => showMode("after")}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
-            </button>
-            <button type="button" className="dentures-journey__arrow"
-              ref={beforeButtonRef} tabIndex={mode === "before" ? -1 : 0}
-              aria-hidden={mode === "before"} aria-label="Show full Before image" onClick={() => showMode("before")}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
-            </button>
-          </div>
+        {images.map((image) => (
+          <img key={image.mode} className="dentures-journey__image"
+            data-active={mode === image.mode} aria-hidden={mode !== image.mode}
+            src={image.src} alt={image.alt} width={image.width} height={image.height}
+            draggable="false" />
+        ))}
+        <div className="dentures-journey__handle">
+          <button type="button" className="dentures-journey__arrow"
+            ref={afterButtonRef} tabIndex={mode === "after" ? -1 : 0}
+            aria-hidden={mode === "after"} aria-label="Show full After image" onClick={() => showMode("after")}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
+          </button>
+          <button type="button" className="dentures-journey__arrow"
+            ref={beforeButtonRef} tabIndex={mode === "before" ? -1 : 0}
+            aria-hidden={mode === "before"} aria-label="Show full Before image" onClick={() => showMode("before")}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
+          </button>
         </div>
       </div>
       <div className="dentures-journey__labels">

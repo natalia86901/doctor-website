@@ -12,10 +12,10 @@ const officeHours = [
 
 const quickLinks = [
   ['Home', '/'],
-  ['Dentures', '/dentures-and-implants'],
-  ['Implants', '/dentures-and-implants/dental-implants'],
-  ['Complex Cases', '/patient-results/complex-cases'],
-  ['Patient Results', '/patient-results'],
+  ['Dentures', '/services/dentures'],
+  ['Implants', '/services/implants'],
+  ['Complex Cases', '/services/complex-cases'],
+  ['Patient Results', '/smile-gallery/patient-results'],
   ['Meet Dr. Tarkesh', '/why-dr-tarkesh/meet-dr-tarkesh'],
   ['New Patients', '/patient-resources/new-patient-forms'],
   ['Contact', '/contact'],
@@ -23,6 +23,16 @@ const quickLinks = [
 
 function Footer() {
   const currentYear = new Date().getFullYear()
+
+  function scrollToTop(event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    })
+  }
 
   return (
     <footer className="site-footer">
@@ -39,13 +49,18 @@ function Footer() {
               Bakersfield Dentures and Implants
             </h2>
 
-            <div className="site-footer__logo-frame">
+            <Link
+              className="site-footer__logo-frame"
+              to="/"
+              onClick={scrollToTop}
+              aria-label="Go to homepage"
+            >
               <img
                 className="site-footer__logo"
                 src={logo} width="2172" height="724"
                 alt="Bakersfield Dentures and Implants"
               />
-            </div>
+            </Link>
 
             <address className="site-footer__contact">
               <span>3726 Coffee Road</span>
@@ -117,6 +132,7 @@ function Footer() {
                   <Link
                     className="site-footer__link"
                     to={path}
+                    onClick={scrollToTop}
                   >
                     {label}
                   </Link>

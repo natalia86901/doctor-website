@@ -1,34 +1,27 @@
-import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { navItems } from '../../components/Navbar/navConfig'
 import hero from '../../assets/dentures/hero-lab.png'
-import traditional from '../../assets/dentures/traditionalDenture.png'
-import treatmentTraditional from '../../assets/dentures/treatmentOptions/traditionalDenture.png'
-import treatmentStandard from '../../assets/dentures/treatmentOptions/standard.png'
-import treatmentCustomized from '../../assets/dentures/treatmentOptions/customized.png'
-import treatmentImplants from '../../assets/dentures/treatmentOptions/implantSupported.png'
-import treatmentFixed from '../../assets/dentures/treatmentOptions/allonfixed.png'
-import treatmentSnap from '../../assets/dentures/treatmentOptions/snapInDenture.png'
-import snapComparison from '../../assets/dentures/snapInDenture.png'
-import fixedComparison from '../../assets/dentures/allOn4FixedArch.png'
+import traditional from '../../assets/dentures/foodComparison/traditional-denture-transparent.png'
+import traditionalCategory from '../../assets/dentures/foodComparison/denture-2-transparent.png'
+import implantCategory from '../../assets/dentures/foodComparison/snap-in-5-transparent.png'
+import snapComparison from '../../assets/dentures/foodComparison/snap-in-denture-transparent.png'
+import snapOption from '../../assets/dentures/foodComparison/snap-in-6-transparent.png'
+import fixedComparison from '../../assets/dentures/foodComparison/all-on-4-transparent.png'
+import fixedOption from '../../assets/dentures/foodComparison/all-on-4-2-transparent.png'
 import softFoods from '../../assets/dentures/soft-foods.png'
 import sandwich from '../../assets/dentures/sandwich.png'
 import steak from '../../assets/dentures/steak-apple.png'
-import PatientComparison from './PatientJourneyComparison'
+import beforeAfter1 from '../../assets/dentures/actualPatientJourney/beforeAfter.Image1.png'
+import before1 from '../../assets/dentures/actualPatientJourney/Before1.png'
+import after1 from '../../assets/dentures/actualPatientJourney/After1.png'
+import beforeAfter2 from '../../assets/dentures/actualPatientJourney/beforeAfter.Image2.png'
+import before2 from '../../assets/dentures/actualPatientJourney/Before2.png'
+import after2 from '../../assets/dentures/actualPatientJourney/After2.png'
+import beforeAfter3 from '../../assets/dentures/actualPatientJourney/beforeAfter.Image3.png'
+import before3 from '../../assets/dentures/actualPatientJourney/Before3.png'
+import after3 from '../../assets/dentures/actualPatientJourney/After3.png'
 import './Dentures.css'
-
-import before1 from "../../assets/dentures/actualPatientJourney/Before1.png";
-import after1 from "../../assets/dentures/actualPatientJourney/After1.png";
-import before2 from "../../assets/dentures/actualPatientJourney/Before2.png";
-import after2 from "../../assets/dentures/actualPatientJourney/After2.png";
-import before3 from "../../assets/dentures/actualPatientJourney/Before3.png";
-import after3 from "../../assets/dentures/actualPatientJourney/After3.png";
-
-const journeyPatients = [
-  { id: 1, beforeImage: before1, afterImage: after1, beforePosition: '50% 60%', afterPosition: '50% 65%' },
-  { id: 2, beforeImage: before2, afterImage: after2, beforePosition: '50% 45%', afterPosition: '50% 50%' },
-  { id: 3, beforeImage: before3, afterImage: after3, beforePosition: '50% 60%', afterPosition: '50% 60%' },
-];
+import PatientComparison from './PatientJourneyComparison'
 
 const officeContact = navItems.find(({ path }) => path === '/contact').children.find(({ href }) => href?.startsWith('tel:')).href
 
@@ -49,8 +42,9 @@ function SectionHeading({ id, title, children, eyebrow }) {
 
 function DenturesHero() {
   return <section className="dentures__hero" aria-labelledby="dentures-title">
-    <div className="dentures__hero-copy"><h1 id="dentures-title">Same-Day<br />Dentures.</h1>
-      <p>Made in our in-house lab.</p><Consultation>Free Consultation</Consultation>
+    <div className="dentures__hero-copy"><h1 id="dentures-title">Same-Day<br />Dentures</h1>
+      <p>Made in our in-house lab, <br />your dentures are designed for a natural look,{' '}
+       <br />comfortable fit,<br className="dentures__hero-mobile-break" /> and confident smile.</p><Consultation>Free Consultation</Consultation>
     </div>
     <img src={hero} alt="Dentures held in gloved hands in a dental laboratory" fetchPriority="high" width="1536" height="1024" />
   </section>
@@ -59,7 +53,7 @@ function DenturesHero() {
 function DayOne() {
   const steps = [['Day One', 'We take your dental impressions.'], ['During Treatment', 'Surgery will be done if needed.'], ['Final Restoration', 'Delivery of denture same day.']]
   return <section className="dentures__section" aria-labelledby="dentures-day-one">
-    <div className="dentures__inner"><SectionHeading id="dentures-day-one" title="A Beautiful Smile from Day One.">Your new smile is ready when you need it — so you never have to go without teeth.</SectionHeading>
+    <div className="dentures__inner"><SectionHeading id="dentures-day-one" title="A Beautiful Smile from Day One">Your new smile is ready when you need it — so you never have to go without teeth.</SectionHeading>
       <div className="dentures__three">{steps.map(([title, text], i) => <article className="dentures__day-card" key={title}>
         <span className="dentures__number">0{i + 1}</span><h3>{title}</h3><p>{text}</p>
       </article>)}</div>
@@ -68,37 +62,31 @@ function DayOne() {
 }
 
 const optionGroups = [
-  { id: 'traditional', title: 'Traditional Denture', titleLines: ['Traditional', 'Denture'], label: 'Standard', image: treatmentTraditional, imageAlt: 'Traditional removable denture', closeLabel: 'Close traditional denture options', options: [
-    { title: 'Standard', image: treatmentStandard, imageAlt: 'Standard traditional denture', text: 'A reliable, functional solution for your smile.', href: '#dentures-traditional-foods' },
-    { title: 'Customized', image: treatmentCustomized, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.', href: '#dentures-traditional-foods' },
+  { id: 'traditional', title: 'Traditional Denture', titleLines: ['Traditional', 'Denture'], label: 'Standard', image: traditionalCategory, imageAlt: 'Traditional removable denture', options: [
+    { title: 'Standard', image: traditional, imageAlt: 'Standard traditional denture', text: 'A reliable, functional solution for your smile.', href: '#dentures-traditional-foods' },
+    { title: 'Customized', image: traditional, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.', href: '#dentures-traditional-foods' },
   ] },
-  { id: 'implants', title: 'Implant-Supported Teeth', titleLines: ['Implant-', 'Supported Teeth'], label: 'Customized', image: treatmentImplants, imageAlt: 'Implant-supported teeth', closeLabel: 'Close implant-supported options', options: [
-    { title: 'All-on-4 Fixed Arch', image: treatmentFixed, imageAlt: 'All-on-4 fixed implant-supported arch', text: 'A permanent solution for a confident, natural smile.', to: '/services/implants' },
-    { title: 'Snap-in Denture', image: treatmentSnap, imageAlt: 'Snap-in implant-supported denture', text: 'A secure, removable option with implant support.', to: '/services/implants' },
+  { id: 'implants', title: 'Implant-Supported Teeth', titleLines: ['Implant-', 'Supported Teeth'], label: 'Customized', image: implantCategory, imageAlt: 'Implant-supported denture', options: [
+    { title: 'All-on-4 Fixed Arch', imageClass: 'dentures__option-image--fixed', image: fixedOption, imageAlt: 'All-on-4 fixed implant-supported arch', text: 'A permanent solution for a confident, natural smile.', to: '/services/implants' },
+    { title: 'Snap-in Denture', imageClass: 'dentures__option-image--snap', image: snapOption, imageAlt: 'Snap-in implant-supported denture', text: 'A secure, removable option with implant support.', to: '/services/implants' },
   ] },
 ]
 
 function TreatmentGroup({ group }) {
-  const [expanded, setExpanded] = useState(true)
-  const trigger = useRef(null)
-  function close() { setExpanded(false); trigger.current?.focus() }
   return <div className={'dentures__group dentures__group--' + group.id}>
     <div className="dentures__category">
-      <img src={group.image} alt={group.imageAlt} loading="lazy" />
+      <span className="dentures__category-image"><img src={group.image} alt={group.imageAlt} loading="lazy" /></span>
       <div className="dentures__category-copy">
         <span className="dentures__category-label">{group.label}</span>
         <h3>{group.titleLines.map((line) => <span key={line}>{line}</span>)}</h3>
-        <button ref={trigger} className="dentures__explore" type="button" aria-expanded={expanded} aria-controls={'dentures-options-' + group.id} onClick={() => setExpanded(!expanded)}>
-        <span className="dentures__explore-icon" aria-hidden="true">→</span><span>Explore options</span><span className="dentures__sr-only">: {group.title}</span>
-      </button></div>
+      </div>
     </div>
-    <div className="dentures__options" id={'dentures-options-' + group.id} hidden={!expanded} onKeyDown={(event) => { if (event.key === 'Escape') close() }}>
-      <div className="dentures__options-heading"><h4>{group.id === 'traditional' ? 'Traditional Denture Options' : 'Implant-Supported Options'}</h4>
-        <button type="button" className="dentures__close" aria-label={group.closeLabel} onClick={close}>×</button></div>
+    <div className="dentures__options" id={'dentures-options-' + group.id}>
+      <div className="dentures__options-heading"><h4>{group.id === 'traditional' ? 'Traditional Denture Options' : 'Implant-Supported Options'}</h4></div>
       <div className="dentures__option-grid">{group.options.map((option) => <article className="dentures__option" key={option.title}>
-        <img src={option.image} alt={option.imageAlt} loading="lazy" />
+        <span className={'dentures__option-image ' + (option.imageClass || '')}><img src={option.image} alt={option.imageAlt} loading="lazy" /></span>
         <div><h5>{option.title}</h5><p>{option.text}</p>
-          {option.to ? <Link to={option.to} aria-label={'Learn more about ' + option.title}>Learn More <span aria-hidden="true">→</span></Link> : <a href={option.href} aria-label={'Learn more about ' + option.title}>Learn More <span aria-hidden="true">→</span></a>}
+          {option.to ? <Link to={option.to} aria-label={'Learn more about ' + option.title}><span className="dentures__option-link-label">Learn More</span> <span aria-hidden="true">→</span></Link> : <a href={option.href} aria-label={'Learn more about ' + option.title}><span className="dentures__option-link-label">Learn More</span> <span aria-hidden="true">→</span></a>}
         </div>
       </article>)}</div>
     </div>
@@ -107,14 +95,14 @@ function TreatmentGroup({ group }) {
 
 function TreatmentOptions() {
   return <section className="dentures__section dentures__section--options" aria-labelledby="dentures-options-title"><div className="dentures__inner">
-    <SectionHeading id="dentures-options-title" title="Two Ways to Restore Your Smile.">Both options are supported by implants. The difference is removable vs. permanent.</SectionHeading>
+    <SectionHeading id="dentures-options-title" title="Two Ways to Restore Your Smile">Both options are supported by implants. The difference is Denture vs Fixed Bridge.</SectionHeading>
     <div className="dentures__two">{optionGroups.map((group) => <TreatmentGroup key={group.id} group={group} />)}</div>
   </div></section>
 }
 
 function FreeExam() {
   return <section className="dentures__exam" aria-labelledby="dentures-exam-title"><div className="dentures__inner">
-    <div><h2 id="dentures-exam-title">Dr. Tarkesh Provides a Free Exam and Full Evaluation</h2><p>to determine which treatment options best for your individual needs.</p></div>
+    <div><h2 id="dentures-exam-title">Dr. Tarkesh Provides a Free X-Ray,<br /> Exam and Full Evaluation</h2><p>Two Ways to Restore Your Smile</p></div>
     <Consultation gold>Book A Free Consultation</Consultation>
   </div></section>
 }
@@ -142,16 +130,25 @@ function FoodComparison() {
 function SmileTimeline() {
   const steps = [['Day One', 'Leave with a beautiful, comfortable smile from day one.'], ['Heal & Continue Treatment', 'Your mouth heals while we finalize your permanent smile.'], ['Final Smile', 'Enjoy a strong, natural-looking smile built for the long term.']]
   return <section className="dentures__section dentures__timeline-section" aria-labelledby="dentures-timeline-title"><div className="dentures__inner">
-    <SectionHeading id="dentures-timeline-title" title="Your Smile Starts from Day One." />
+    <SectionHeading id="dentures-timeline-title" title="Your Smile Starts from Day One" />
     <ol className="dentures__timeline">{steps.map(([title, text], i) => <li key={title}><span className="dentures__step" aria-hidden="true">{i + 1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
     <div className="dentures__actions"><Consultation /></div>
   </div></section>
 }
 
+const patientJourneys = [
+  { id: 1, comparisonImage: beforeAfter1, beforeImage: before1, afterImage: after1 },
+  { id: 2, comparisonImage: beforeAfter2, beforeImage: before2, afterImage: after2 },
+  { id: 3, comparisonImage: beforeAfter3, beforeImage: before3, afterImage: after3 },
+]
+
 function PatientJourney() {
-  return <section className="dentures__section dentures__journey" aria-labelledby="dentures-journey-title"><div className="dentures__inner">
-    <SectionHeading id="dentures-journey-title" title="Actual Patient Journey." />
-    <div className="dentures__three">{journeyPatients.map((result) => <PatientComparison key={result.id} result={result} />)}</div>
+  return <section className="dentures-journey" aria-labelledby="dentures-journey-title"><div className="dentures-journey__inner">
+    <header className="dentures-journey__header">
+      <p className="dentures-journey__eyebrow">PATIENT RESULTS</p>
+      <h2 id="dentures-journey-title" className="dentures-journey__title">Actual Patient Journey</h2>
+    </header>
+    <div className="dentures-journey__grid">{patientJourneys.map((result) => <article className="dentures-journey__case" key={result.id}><PatientComparison result={result} /></article>)}</div>
     <div className="dentures__actions"><Consultation /></div>
   </div></section>
 }

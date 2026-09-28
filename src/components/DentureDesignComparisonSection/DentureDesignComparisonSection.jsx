@@ -34,7 +34,10 @@ function FeatureIcon({ type }) {
   }
 
   return (
-    <svg className="denture-comparison__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className="denture-comparison__icon" viewBox="0 0 24 24" fill="none" 
+    stroke="currentColor" strokeWidth="1.6" 
+    strokeLinecap="round" strokeLinejoin="round" 
+    aria-hidden="true">
       {paths[type]}
     </svg>
   )
@@ -43,7 +46,8 @@ function FeatureIcon({ type }) {
 function FeatureGroup({ features, tone, title, isVisible }) {
   return (
     <section
-      className={`denture-comparison__feature-group denture-comparison__feature-group--${tone} ${isVisible ? '' : 'denture-comparison__feature-group--hidden'}`}
+      className={`denture-comparison__feature-group denture-comparison__feature-group--${tone} ${isVisible ? '' 
+      : 'denture-comparison__feature-group--hidden'}`}
       aria-hidden={!isVisible}
     >
       <h3 className="denture-comparison__feature-title">{title}</h3>
