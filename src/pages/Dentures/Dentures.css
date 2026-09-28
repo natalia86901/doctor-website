@@ -20,6 +20,7 @@
 .dentures__hero-copy { width: 55%; padding: 64px clamp(24px, 6vw, 90px); }
 .dentures h1 { margin: 0; font-family: var(--font-serif); font-weight: var(--weight-regular); font-size: var(--type-h1); line-height: var(--leading-headline); letter-spacing: 0; word-spacing: normal; text-transform: none; }
 .dentures__hero-copy p { margin: 22px 0 32px; color: #8e6a2f; font-family: var(--font-sans); font-weight: var(--weight-regular); font-size: var(--type-lead); line-height: var(--leading-body); letter-spacing: 0; word-spacing: normal; text-transform: none; }
+.dentures__hero-mobile-break { display: none; }
 .dentures__day-card { padding: 26px 30px 36px; background: #0b2c4d; color: white; text-align: center; }
 .dentures__number { display: block; max-width: 260px; margin: 0 auto 24px; padding-bottom: 18px; border-bottom: 2px solid var(--brand-gold); color: #d4b373; font-size: clamp(2.8rem, 4vw, 4rem); font-family: var(--font-sans); font-weight: var(--weight-bold); }
 .dentures__day-card h3 { font-family: var(--font-sans); font-weight: var(--weight-bold); font-size: var(--type-card); line-height: var(--leading-card); letter-spacing: 0; word-spacing: normal; text-transform: none; }
