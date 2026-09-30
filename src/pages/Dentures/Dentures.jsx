@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { navItems } from '../../components/Navbar/navConfig'
 import hero from '../../assets/dentures/hero-lab.png'
 import traditional from '../../assets/dentures/foodComparison/traditional-denture-transparent.png'
@@ -25,8 +24,8 @@ import PatientComparison from './PatientJourneyComparison'
 
 const officeContact = navItems.find(({ path }) => path === '/contact').children.find(({ href }) => href?.startsWith('tel:')).href
 
-function Consultation({ children = 'Book a Free Consultation', gold = false }) {
-  return <a className={'dentures__cta' + (gold ? ' dentures__cta--gold' : '')} href={officeContact}>
+function Consultation({ children = 'Book a Free Consultation', variant = 'light' }) {
+  return <a className={'dentures__cta dentures__cta--on-' + variant} href={officeContact}>
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" /></svg>
     {children}<span aria-hidden="true">→</span>
   </a>
@@ -63,12 +62,12 @@ function DayOne() {
 
 const optionGroups = [
   { id: 'traditional', title: 'Traditional Denture', titleLines: ['Traditional', 'Denture'], label: 'Standard', image: traditionalCategory, imageAlt: 'Traditional removable denture', options: [
-    { title: 'Standard', image: traditional, imageAlt: 'Standard traditional denture', text: 'A reliable, functional solution for your smile.', href: '#dentures-traditional-foods' },
-    { title: 'Customized', image: traditional, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.', href: '#dentures-traditional-foods' },
+    { title: 'Standard', image: traditional, imageAlt: 'Standard traditional denture', text: 'A reliable, functional solution for your smile.' },
+    { title: 'Customized', image: traditional, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.' },
   ] },
   { id: 'implants', title: 'Implant-Supported Teeth', titleLines: ['Implant-', 'Supported Teeth'], label: 'Customized', image: implantCategory, imageAlt: 'Implant-supported denture', options: [
-    { title: 'All-on-4 Fixed Arch', imageClass: 'dentures__option-image--fixed', image: fixedOption, imageAlt: 'All-on-4 fixed implant-supported arch', text: 'A permanent solution for a confident, natural smile.', to: '/services/implants' },
-    { title: 'Snap-in Denture', imageClass: 'dentures__option-image--snap', image: snapOption, imageAlt: 'Snap-in implant-supported denture', text: 'A secure, removable option with implant support.', to: '/services/implants' },
+    { title: 'All-on-4 Fixed Arch', imageClass: 'dentures__option-image--fixed', image: fixedOption, imageAlt: 'All-on-4 fixed implant-supported arch', text: 'A permanent solution for a confident, natural smile.' },
+    { title: 'Snap-in Denture', imageClass: 'dentures__option-image--snap', image: snapOption, imageAlt: 'Snap-in implant-supported denture', text: 'A secure, removable option with implant support.' },
   ] },
 ]
 
@@ -86,7 +85,6 @@ function TreatmentGroup({ group }) {
       <div className="dentures__option-grid">{group.options.map((option) => <article className="dentures__option" key={option.title}>
         <span className={'dentures__option-image ' + (option.imageClass || '')}><img src={option.image} alt={option.imageAlt} loading="lazy" /></span>
         <div><h5>{option.title}</h5><p>{option.text}</p>
-          {option.to ? <Link to={option.to} aria-label={'Learn more about ' + option.title}><span className="dentures__option-link-label">Learn More</span> <span aria-hidden="true">→</span></Link> : <a href={option.href} aria-label={'Learn more about ' + option.title}><span className="dentures__option-link-label">Learn More</span> <span aria-hidden="true">→</span></a>}
         </div>
       </article>)}</div>
     </div>
@@ -103,7 +101,7 @@ function TreatmentOptions() {
 function FreeExam() {
   return <section className="dentures__exam" aria-labelledby="dentures-exam-title"><div className="dentures__inner">
     <div><h2 id="dentures-exam-title">Dr. Tarkesh Provides a Free X-Ray,<br /> Exam and Full Evaluation</h2><p>Two Ways to Restore Your Smile</p></div>
-    <Consultation gold>Book A Free Consultation</Consultation>
+    <Consultation variant="dark">Book A Free Consultation</Consultation>
   </div></section>
 }
 
@@ -123,7 +121,7 @@ function FoodComparison() {
       <p className="dentures__food-label">{row === 2 ? 'Enjoy your favorite foods again' : 'Commonly enjoyed foods'}</p>
       <ul className="dentures__foods">{option.foods.map((food, col) => <li key={food}><span className="dentures__food-icon" aria-hidden="true" style={{ backgroundPosition: col * 100 / 3 + '% ' + row * 50 + '%' }} /><span>{food}</span></li>)}</ul>
     </article>)}</div>
-    <div className="dentures__actions"><Consultation gold>Schedule a Consultation</Consultation><p className="dentures__eyebrow">Discover what may be possible for you.</p></div>
+    <div className="dentures__actions"><Consultation>Schedule a Consultation</Consultation><p className="dentures__eyebrow">Discover what may be possible for you.</p></div>
   </div></section>
 }
 
