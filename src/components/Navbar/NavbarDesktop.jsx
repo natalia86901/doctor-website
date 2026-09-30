@@ -1,10 +1,11 @@
 import { useEffect, useId, useRef, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { navItems } from './navConfig'
 import logo from '../../assets/brand/LOGO.svg'
 
 function NavbarDesktop() {
   const [openPath, setOpenPath] = useState(null)
+  const location = useLocation()
   const navRef = useRef(null)
   const submenuIdPrefix = useId()
 
@@ -37,37 +38,35 @@ function NavbarDesktop() {
           <ul className="desktop-nav__list">
             {navItems.map((item, index) => {
               const isOpen = openPath === item.path
+              const isActive = location.pathname === item.path || location.pathname.startsWith(`${item.path}/`)
               const submenuId = `${submenuIdPrefix}-submenu-${index}`
               return (
                 <li
                   className="desktop-nav__item"
                   key={item.path}
                   onPointerEnter={() => setOpenPath(item.path)}
-                  onPointerLeave={() => setOpenPath(null)}
-                  onFocus={() => setOpenPath(item.path)}
+                  onPointerLeave={(event) => {
+                    if (!event.currentTarget.contains(document.activeElement)) {
+                      setOpenPath((current) => current === item.path ? null : current)
+                    }
+                  }}
                   onBlur={(event) => {
-                    if (!event.currentTarget.contains(event.relatedTarget)) setOpenPath(null)
+                    if (!event.currentTarget.contains(event.relatedTarget)) {
+                      setOpenPath((current) => current === item.path ? null : current)
+                    }
                   }}
                 >
                   <div className="desktop-nav__parent">
-                    <NavLink
-                      className={({ isActive }) => `desktop-nav__link${isActive ? ' desktop-nav__link--active' : ''}`}
-                      to={item.path}
-                      end={false}
-                      onClick={() => setOpenPath(null)}
-                    >
-                      {item.label}
-                    </NavLink>
                     <button
-                      className="desktop-nav__menu-button"
+                      className={`desktop-nav__link${isActive ? ' desktop-nav__link--active' : ''}`}
                       type="button"
-                      aria-label={`Toggle ${item.label} menu`}
                       aria-expanded={isOpen}
                       aria-controls={submenuId}
                       data-menu-path={item.path}
-                      onClick={() => setOpenPath(isOpen ? null : item.path)}
+                      onClick={() => setOpenPath((current) => current === item.path ? null : item.path)}
                     >
-                      <span aria-hidden="true" />
+                      {item.label}
+                      <span className="desktop-nav__menu-icon" aria-hidden="true"><span /></span>
                     </button>
                   </div>
                   <ul className="desktop-nav__dropdown" id={submenuId} hidden={!isOpen}>
@@ -76,7 +75,7 @@ function NavbarDesktop() {
                         {child.path ? (
                           <NavLink to={child.path} onClick={() => setOpenPath(null)}>{child.label}</NavLink>
                         ) : (
-                          <a href={child.href}>{child.label}</a>
+                          <a href={child.href} onClick={() => setOpenPath(null)}>{child.label}</a>
                         )}
                       </li>
                     ))}

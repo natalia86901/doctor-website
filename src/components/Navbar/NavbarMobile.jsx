@@ -79,22 +79,15 @@ function NavbarMobile() {
               return (
                 <li className="mobile-nav__item" key={item.path}>
                   <div className="mobile-nav__row">
-                    <NavLink
-                      className={`mobile-nav__link${isActive ? ' mobile-nav__link--active' : ''}`}
-                      to={item.path}
-                      onClick={() => closeMenu()}
-                    >
-                      {item.label}
-                    </NavLink>
                     <button
-                      className="mobile-nav__toggle"
+                      className={`mobile-nav__link${isActive ? ' mobile-nav__link--active' : ''}`}
                       type="button"
                       aria-expanded={isExpanded}
                       aria-controls={submenuId}
-                      aria-label={`${isExpanded ? 'Collapse' : 'Expand'} ${item.label} submenu`}
-                      onClick={() => setExpandedPath(isExpanded ? null : item.path)}
+                      onClick={() => setExpandedPath((current) => current === item.path ? null : item.path)}
                     >
-                      <span aria-hidden="true" />
+                      {item.label}
+                      <span className="mobile-nav__toggle" aria-hidden="true"><span /></span>
                     </button>
                   </div>
 

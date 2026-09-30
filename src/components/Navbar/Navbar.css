@@ -78,7 +78,12 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 5px 0 clamp(11px, 1vw, 19px);
+  padding: 0 4px 0 clamp(11px, 1vw, 19px);
+  gap: 5px;
+  min-height: 44px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   color: var(--text-primary);
   white-space: nowrap;
   text-decoration: none;
@@ -91,12 +96,12 @@
   text-transform: none;
 }
 
-.desktop-nav__menu-button {
+.desktop-nav__menu-icon {
   display: grid;
   place-items: center;
   width: 28px;
+  flex: 0 0 28px;
   height: 44px;
-  margin-right: 4px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -104,7 +109,7 @@
   cursor: pointer;
 }
 
-.desktop-nav__menu-button span {
+.desktop-nav__menu-icon span {
   width: 7px;
   height: 7px;
   border-right: 1.5px solid currentColor;
@@ -113,7 +118,7 @@
   transition: transform 0.16s ease;
 }
 
-.desktop-nav__menu-button[aria-expanded="true"] span {
+.desktop-nav__link[aria-expanded="true"] .desktop-nav__menu-icon span {
   transform: translateY(2px) rotate(225deg);
 }
 
@@ -415,7 +420,12 @@
   align-items: center;
   flex: 1 1 auto;
   min-width: 0;
-  padding: 13px 20px;
+  padding: 13px 0 13px 20px;
+  justify-content: space-between;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
   color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-sans);
@@ -427,6 +437,7 @@
   text-transform: none;
 }
 
+.desktop-nav__link--active,
 .mobile-nav__link--active {
   color: var(--brand-navy);
 }
@@ -437,7 +448,6 @@
   place-items: center;
   flex: 0 0 52px;
   width: 52px;
-  min-height: 52px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -455,7 +465,7 @@
   transition: transform 0.16s ease;
 }
 
-.mobile-nav__toggle[aria-expanded="true"] span {
+.mobile-nav__link[aria-expanded="true"] .mobile-nav__toggle span {
   transform: translateY(2px) rotate(225deg);
 }
 
@@ -538,7 +548,6 @@
 }
 
 .mobile-nav__link:focus-visible,
-.mobile-nav__toggle:focus-visible,
 .mobile-nav__submenu a:focus-visible,
 .mobile-nav__phone:focus-visible {
   position: relative;
@@ -560,7 +569,7 @@
 
 
 @media (prefers-reduced-motion: reduce) {
-  .desktop-nav__menu-button span {
+  .desktop-nav__menu-icon span {
     transition: none;
   }
   .mobile-header__menu-button span {
