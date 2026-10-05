@@ -1,6 +1,7 @@
 import { navItems } from '../../components/Navbar/navConfig'
 import hero from '../../assets/dentures/hero-lab.png'
 import traditional from '../../assets/dentures/foodComparison/traditional-denture-transparent.png'
+import traditional1 from '../../assets/dentures/foodComparison/traditional-denture-customized.png'
 import traditionalCategory from '../../assets/dentures/foodComparison/denture-2-transparent.png'
 import implantCategory from '../../assets/dentures/foodComparison/snap-in-5-transparent.png'
 import snapComparison from '../../assets/dentures/foodComparison/snap-in-denture-transparent.png'
@@ -63,7 +64,7 @@ function DayOne() {
 const optionGroups = [
   { id: 'traditional', title: 'Traditional Denture', titleLines: ['Traditional', 'Denture'], label: 'Standard', image: traditionalCategory, imageAlt: 'Traditional removable denture', options: [
     { title: 'Standard', image: traditional, imageAlt: 'Standard traditional denture', text: 'A reliable, functional solution for your smile.' },
-    { title: 'Customized', image: traditional, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.' },
+    { title: 'Customized', image: traditional1, imageAlt: 'Customized traditional denture', text: 'An enhanced fit, comfort and natural appearance.' },
   ] },
   { id: 'implants', title: 'Implant-Supported Teeth', titleLines: ['Implant-', 'Supported Teeth'], label: 'Customized', image: implantCategory, imageAlt: 'Implant-supported denture', options: [
     { title: 'All-on-4 Fixed Arch', imageClass: 'dentures__option-image--fixed', image: fixedOption, imageAlt: 'All-on-4 fixed implant-supported arch', text: 'A permanent solution for a confident, natural smile.' },

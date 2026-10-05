@@ -1,5 +1,5 @@
 .dentures {
-  --dentures-section-space: 80px;
+  --dentures-section-space: 40px;
   --font-serif: "Times New Roman", Times, serif;
   --font-sans: "Montserrat", Arial, sans-serif;
   --weight-bold: 600;
@@ -63,9 +63,7 @@
 .dentures__section--options .dentures__heading h2 { color: var(--options-navy); }
 .dentures__section--options .dentures__intro { max-width: 1040px; margin-top: 14px; color: #55585e; }
 .dentures__section--options .dentures__two { align-items: stretch; gap: 22px; }
-.dentures__group { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 58px auto; }
-/* The connector stretches only across the track between the two cards. */
-.dentures__group::before { content: ''; grid-row: 2; grid-column: 1; justify-self: center; border-left: 1px solid var(--options-gold); }
+.dentures__group { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 24px auto; }
 .dentures__group > .dentures__category { grid-row: 1; grid-column: 1; }
 .dentures__group > .dentures__options { grid-row: 3; grid-column: 1; }
 .dentures__category { display: grid; grid-template-columns: 55% 45%; grid-template-rows: minmax(0, 1fr); align-items: stretch; height: 320px; background: var(--options-light); border-radius: 5px; overflow: hidden; }
@@ -77,7 +75,6 @@
 .dentures__category h3 span { display: block; }
 .dentures__group--implants .dentures__category, .dentures__group--implants .dentures__options { background: var(--options-navy); color: white; }
 .dentures__options { position: relative; padding: 24px; border-radius: 5px; background: var(--options-light); }
-.dentures__options::after { position: absolute; bottom: 100%; left: 25%; width: 50%; height: 30px; border: 1px solid var(--options-gold); border-bottom: 0; border-radius: 8px 8px 0 0; content: ''; }
 .dentures__options-heading { display: flex; align-items: center; margin-bottom: 20px; }
 .dentures__options h4 { margin: 0; font-family: var(--font-sans); font-weight: var(--weight-bold); font-size: .82rem; line-height: var(--leading-card); letter-spacing: .13em; text-transform: uppercase; }
 .dentures__option-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -104,6 +101,10 @@
 .dentures__group--implants .dentures__category-image { --art-width: 1016; --art-x: -50.18%; --art-y: -51.41%; }
 .dentures__group--implants .dentures__category-image > img { width: min(calc(87.55cqw * 1084 / 1016), calc(95.42cqh * 1084 / 1016)); }
 .dentures__option > div { display: flex; flex-direction: column; align-items: center; padding: 15px 16px 14px; }
+.dentures__group--implants .dentures__option { background: var(--options-navy); border-color: var(--brand-gold); color: var(--brand-white); }
+.dentures__section--options .dentures__group--implants .dentures__option > .dentures__option-image { background: var(--options-navy); }
+.dentures__group--implants .dentures__option > div { position: relative; }
+.dentures__group--implants .dentures__option > div::before { content: ''; position: absolute; top: 0; left: 12%; right: 12%; border-top: 1px solid var(--brand-gold); }
 .dentures__option h5 { max-width: 100%; overflow-wrap: anywhere; margin: 0; font-family: var(--font-sans); font-weight: var(--weight-bold); font-size: var(--type-card); line-height: var(--leading-card); letter-spacing: normal; text-transform: uppercase; }
 .dentures__section--options .dentures__option p { min-height: 0; margin: 10px 0 4px; font-family: var(--font-sans); font-weight: var(--weight-regular); font-size: var(--type-body); line-height: var(--leading-body); letter-spacing: 0; text-transform: none; }
 .dentures__exam { padding-block: 42px; background: #0b2843; color: white; border-block: 2px solid var(--brand-gold); }
@@ -192,7 +193,7 @@
   .dentures__category { grid-template-columns: 53% 47%; height: 250px; text-align: left; }
   .dentures__category-copy { padding: 18px 14px; }
   .dentures__category-label { min-width: 0; width: 100%; max-width: 142px; }
-  .dentures__group { grid-template-rows: auto 50px auto; }
+  .dentures__group { grid-template-rows: auto 24px auto; }
   .dentures__options { padding: 16px; }
   .dentures__option-grid { gap: 12px; }
   .dentures__section--options .dentures__option { grid-template-rows: 150px 1fr; }
@@ -223,7 +224,6 @@
   .dentures__section--options .dentures__option { grid-template-rows: 180px 1fr; }
   .dentures__section--options .dentures__option > .dentures__option-image { height: 180px; }
   .dentures__section--options .dentures__option > div { padding: 18px 14px; }
-  .dentures__section--options .dentures__options::after { display: none; }
 }
 @media (min-width: 410px) and (max-width: 520px) {
   .dentures__section--options .dentures__option > .dentures__option-image--snap { object-fit: contain; object-position: center; }
@@ -231,7 +231,7 @@
 
 /* Share content-sized title and description rows across both lower panels. */
 @media (min-width: 681px) {
-  .dentures__section--options .dentures__two { grid-template-rows: auto 58px auto auto auto auto; row-gap: 0; }
+  .dentures__section--options .dentures__two { grid-template-rows: auto 24px auto auto auto auto; row-gap: 0; }
   .dentures__group { grid-row: 1 / span 6; grid-template-rows: subgrid; row-gap: 0; }
   .dentures__group > .dentures__options { display: grid; grid-row: 3 / span 4; grid-template-rows: subgrid; row-gap: 0; }
   .dentures__option-grid { grid-row: 2 / span 3; grid-template-rows: subgrid; row-gap: 0; }
