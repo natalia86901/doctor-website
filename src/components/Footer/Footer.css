@@ -4,9 +4,11 @@
 }
 
 .site-footer__inner {
+  --footer-top-space: 28px;
+  position: relative;
   width: min(100% - 48px, 1260px);
   margin: 0 auto;
-  padding: 28px 0 18px;
+  padding: var(--footer-top-space) 0 18px;
 }
 
 .site-footer__main {
@@ -221,7 +223,8 @@
 @media (max-width: 680px) {
   .site-footer__inner {
     width: min(100% - 40px, 500px);
-    padding: 25px 0 20px;
+    --footer-top-space: 25px;
+    padding: var(--footer-top-space) 0 20px;
   }
 
   .site-footer__main {
@@ -290,4 +293,18 @@
   .site-footer__appointment {
     transition: none;
   }
+}
+
+/* Match the Home divider width without occupying any layout space.
+   Center the 2px line between the preceding section's bottom padding
+   and this footer's existing content inset. */
+.site-footer__inner::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc((var(--footer-top-space) - var(--section-space)) / 2 - 1px);
+  width: 100%;
+  height: 2px;
+  background: var(--brand-gold);
+  pointer-events: none;
 }

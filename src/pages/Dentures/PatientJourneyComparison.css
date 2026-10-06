@@ -6,7 +6,7 @@
 .dentures-journey__inner {
   width: min(100% - 48px, 1260px);
   margin: 0 auto;
-  padding: var(--dentures-section-space) 0;
+  padding: 0;
 }
 
 .dentures-journey__header {

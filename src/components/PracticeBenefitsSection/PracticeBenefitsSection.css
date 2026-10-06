@@ -220,3 +220,26 @@
     transition: none;
   }
 }
+/* Center decorative lines in the existing gaps; occupy no layout space. */
+.practice-benefits__inner {
+  position: relative;
+}
+
+.practice-benefits__inner::before,
+.practice-benefits__inner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0b2347;
+  pointer-events: none;
+}
+
+.practice-benefits__inner::before {
+  top: calc(-1 * var(--section-space) - 1px);
+}
+
+.practice-benefits__inner::after {
+  bottom: calc(-1 * var(--section-space) - 1px);
+}

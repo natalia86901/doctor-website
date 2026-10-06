@@ -42,7 +42,7 @@ export default function ComplexCases() {
         <div className="complex-cases__inner complex-cases__hero-grid">
           <div className="complex-cases__hero-copy">
             <p className="complex-cases__eyebrow">Advanced Care</p>
-            <h1 id="complex-cases-title">When the case is complex, experience matters more.</h1>
+            <h1 id="complex-cases-title">When the case is complex, experience matters more</h1>
             <div className="complex-cases__rule" aria-hidden="true" />
             <p>Severe bone loss, previous implant failures, or difficult anatomy don’t always mean there are no options. Dr. Tarkesh has advanced training, specialized equipment, and a personalized approach to help patients with even the most challenging cases.</p>
             <a className="complex-cases__cta complex-cases__hero-cta" href={officeContact}>
@@ -62,7 +62,7 @@ export default function ComplexCases() {
         <div className="complex-cases__inner">
           <header className="complex-cases__heading">
             <p className="complex-cases__eyebrow">How Advanced Implants Can Help</p>
-            <h2 id="complex-cases-options">When there isn’t enough bone,<br className="complex-cases__desktop-break" /> we don’t always have to build more.</h2>
+            <h2 id="complex-cases-options">When there isn’t enough bone,<br className="complex-cases__desktop-break" /> we don’t always have to build more</h2>
             <p>In complex cases, longer implants can be used to anchor into stronger bone areas for added support — allowing treatment options where standard implants may not be possible.</p>
           </header>
           <div className="complex-cases__comparison">
@@ -99,7 +99,7 @@ export default function ComplexCases() {
           <div className="complex-cases__story-copy">
             <p className="complex-cases__eyebrow">Real Complex Case</p>
             <div className="complex-cases__rule" aria-hidden="true" />
-            <h2 id="complex-cases-story">“I thought there was nowhere to put implants.”</h2>
+            <h2 id="complex-cases-story">“I thought there was nowhere to put implants”</h2>
             <p>Other doctors said No,<br /> but Dr. Tarkesh found a way.</p>
             <ConsultationLink />
           </div>
@@ -108,7 +108,7 @@ export default function ComplexCases() {
 
       <section className="complex-cases__section complex-cases__closing" aria-labelledby="complex-cases-consultation">
         <div className="complex-cases__inner">
-          <h2 id="complex-cases-consultation">Some cases are challenging, but with the right training and experience, we take them thoughtfully and carefully.</h2>
+          <h2 id="complex-cases-consultation">Some cases are challenging, but with the right training and experience, we take them thoughtfully and carefully</h2>
           <ConsultationLink variant="gold">Book Free Consultation</ConsultationLink>
         </div>
       </section>

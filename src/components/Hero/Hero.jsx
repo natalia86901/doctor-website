@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import heroImage from "../../assets/hero.jpg";
+import heroImage from "../../assets/hero.png";
 import video1 from "../../assets/videos/video1.mp4";
 import "./Hero.css";
 
@@ -119,7 +119,7 @@ function Hero() {
           <h1 id="hero-heading">
             <span>They Said It Was</span>
             <span>Impossible.</span>
-            <span>We Proved It Is Possible.</span>
+            <span>We Proved It Is Possible</span>
           </h1>
 
           <p className="hero__description">

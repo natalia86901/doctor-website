@@ -1,5 +1,5 @@
 .treatment-options {
-  background: #f7f4ed;
+  background: var(--brand-navy);
   color: var(--brand-navy);
 }
 
@@ -15,7 +15,7 @@
 
 .treatment-options__title {
   margin: 0;
-  color: var(--brand-navy);
+  color: var(--brand-white);
   font-family: var(--font-serif);
   font-weight: var(--weight-regular);
   font-size: var(--type-h2);

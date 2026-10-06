@@ -1,0 +1,127 @@
+/* Dentures interaction palette only: retain each CTA's typography, border
+   width/style, sizing, spacing, focus ring and click behavior. */
+:is(a, button)[class]:is(
+  .desktop-header__cta,
+  .mobile-header__cta,
+  .hero__primary-cta,
+  .practice-benefits__primary-cta,
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta,
+  .teeth-options-comparison__option-link,
+  .teeth-options-comparison__consultation-link,
+  .complex-cases__cta,
+  .dentures__cta--on-light,
+  .site-footer__appointment,
+  .dental-implants-expertise__cta,
+  .dentures__cta--on-dark
+) {
+  --cta-background: var(--brand-navy);
+  --cta-text: var(--brand-white);
+  --cta-border: var(--brand-navy);
+  --cta-hover-background: var(--brand-gold);
+  --cta-hover-text: var(--brand-navy);
+  --cta-hover-border: var(--brand-gold);
+  --cta-pressed-background: linear-gradient(110deg, #ac8037, #cda75d, #b68a42);
+  --cta-pressed-text: var(--brand-white);
+  background: var(--cta-background);
+  color: var(--cta-text);
+  border-color: var(--cta-border);
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+:is(a, button)[class]:is(.site-footer__appointment, .dental-implants-expertise__cta, .dentures__cta--on-dark) {
+  --cta-background: var(--brand-gold);
+  --cta-border: var(--brand-gold);
+  --cta-hover-background: transparent;
+  --cta-hover-text: var(--brand-gold);
+  --cta-hover-border: var(--brand-white);
+  --cta-pressed-background: linear-gradient(90deg, var(--brand-gold), #f4f1ec);
+  --cta-pressed-text: var(--brand-navy);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  :is(a, button)[class]:is(
+  .desktop-header__cta,
+  .mobile-header__cta,
+  .hero__primary-cta,
+  .practice-benefits__primary-cta,
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta,
+  .teeth-options-comparison__option-link,
+  .teeth-options-comparison__consultation-link,
+  .complex-cases__cta,
+  .dentures__cta--on-light,
+  .site-footer__appointment,
+  .dental-implants-expertise__cta,
+  .dentures__cta--on-dark
+):hover {
+    background: var(--cta-hover-background);
+    color: var(--cta-hover-text);
+    border-color: var(--cta-hover-border);
+  }
+}
+
+/* Override older ungated hover rules on touch devices. */
+@media (hover: none), (pointer: coarse) {
+  :is(a, button)[class]:is(
+  .desktop-header__cta,
+  .mobile-header__cta,
+  .hero__primary-cta,
+  .practice-benefits__primary-cta,
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta,
+  .teeth-options-comparison__option-link,
+  .teeth-options-comparison__consultation-link,
+  .complex-cases__cta,
+  .dentures__cta--on-light,
+  .site-footer__appointment,
+  .dental-implants-expertise__cta,
+  .dentures__cta--on-dark
+):hover {
+    background: var(--cta-background);
+    color: var(--cta-text);
+    border-color: var(--cta-border);
+  }
+}
+
+:is(a, button)[class]:is(
+  .desktop-header__cta,
+  .mobile-header__cta,
+  .hero__primary-cta,
+  .practice-benefits__primary-cta,
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta,
+  .teeth-options-comparison__option-link,
+  .teeth-options-comparison__consultation-link,
+  .complex-cases__cta,
+  .dentures__cta--on-light,
+  .site-footer__appointment,
+  .dental-implants-expertise__cta,
+  .dentures__cta--on-dark
+):active {
+  background: var(--cta-pressed-background);
+  color: var(--cta-pressed-text);
+  border-color: var(--brand-gold);
+}
+
+:is(a, button)[class]:is(.site-footer__appointment, .dental-implants-expertise__cta, .dentures__cta--on-dark):focus-visible {
+  outline-color: var(--brand-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(a, button)[class]:is(
+  .desktop-header__cta,
+  .mobile-header__cta,
+  .hero__primary-cta,
+  .practice-benefits__primary-cta,
+  .dental-implants-hero__primary-cta,
+  .dental-implants-hero__secondary-cta,
+  .teeth-options-comparison__option-link,
+  .teeth-options-comparison__consultation-link,
+  .complex-cases__cta,
+  .dentures__cta--on-light,
+  .site-footer__appointment,
+  .dental-implants-expertise__cta,
+  .dentures__cta--on-dark
+) { transition: none; }
+}

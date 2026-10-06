@@ -43,8 +43,6 @@ function FinancingOptionsSection() {
           </div>
         </article>
 
-        <div className="financing-options__divider" aria-hidden="true" />
-
         <article className="financing-options__insurance">
           <div className="financing-options__insurance-icon-area">
             <img

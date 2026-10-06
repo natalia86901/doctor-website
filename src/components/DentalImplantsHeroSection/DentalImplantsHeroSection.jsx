@@ -7,7 +7,7 @@ function DentalImplantsHeroSection() {
     <section className="dental-implants-hero" aria-labelledby="dental-implants-hero-title">
       <div className="dental-implants-hero__content">
         <h1 className="dental-implants-hero__title" id="dental-implants-hero-title">
-          Dental Implants That Feel Secure and Help You Feel Like Yourself Again.
+          Dental Implants That Feel Secure and Help You Feel Like Yourself Again
         </h1>
 
         <p className="dental-implants-hero__description">

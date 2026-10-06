@@ -18,7 +18,7 @@ function DentalImplantsPromiseSection() {
             <br />
             Doesn&apos;t Have
             <br />
-            to Wait.
+            to Wait
           </h2>
           <p className="dental-implants-promise__lead">
             Leave with a beautiful, comfortable smile from day one — even when

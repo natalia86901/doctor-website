@@ -6,7 +6,7 @@
 }
 
 .complex-cases-banner__inner {
-  width: min(100% - 48px, 1000px);
+  width: min(100% - 48px, 1480px);
   margin: 0 auto;
   padding: clamp(38px, 4vw, 54px) 0 clamp(42px, 4.5vw, 58px);
   text-align: center;
@@ -25,11 +25,11 @@
 }
 
 .complex-cases-banner__title span {
-  display: block;
+  display: inline;
 }
 
 .complex-cases-banner__description {
-  max-width: 720px;
+  max-width: none;
   margin: 17px auto 0;
   color: rgb(255 255 255 / 90%);
   font-family: var(--font-sans);
@@ -42,7 +42,14 @@
 }
 
 
-@media (max-width: 900px) {
+.complex-cases-banner__cta {
+  margin-top: 30px;
+  max-width: 100%;
+}
+
+.complex-cases-banner__cta:focus-visible {
+  outline: 3px solid var(--brand-white);
+  outline-offset: 5px;
 }
 
 @media (max-width: 680px) {

@@ -1,0 +1,79 @@
+/* Main section wrappers own the full responsive padding on each edge.
+   Adjacent sections therefore contribute 80px / 128px / 96px in total.
+   Clear only the former spacing owners; nested card spacing stays intact. */
+:is(
+  .hero,
+  .complex-cases-banner,
+  .treatment-promise,
+  .treatment-solutions,
+  .why-its-possible,
+  .treatment-options,
+  .patient-results,
+  .practice-benefits,
+  .treatment-process,
+  .financing-options,
+  .dental-implants-hero,
+  .dental-implants-expertise,
+  .denture-comparison,
+  .teeth-options-comparison,
+  .dental-implants-promise,
+  .dental-implants-patient-story,
+  .dentures__hero,
+  .dentures__section,
+  .dentures__exam,
+  .dentures-journey,
+  .complex-cases__hero,
+  .complex-cases__section,
+  .meet-dr-tarkesh__intro,
+  .meet-dr-tarkesh__videos,
+  .route-placeholder
+) {
+  padding-block: var(--section-space);
+  margin-block: 0;
+}
+
+:is(
+  .hero__content,
+  .complex-cases-banner__inner,
+  .treatment-promise__inner,
+  .treatment-solutions__inner,
+  .why-its-possible__inner,
+  .treatment-options__inner,
+  .patient-results__inner,
+  .practice-benefits__inner,
+  .treatment-process__inner,
+  .financing-options__inner,
+  .dental-implants-hero__content,
+  .dental-implants-expertise__content,
+  .dental-implants-expertise__media,
+  .denture-comparison__inner,
+  .teeth-options-comparison__inner,
+  .dental-implants-promise__inner,
+  .dental-implants-patient-story__inner,
+  .dentures__hero-copy,
+  .dentures-journey__inner,
+  .complex-cases__hero-grid,
+  .meet-dr-tarkesh
+) {
+  padding-block: 0;
+}
+
+/* Dentures separates the hero headline leading from section headlines. */
+:is(.hero h1, .dental-implants-hero__title, .complex-cases h1,
+    .meet-dr-tarkesh__title, .route-placeholder h1) {
+  line-height: var(--leading-h1);
+}
+
+/* Equivalent numeric markers follow the Dentures day cards and timeline. */
+.treatment-solutions__stat-value {
+  font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: var(--weight-bold);
+  line-height: normal;
+  letter-spacing: 0;
+}
+.treatment-process__number {
+  font-size: 32px;
+  line-height: normal;
+}
+

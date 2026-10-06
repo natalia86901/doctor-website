@@ -75,7 +75,7 @@ function DentureDesignComparisonSection() {
       <div className="denture-comparison__inner">
         <header className="denture-comparison__header">
           <h2 id="denture-design-comparison-heading" className="denture-comparison__title">
-            One Denture. Two Designs.
+            One Denture. Two Designs
           </h2>
           <p className="denture-comparison__subtitle">
             <span>Different feel.</span> <strong>Same goal.</strong>
@@ -123,7 +123,7 @@ function DentureDesignComparisonSection() {
         </div>
 
         <footer className="denture-comparison__conclusion">
-          <h3>Both options are securely supported by implants<br />and customized for your needs.</h3>
+          <h3>Both options are securely supported by implants<br />and customized for your needs</h3>
           <p>Our goal is the same: to help you eat, speak, and smile with confidence and comfort.</p>
         </footer>
       </div>
