@@ -9,8 +9,9 @@
 .iv p { font-size: var(--type-body); font-weight: var(--weight-regular); line-height: var(--leading-body); }
 .iv .iv__eyebrow { display: flex; align-items: center; gap: 14px; color: var(--brand-gold); font-size: var(--type-label); font-weight: var(--weight-bold); line-height: var(--leading-body); letter-spacing: var(--tracking-label); text-transform: uppercase; }
 .iv .iv__eyebrow--line::after, .iv .iv__eyebrow--center::before, .iv .iv__eyebrow--center::after { content: ''; width: 52px; height: 1px; background: var(--brand-gold); }
-.iv .iv__hero { position: relative; display: flex; align-items: center; min-height: 440px; isolation: isolate; }
-.iv .iv__hero-image { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.iv .iv__hero { position: relative; display: flex; align-items: center; min-height: max(440px, 24vw); isolation: isolate; }
+/* Keep the source's space above the doctor's hair when cover crops vertically. */
+.iv .iv__hero-image { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .iv .iv__hero-copy { width: 49%; max-width: 590px; }
 .iv .iv__hero-copy h1 { margin-top: 12px; }
 .iv .iv__hero-copy > p:not(.iv__eyebrow) { margin-top: 20px; max-width: 540px; }
@@ -54,7 +55,8 @@
 .iv .iv__play svg { width: 100%; height: 100%; fill: currentColor; }
 .iv .iv__play:active { background: var(--brand-navy); }
 .iv .iv__patient-card { display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px; overflow: hidden; background: var(--denture-cream); color: var(--brand-navy); }
-.iv .iv__patient-card > img { display: block; width: 100%; height: 100%; min-height: 440px; object-fit: cover; object-position: 46% center; }
+/* Anchor the embedded logo even when the copy makes the image column taller. */
+.iv .iv__patient-card > img { display: block; width: 100%; height: 100%; min-height: 440px; object-fit: cover; object-position: left bottom; }
 .iv .iv__patient-copy { align-self: center; padding: 40px; }
 .iv .iv__patient-copy h2 { margin-top: 20px; }
 .iv .iv__patient-copy > p:not(.iv__eyebrow) { margin-top: 24px; color: var(--brand-gray); }
@@ -64,7 +66,7 @@
   .iv .iv__hero > .iv__inner { order: -1; }
   .iv .iv__hero-copy { width: 100%; max-width: 640px; }
   .iv .iv__hero-copy .iv__desktop-break { display: none; }
-  .iv .iv__hero-image { position: static; width: 100%; height: clamp(300px, 42vw, 430px); margin-top: 24px; object-position: right center; }
+  .iv .iv__hero-image { position: static; width: 100%; height: clamp(300px, 42vw, 430px); margin-top: 24px; object-position: right top; }
   .iv .iv__anxiety-content { gap: 24px; }
   .iv .iv__patient-copy { padding: 28px; }
   .iv .iv__patient-card > img { min-height: 520px; }
@@ -83,7 +85,7 @@
   .iv .iv__hero > .iv__inner { order: -1; }
   .iv .iv__hero-copy { width: 100%; }
   .iv .iv__hero::after { display: none; }
-  .iv .iv__hero-image { position: static; width: 100%; height: 280px; margin-top: 24px; object-position: right center; }
+  .iv .iv__hero-image { position: static; width: 100%; height: 280px; margin-top: 24px; object-position: right top; }
   .iv .iv__actions { gap: 18px; }
   .iv .iv__anxiety-content { flex-direction: column; gap: 20px; text-align: center; }
   .iv .iv__anxiety-content > .iv__anxiety-icon { width: 100px; height: 100px; }
