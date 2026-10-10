@@ -1,0 +1,106 @@
+.iv { color: var(--brand-navy); background: var(--denture-cream); font-family: var(--font-sans); }
+.iv .iv__section { padding-block: var(--section-space); margin-block: 0; }
+.iv .iv__inner { width: min(100% - 48px, 1260px); margin-inline: auto; }
+.iv :is(h1, h2, h3, p) { margin: 0; }
+.iv :is(h1, h2) { font-family: var(--font-serif); font-weight: var(--weight-regular); }
+.iv h1 { font-size: var(--type-h1); line-height: var(--leading-h1); }
+.iv h2 { font-size: var(--type-h2); line-height: var(--leading-headline); }
+.iv h3 { font-size: var(--type-card); font-weight: var(--weight-bold); line-height: var(--leading-card); }
+.iv p { font-size: var(--type-body); font-weight: var(--weight-regular); line-height: var(--leading-body); }
+.iv .iv__eyebrow { display: flex; align-items: center; gap: 14px; color: var(--brand-gold); font-size: var(--type-label); font-weight: var(--weight-bold); line-height: var(--leading-body); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.iv .iv__eyebrow--line::after, .iv .iv__eyebrow--center::before, .iv .iv__eyebrow--center::after { content: ''; width: 52px; height: 1px; background: var(--brand-gold); }
+.iv .iv__hero { position: relative; display: flex; align-items: center; min-height: 440px; isolation: isolate; }
+.iv .iv__hero-image { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.iv .iv__hero-copy { width: 49%; max-width: 590px; }
+.iv .iv__hero-copy h1 { margin-top: 12px; }
+.iv .iv__hero-copy > p:not(.iv__eyebrow) { margin-top: 20px; max-width: 540px; }
+.iv .iv__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 28px; margin-top: 22px; }
+.iv .iv__cta { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 40px; padding: 12px 19px; border: 1px solid var(--brand-navy); border-radius: 2px; color: var(--brand-white); background: var(--brand-navy); text-decoration: none; text-align: center; font-size: var(--type-cta); font-weight: var(--weight-bold); line-height: var(--leading-cta); letter-spacing: var(--tracking-cta); text-transform: uppercase; transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease; }
+.iv .iv__cta span { color: var(--brand-gold); font-size: 24px; line-height: 1; }
+.iv .iv__doctor-link { padding-block: 6px; border-bottom: 1px solid var(--brand-gold); color: var(--brand-navy); font-size: calc(var(--type-cta-compact) + 1px); font-weight: 800; line-height: var(--leading-cta); text-decoration: none; }
+@media (hover: hover) and (pointer: fine) {
+  .iv .iv__cta:hover { background: var(--brand-gold); border-color: var(--brand-gold); color: var(--brand-navy); }
+  .iv .iv__cta:hover span { color: var(--brand-navy); }
+  .iv .iv__doctor-link:hover { color: var(--brand-gray); }
+  .iv .iv__play:hover { background: var(--brand-gold); color: var(--brand-navy); }
+}
+.iv .iv__cta:active { background: linear-gradient(110deg, #ac8037, #cda75d, #b68a42); border-color: var(--brand-gold); color: var(--brand-white); }
+.iv .iv__doctor-link:active { color: var(--brand-gold); }
+.iv :is(a, button, video):focus-visible { outline: 3px solid var(--brand-navy); outline-offset: 4px; }
+.iv .iv__play:focus-visible { outline-color: var(--brand-white); }
+.iv .iv__dark { background: var(--brand-navy); color: var(--brand-white); }
+.iv .iv__anxiety-content { display: flex; justify-content: center; align-items: center; gap: 44px; }
+.iv .iv__anxiety-content > .iv__anxiety-icon { width: 130px; height: 130px; flex-shrink: 0; object-fit: contain; }
+.iv .iv__anxiety h2 { max-width: 950px; }
+.iv .iv__anxiety em { color: var(--brand-gold); }
+.iv .iv__icon-gold { stroke: var(--brand-gold); }
+.iv .iv__heading { text-align: center; }
+.iv .iv__heading .iv__eyebrow { justify-content: center; margin-bottom: 16px; }
+.iv .iv__intro { margin-top: 14px; color: var(--brand-gray); }
+.iv .iv__steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding: 0; margin: 28px auto 0; max-width: 1080px; list-style: none; text-align: center; }
+.iv .iv__step { position: relative; min-width: 0; }
+.iv .iv__step-icon { display: grid; place-items: center; width: 132px; height: 132px; margin-inline: auto; border: 1px solid var(--brand-gold); border-radius: 50%; }
+.iv .iv__step-icon svg { width: 92px; height: 92px; }
+.iv .iv__step:not(:last-child)::after { content: ''; position: absolute; top: 66px; left: calc(50% + 82px); width: calc(100% - 124px); height: 9px; background: radial-gradient(circle, var(--brand-gold) 0 4px, transparent 4px) center / 14px 9px no-repeat, linear-gradient(var(--brand-gold), var(--brand-gold)) left center / calc(50% - 10px) 1px no-repeat, linear-gradient(var(--brand-gold), var(--brand-gold)) right center / calc(50% - 10px) 1px no-repeat; }
+.iv .iv__step-number { display: block; margin-top: 8px; color: var(--brand-gold); font-size: var(--type-body); line-height: var(--leading-body); }
+.iv .iv__step p { margin: 8px auto 0; max-width: 310px; color: var(--brand-gray); }
+.iv .iv__treatment { text-align: center; }
+.iv .iv__treatment-icon { display: block; width: 76px; height: 76px; margin: 0 auto 16px; object-fit: contain; }
+.iv .iv__video-subtitle { margin-top: 8px; font-size: var(--type-card); line-height: var(--leading-card); }
+.iv .iv__video { position: relative; overflow: hidden; margin: 26px auto 0; border-radius: 14px; background: var(--brand-navy); aspect-ratio: 16 / 7; }
+.iv .iv__video video { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.iv .iv__video video[controls] { object-fit: contain; }
+.iv .iv__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 88px; height: 88px; padding: 24px; border: 2px solid var(--brand-gold); border-radius: 50%; background: rgb(10 34 70 / 80%); color: var(--brand-gold); cursor: pointer; transition: background-color 180ms ease, color 180ms ease; }
+.iv .iv__play svg { width: 100%; height: 100%; fill: currentColor; }
+.iv .iv__play:active { background: var(--brand-navy); }
+.iv .iv__patient-card { display: grid; grid-template-columns: 1fr 1fr; border-radius: 18px; overflow: hidden; background: var(--denture-cream); color: var(--brand-navy); }
+.iv .iv__patient-card > img { display: block; width: 100%; height: 100%; min-height: 440px; object-fit: cover; object-position: 46% center; }
+.iv .iv__patient-copy { align-self: center; padding: 40px; }
+.iv .iv__patient-copy h2 { margin-top: 20px; }
+.iv .iv__patient-copy > p:not(.iv__eyebrow) { margin-top: 24px; color: var(--brand-gray); }
+.iv .iv__patient-copy .iv__cta { margin-top: 28px; gap: 0; }
+@media (max-width: 1024px) {
+  .iv .iv__hero { flex-direction: column; min-height: 0; }
+  .iv .iv__hero > .iv__inner { order: -1; }
+  .iv .iv__hero-copy { width: 100%; max-width: 640px; }
+  .iv .iv__hero-copy .iv__desktop-break { display: none; }
+  .iv .iv__hero-image { position: static; width: 100%; height: clamp(300px, 42vw, 430px); margin-top: 24px; object-position: right center; }
+  .iv .iv__anxiety-content { gap: 24px; }
+  .iv .iv__patient-copy { padding: 28px; }
+  .iv .iv__patient-card > img { min-height: 520px; }
+}
+@media (max-width: 800px) {
+  .iv .iv__steps { gap: 24px; }
+  .iv .iv__step-icon { width: 108px; height: 108px; }
+  .iv .iv__step-icon svg { width: 78px; height: 78px; }
+  .iv .iv__step:not(:last-child)::after { top: 54px; left: calc(50% + 62px); width: calc(100% - 100px); }
+  .iv .iv__patient-card { grid-template-columns: 1fr; }
+  .iv .iv__patient-card > img { min-height: 0; height: auto; aspect-ratio: 1.44; }
+}
+@media (max-width: 680px) {
+  .iv .iv__inner { width: min(100% - 40px, 500px); }
+  .iv .iv__hero { display: flex; flex-direction: column; min-height: 0; }
+  .iv .iv__hero > .iv__inner { order: -1; }
+  .iv .iv__hero-copy { width: 100%; }
+  .iv .iv__hero::after { display: none; }
+  .iv .iv__hero-image { position: static; width: 100%; height: 280px; margin-top: 24px; object-position: right center; }
+  .iv .iv__actions { gap: 18px; }
+  .iv .iv__anxiety-content { flex-direction: column; gap: 20px; text-align: center; }
+  .iv .iv__anxiety-content > .iv__anxiety-icon { width: 100px; height: 100px; }
+  .iv .iv__desktop-break { display: none; }
+  .iv .iv__steps { grid-template-columns: 1fr; gap: 32px; }
+  .iv .iv__step:not(:last-child)::after { display: none; }
+  .iv .iv__step-icon { width: 132px; height: 132px; }
+  .iv .iv__step-icon svg { width: 92px; height: 92px; }
+  .iv .iv__video { aspect-ratio: 16 / 9; border-radius: 10px; }
+  .iv .iv__play { width: 64px; height: 64px; padding: 18px; }
+  .iv .iv__patient-card > img { aspect-ratio: 1.44; }
+  .iv .iv__patient-copy { padding: 28px 20px; }
+  .iv .iv__patient-copy .iv__cta { width: 100%; }
+}
+@media (max-width: 360px) {
+  .iv .iv__inner { width: min(100% - 32px, 500px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .iv :is(.iv__cta, .iv__play) { transition: none; }
+}

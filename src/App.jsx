@@ -10,6 +10,7 @@ import Dentures from './pages/Dentures/Dentures'
 import ComplexCases from './pages/ComplexCases/ComplexCases'
 import MeetDrTarkesh from './pages/MeetDrTarkesh/MeetDrTarkesh'
 import PlaceholderPage from './pages/PlaceholderPage/PlaceholderPage'
+import IV from './pages/IV/IV'
 
 const dentalImplantsPath = '/services/implants'
 
@@ -23,12 +24,13 @@ function App() {
         <Route path={dentalImplantsPath} element={<DentalImplantsPage />} />
         <Route path="/services/dentures" element={<Dentures />} />
         <Route path="/services/complex-cases" element={<ComplexCases />} />
+        <Route path="/services/iv-sedation" element={<IV />} />
         <Route path="/dentures" element={<Navigate to="/services/dentures" replace />} />
         <Route
           path="/why-dr-tarkesh/meet-dr-tarkesh"
           element={<MeetDrTarkesh />}
         />
-        {internalRoutes.filter(({ path }) => path !== dentalImplantsPath && path !== '/services/dentures' && path !== '/services/complex-cases').map(({ label, path }) => (
+        {internalRoutes.filter(({ path }) => path !== dentalImplantsPath && path !== '/services/dentures' && path !== '/services/complex-cases' && path !== '/services/iv-sedation').map(({ label, path }) => (
           <Route key={path} path={path} element={<PlaceholderPage title={label} />} />
         ))}
         <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import heroImage from "../../assets/hero.png";
-import video1 from "../../assets/videos/video1.mp4";
+import video1 from "../../assets/IV/iv-tarkesh.mp4";
 import "./Hero.css";
 
 function PlayIcon() {
