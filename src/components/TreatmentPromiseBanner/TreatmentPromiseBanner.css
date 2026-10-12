@@ -319,11 +319,11 @@
   }
 
   .treatment-promise__line--top {
-    top: 28px;
+    top: -24px;
   }
 
   .treatment-promise__line--bottom {
-    bottom: 24px;
+    bottom: -24px;
   }
 
   .treatment-promise__line::before,
@@ -334,7 +334,7 @@
 
 
   .treatment-promise__dots {
-    top: 24px;
+    top: -28px;
     gap: 8px;
     padding: 0 10px;
   }
@@ -352,12 +352,12 @@
   }
 
   .treatment-promise__corner--top-right {
-    top: 8px;
+    top: -40px;
     right: 8px;
   }
 
   .treatment-promise__corner--bottom-left {
-    bottom: 8px;
+    bottom: -40px;
     left: 8px;
   }
 
