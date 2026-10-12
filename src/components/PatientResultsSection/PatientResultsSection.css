@@ -72,118 +72,79 @@
   object-position: center;
   transform-origin: center;
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 120ms ease;
 }
 
-/* Slightly crop full photos to hide rounded corners built into the files. */
-.patient-results__comparison[data-mode="before"] .patient-results__image,
-.patient-results__comparison[data-mode="after"] .patient-results__image {
+.patient-results__layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.patient-results__layer[data-image="comparison"] {
+  display: none;
+}
+
+/* Keep the existing full-photo crop fixed while clipping its visible layer. */
+.patient-results__image {
   transform: scale(1.04);
 }
 
-/* Fade out first, then reveal the next image. */
-.patient-results__image[data-active="true"] {
-  opacity: 1;
-  transition-delay: 120ms;
+.patient-results__layer[data-image="before"] {
+  clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+}
+
+.patient-results__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--comparison-position);
+  width: 1px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
 }
 
 .patient-results__handle {
   position: absolute;
   top: 50%;
-  left: 50%;
-  display: flex;
-  width: 88px;
-  height: 52px;
+  left: var(--comparison-position);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
   transform: translate(-50%, -50%);
   touch-action: pan-y pinch-zoom;
-  transition: left 240ms ease, width 240ms ease;
+  cursor: ew-resize;
 }
 
-/* The circle is smaller than the two separate 44px-wide touch targets. */
-.patient-results__handle::before {
-  content: "";
-  position: absolute;
-  inset: 0 18px;
-  border: 2px solid white;
+.patient-results__handle-circle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid white;
+  box-shadow: 0 0 0 3px var(--brand-gold);
   border-radius: 50%;
   background: var(--brand-navy);
-  box-shadow: 0 0 0 1px var(--brand-navy);
-  pointer-events: none;
-  transition: inset 240ms ease, border-radius 240ms ease;
-}
-
-.patient-results__arrow {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex: 0 0 44px;
-  height: 52px;
-  padding: 0 5px 0 0;
-  border: 0;
-  border-radius: 26px 0 0 26px;
-  background: transparent;
   color: white;
-  touch-action: pan-y pinch-zoom;
-  cursor: pointer;
+  pointer-events: none;
 }
 
-.patient-results__arrow:last-child {
-  justify-content: flex-start;
-  padding: 0 0 0 5px;
-  border-radius: 0 26px 26px 0;
-}
-
-.patient-results__arrow:hover {
-  background: rgb(255 255 255 / 15%);
-}
-
-.patient-results__arrow:focus-visible {
+.patient-results__handle:focus-visible {
   outline: 3px solid var(--brand-gold);
   outline-offset: -3px;
+  border-radius: 50%;
 }
 
-.patient-results__arrow svg {
-  width: 18px;
-  height: 18px;
+.patient-results__handle svg {
+  width: 22px;
+  height: 22px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 3;
+  stroke-width: 1.5;
   stroke-linecap: round;
   stroke-linejoin: round;
-  pointer-events: none;
-}
-
-.patient-results__comparison[data-mode="after"] .patient-results__handle {
-  left: 23px;
-  width: 44px;
-}
-
-.patient-results__comparison[data-mode="before"] .patient-results__handle {
-  left: calc(100% - 23px);
-  width: 44px;
-}
-
-.patient-results__comparison[data-mode="after"] .patient-results__handle::before {
-  inset: 0;
-  border-radius: 0 26px 26px 0;
-}
-
-.patient-results__comparison[data-mode="before"] .patient-results__handle::before {
-  inset: 0;
-  border-radius: 26px 0 0 26px;
-}
-
-.patient-results__arrow[aria-hidden="true"] {
-  position: absolute;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.patient-results__comparison:not([data-mode="comparison"]) .patient-results__arrow {
-  justify-content: center;
-  padding: 0;
 }
 
 .patient-results__labels {
@@ -205,47 +166,21 @@
   word-spacing: normal;
   text-transform: uppercase;
   transform: translateX(-50%);
-  transition: left 240ms ease, opacity 240ms ease;
 }
 
 .patient-results__label:nth-child(2) {
   left: 75%;
 }
 
-.patient-results__comparison[data-mode="after"] .patient-results__label:nth-child(2),
-.patient-results__comparison[data-mode="before"] .patient-results__label:first-child {
+/* Endpoint labels share the existing fixed-height label area. */
+.patient-results__comparison[data-endpoint="before"] .patient-results__label:first-child,
+.patient-results__comparison[data-endpoint="after"] .patient-results__label:nth-child(2) {
   left: 50%;
 }
 
-.patient-results__comparison[data-mode="after"] .patient-results__label:first-child,
-.patient-results__comparison[data-mode="before"] .patient-results__label:nth-child(2) {
-  opacity: 0;
-}
-
-.patient-results__compare {
-  position: absolute;
-  top: 0;
-  right: 0;
-  min-height: 28px;
-  padding: 4px;
-  border: 0;
-  background: transparent;
-  color: var(--brand-navy);
-  font-family: var(--font-sans);
-  font-size: var(--type-label);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  cursor: pointer;
-}
-
-.patient-results__compare[aria-hidden="true"] {
+.patient-results__comparison[data-endpoint="before"] .patient-results__label:nth-child(2),
+.patient-results__comparison[data-endpoint="after"] .patient-results__label:first-child {
   visibility: hidden;
-  pointer-events: none;
-}
-
-.patient-results__compare:focus-visible {
-  outline: 2px solid var(--brand-gold);
-  outline-offset: 1px;
 }
 
 .patient-results__quote {

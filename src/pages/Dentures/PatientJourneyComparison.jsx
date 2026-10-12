@@ -1,28 +1,42 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./PatientJourneyComparison.css";
 
 function PatientComparison({ result }) {
-  const [mode, setMode] = useState("comparison");
-  const afterButtonRef = useRef(null);
-  const beforeButtonRef = useRef(null);
-  const compareButtonRef = useRef(null);
+  const [position, setPosition] = useState(50);
+  const surfaceRef = useRef(null);
+  const pointerRef = useRef(null);
 
-  const pendingFocusRef = useRef(null);
-
-  function showMode(nextMode) {
-    const hiddenButton = nextMode === "after" ? afterButtonRef.current
-      : nextMode === "before" ? beforeButtonRef.current : compareButtonRef.current;
-    // Capture focus before CSS hides the previously focused button.
-    if (hiddenButton === document.activeElement) {
-      pendingFocusRef.current = nextMode === "after" ? beforeButtonRef : afterButtonRef;
-    }
-    setMode(nextMode);
+  function updatePosition(clientX) {
+    const bounds = surfaceRef.current.getBoundingClientRect();
+    setPosition(Math.max(0, Math.min(100, (clientX - bounds.left) / bounds.width * 100)));
   }
 
-  useLayoutEffect(() => {
-    pendingFocusRef.current?.current.focus({ preventScroll: true });
-    pendingFocusRef.current = null;
-  }, [mode]);
+  function startDrag(event) {
+    if (!event.isPrimary || event.button !== 0 || pointerRef.current !== null) return;
+    pointerRef.current = event.pointerId;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    event.currentTarget.focus({ preventScroll: true });
+    updatePosition(event.clientX);
+  }
+
+  function endDrag(event) {
+    if (pointerRef.current !== event.pointerId) return;
+    pointerRef.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  function handleKeyDown(event) {
+    const changes = { ArrowLeft: -1, ArrowRight: 1 };
+    if (event.key === "Home" || event.key === "End") {
+      event.preventDefault();
+      setPosition(event.key === "Home" ? 0 : 100);
+    } else if (event.key in changes) {
+      event.preventDefault();
+      setPosition((value) => Math.max(0, Math.min(100, value + changes[event.key])));
+    }
+  }
 
   const images = [
     { mode: "comparison", src: result.comparisonImage, width: 1536, height: 1024,
@@ -34,36 +48,37 @@ function PatientComparison({ result }) {
   ];
 
   return (
-    <div className="dentures-journey__comparison" data-mode={mode}
+    <div className="dentures-journey__comparison" data-endpoint={position === 0 ? "after" : position === 100 ? "before" : undefined} style={{ "--comparison-position": `${position}%` }}
       role="group" aria-label={`Before and after treatment, patient ${result.id}`}>
-      <div className="dentures-journey__surface">
+      <div className="dentures-journey__surface" ref={surfaceRef}>
         {images.map((image) => (
-          <img key={image.mode} className="dentures-journey__image"
-            data-active={mode === image.mode} aria-hidden={mode !== image.mode}
-            src={image.src} alt={image.alt} width={image.width} height={image.height}
-            draggable="false" />
+          <div key={image.mode} className="dentures-journey__layer" data-image={image.mode}
+            aria-hidden={image.mode === "comparison"}>
+            <img className="dentures-journey__image"
+              src={image.src} alt={image.alt} width={image.width} height={image.height}
+              draggable="false" />
+          </div>
         ))}
-        <div className="dentures-journey__handle">
-          <button type="button" className="dentures-journey__arrow"
-            ref={afterButtonRef} tabIndex={mode === "after" ? -1 : 0}
-            aria-hidden={mode === "after"} aria-label="Show full After image" onClick={() => showMode("after")}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
-          </button>
-          <button type="button" className="dentures-journey__arrow"
-            ref={beforeButtonRef} tabIndex={mode === "before" ? -1 : 0}
-            aria-hidden={mode === "before"} aria-label="Show full Before image" onClick={() => showMode("before")}>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
-          </button>
+        <div className="dentures-journey__divider" aria-hidden="true" />
+        <div className="dentures-journey__handle" role="slider" tabIndex={0}
+          aria-label={`Before and after comparison, patient ${result.id}`}
+          aria-orientation="horizontal" aria-valuemin={0} aria-valuemax={100}
+          aria-valuenow={Math.round(position)}
+          aria-valuetext={`${Math.round(position)}% Before, ${100 - Math.round(position)}% After`}
+          onKeyDown={handleKeyDown} onPointerDown={startDrag}
+          onPointerMove={(event) => {
+            if (pointerRef.current === event.pointerId) updatePosition(event.clientX);
+          }}
+          onPointerUp={endDrag} onPointerCancel={endDrag}
+          onLostPointerCapture={() => { pointerRef.current = null; }}>
+          <span className="dentures-journey__handle-circle" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6" /></svg>
+          </span>
         </div>
       </div>
       <div className="dentures-journey__labels">
         <span className="dentures-journey__label" aria-hidden="true">BEFORE</span>
         <span className="dentures-journey__label" aria-hidden="true">AFTER</span>
-        <button type="button" className="dentures-journey__compare" ref={compareButtonRef}
-          aria-label="Compare Before and After images" aria-hidden={mode === "comparison"}
-          tabIndex={mode === "comparison" ? -1 : 0} onClick={() => showMode("comparison")}>
-          Compare
-        </button>
       </div>
     </div>
   );
