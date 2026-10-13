@@ -308,3 +308,11 @@
   background: var(--brand-gold);
   pointer-events: none;
 }
+
+.site-footer--without-top-divider .site-footer__inner::before {
+  display: none;
+}
+
+.site-footer--divider-at-boundary .site-footer__inner::before {
+  top: 0;
+}

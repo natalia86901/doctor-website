@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/brand/logoFooter.png'
 import './Footer.css'
 
@@ -21,7 +21,18 @@ const quickLinks = [
   ['Contact', '/contact'],
 ]
 
+const routesWithoutTopDivider = new Set([
+  '/services/dentures',
+  '/services/implants',
+  '/services/complex-cases',
+  '/why-dr-tarkesh/meet-dr-tarkesh',
+])
+
 function Footer() {
+  const { pathname } = useLocation()
+  const normalizedPath = pathname.replace(/\/+$/, '') || '/'
+  const hideTopDivider = routesWithoutTopDivider.has(normalizedPath)
+  const dividerAtBoundary = normalizedPath === '/patient-resources/pricing-financing'
   const currentYear = new Date().getFullYear()
 
   function scrollToTop(event) {
@@ -35,7 +46,7 @@ function Footer() {
   }
 
   return (
-    <footer className="site-footer">
+    <footer className={`site-footer${hideTopDivider ? ' site-footer--without-top-divider' : ''}${dividerAtBoundary ? ' site-footer--divider-at-boundary' : ''}`}>
       <div className="site-footer__inner">
         <div className="site-footer__main">
           <section

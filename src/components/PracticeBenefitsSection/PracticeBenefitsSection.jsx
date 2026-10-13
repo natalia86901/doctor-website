@@ -50,9 +50,9 @@ function PracticeBenefitsSection() {
         </div>
 
         <div className="practice-benefits__actions">
-          <button className="practice-benefits__primary-cta" type="button">
+          <Link className="practice-benefits__primary-cta" to="/contact/schedule-consultation">
             BOOK YOUR FREE CONSULTATION
-          </button>
+          </Link>
 
           <Link
             className="practice-benefits__secondary-link"

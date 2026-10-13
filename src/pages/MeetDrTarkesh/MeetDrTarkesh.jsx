@@ -7,8 +7,7 @@ import videoSource from '../../assets/IV/iv-tarkesh.mp4'
 import videoPoster from '../../assets/IV/iv-video-poster.jpg'
 import './MeetDrTarkesh.css'
 
-const consultationPhone = navItems.find(({ path }) => path === '/contact')
-  .children.find(({ href }) => href?.startsWith('tel:')).href
+const consultationPhone = '/contact/schedule-consultation'
 const ivPath = navItems.find(({ path }) => path === '/services')
   .children.find(({ label }) => label === 'IV Sedation').path
 const education = ['Engineering foundation', 'Biology & genetics', 'Biomedical sciences', 'Doctor of Dental Medicine', 'Advanced implant education', 'Ongoing global training']
@@ -39,7 +38,7 @@ function MeetDrTarkesh() {
         <div className="tarkesh__inner tarkesh__hero-layout">
           <div className="tarkesh__hero-copy">
             <p className="tarkesh__eyebrow">Meet Dr. Nozar Tarkesh</p>
-            <h1 id="tarkesh-title">Precision built on experience. Driven by continuous learning.</h1>
+            <h1 id="tarkesh-title">Precision Built on Experience<br />Driven by Continuous Learning</h1>
             <p>Dr. Nozar Tarkesh brings together an engineering mindset, advanced scientific education and years of focused training in implant dentistry. His path includes studies in Biology and Genetics, a Master’s degree in Biomedical Sciences and a Doctor of Dental Medicine degree from Midwestern University College of Dental Medicine in Arizona.</p>
             <p>But his education did not stop with dental school. Dr. Tarkesh has continued to pursue advanced implant training throughout the United States and internationally, dedicating thousands of hours to continuing education, complex implantology and full-mouth rehabilitation. Because in advanced dentistry, experience matters — but the willingness to keep learning matters just as much.</p>
             <p className="tarkesh__credentials">Engineering mindset · Advanced implant training · Global continuing education</p>
@@ -54,7 +53,7 @@ function MeetDrTarkesh() {
       <section className="tarkesh__section tarkesh__guidance" aria-labelledby="tarkesh-guidance-title">
         <div className="tarkesh__inner">
           <div className="tarkesh__ornament" aria-hidden="true"><span /><span /><span /></div>
-          <h2 id="tarkesh-guidance-title">Expert guidance for every smile<br /> from simple to complex.</h2>
+          <h2 id="tarkesh-guidance-title">Expert Guidance for Every Smile<br />From Simple to Complex</h2>
           <div className="tarkesh__rule" aria-hidden="true" />
         </div>
       </section>
@@ -91,11 +90,11 @@ function MeetDrTarkesh() {
           <img className="tarkesh__treatment-image" src={treatmentImage} alt="Dr. Tarkesh and a dental assistant treating a patient using magnification and digital imaging" loading="lazy" />
           <div className="tarkesh__beyond-copy">
             <p className="tarkesh__eyebrow">Beyond the technology</p>
-            <h2 id="tarkesh-beyond-title">Expertise matters.<br /> So does how you feel.</h2>
+            <h2 id="tarkesh-beyond-title">Expertise Matters<br />So Does How You Feel</h2>
             <p>Trust begins with listening. Dr. Tarkesh takes time to understand your concerns, explain your options and help you feel confident about your care.</p>
             <p>For patients who feel anxious about treatment, IV sedation may offer a calmer, more comfortable experience.</p>
             <Link className="tarkesh__cta" to={ivPath}>Learn more</Link>
-            <h3>Your case is unique. Your treatment plan should be too.</h3>
+            <p>Your case is unique. Your treatment plan should be too.</p>
             <a className="tarkesh__cta" href={consultationPhone}>Discuss a complex case</a>
           </div>
         </div>

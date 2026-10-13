@@ -1,0 +1,35 @@
+.appointment { background: var(--denture-cream); color: var(--brand-navy); padding: var(--section-space) 0; font-family: var(--font-sans); }
+.appointment__layout { width: min(calc(100% - 48px), 1260px); margin-inline: auto; display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+.appointment h1 { margin: 24px 0 0; font-family: var(--font-serif); font-size: var(--type-h1); font-weight: var(--weight-regular); line-height: var(--leading-headline); letter-spacing: 0; }
+.appointment h3 { margin: 0; font-size: var(--type-card); font-weight: var(--weight-bold); line-height: var(--leading-card); }
+.appointment p { margin: 0; font-size: var(--type-body); line-height: var(--leading-body); }
+.appointment .appointment__eyebrow { color: var(--brand-gold); font-size: var(--type-label); font-weight: var(--weight-bold); letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.appointment__intro { padding-top: 32px; }
+.appointment__rule { width: 72px; height: 3px; background: var(--brand-gold); margin-block: 32px; }
+.appointment__description { color: var(--brand-gray, #62656b); }
+.appointment__benefits { list-style: none; margin: 40px 0 0; padding: 0; display: grid; gap: 32px; }
+.appointment__benefits li { display: grid; grid-template-columns: 64px 1fr; gap: 24px; align-items: start; }
+.appointment__benefits p { margin-top: 8px; color: var(--brand-gray, #62656b); }
+.appointment__icon { width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: #eee9df; color: var(--brand-gold); }
+.appointment__icon svg { width: 32px; height: 32px; }
+.appointment__form { min-width: 0; padding: clamp(24px, 3vw, 40px); border-radius: 16px; background: var(--brand-white); box-shadow: 0 8px 32px rgb(10 34 70 / 6%); }
+.appointment__field { display: grid; gap: 10px; margin-bottom: 24px; }
+.appointment__field label { font-size: var(--type-caption); font-weight: var(--weight-bold); line-height: 1.5; color: var(--brand-gray, #62656b); }
+.appointment__field input, .appointment__field textarea { box-sizing: border-box; width: 100%; min-width: 0; padding: 16px; border: 1px solid #c9cbd0; border-radius: 8px; background: var(--brand-white); color: var(--brand-navy); font-family: inherit; font-size: var(--type-body); line-height: var(--leading-body); }
+.appointment__field textarea { resize: vertical; min-height: 130px; }
+.appointment__field input::placeholder, .appointment__field textarea::placeholder { color: #777b84; opacity: 1; }
+.appointment__field input:focus-visible, .appointment__field textarea:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: 2px; }
+.appointment__submit { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 58px; padding: 16px 20px; border: 1px solid var(--brand-navy); border-radius: 2px; background: var(--brand-navy); color: var(--brand-white); font-family: inherit; font-size: var(--type-cta); font-weight: var(--weight-bold); line-height: var(--leading-cta); letter-spacing: var(--tracking-cta); cursor: pointer; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease; }
+@media (hover: hover) and (pointer: fine) { .appointment__submit:hover:not(:disabled) { background: var(--brand-gray); border-color: var(--brand-gray); } }
+.appointment__submit:active:not(:disabled) { background: var(--brand-gold); color: var(--brand-navy); border-color: var(--brand-gold); }
+.appointment__submit:focus-visible { outline: 3px solid var(--brand-gold); outline-offset: 4px; }
+.appointment__submit:disabled { opacity: .65; cursor: not-allowed; }
+.appointment .appointment__privacy { display: flex; gap: 12px; margin-top: 24px; color: var(--brand-gray, #62656b); font-size: var(--type-caption); }
+.appointment__privacy svg { width: 20px; height: 24px; flex-shrink: 0; color: var(--brand-gold); }
+.appointment .appointment__status { margin-top: 16px; font-size: var(--type-caption); }
+.appointment__honeypot { display: none; }
+.appointment__spinner { width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: appointment-spin 800ms linear infinite; }
+@keyframes appointment-spin { to { transform: rotate(360deg); } }
+@media (max-width: 800px) { .appointment__layout { grid-template-columns: 1fr; max-width: 600px; } .appointment__intro { padding-top: 0; } }
+@media (max-width: 680px) { .appointment__layout { width: calc(100% - 40px); gap: 32px; } .appointment__form { padding: 24px 20px; } .appointment__benefits li { grid-template-columns: 52px 1fr; gap: 16px; } .appointment__icon { width: 52px; height: 52px; } }
+@media (prefers-reduced-motion: reduce) { .appointment__submit { transition: none; } .appointment__spinner { animation: none; } }

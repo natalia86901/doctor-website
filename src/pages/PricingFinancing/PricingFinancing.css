@@ -1,0 +1,107 @@
+.pricing-financing { color: var(--brand-navy); background: var(--denture-cream); font-size: var(--type-body); line-height: var(--leading-body); }
+.pricing-financing__section { padding-block: var(--section-space); margin-block: 0; }
+.pricing-financing__container { width: min(100% - 48px, 1260px); margin-inline: auto; }
+.pricing-financing h1, .pricing-financing h2, .pricing-financing h3 { margin: 0; font-family: var(--font-serif); font-weight: var(--weight-regular); letter-spacing: 0; }
+.pricing-financing h1 { font-size: var(--type-h1); line-height: var(--leading-h1); }
+.pricing-financing h2, .pricing-financing h3 { font-size: var(--type-h2); line-height: var(--leading-headline); }
+.pricing-financing p { margin: 20px 0 0; }
+.pricing-financing__hero { position: relative; isolation: isolate; display: flex; align-items: center; min-height: 520px; overflow: hidden; }
+.pricing-financing__hero-photo { position: absolute; right: 0; top: 0; width: 56%; height: 100%; object-fit: cover; object-position: center; z-index: -2; }
+.pricing-financing__hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--denture-cream) 40%, transparent 65%); }
+.pricing-financing__hero-copy { width: 47%; max-width: 560px; }
+.pricing-financing__hero-copy p { max-width: 440px; }
+.pricing-financing__cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 58px; margin-top: 30px; padding: 12px 24px; border: 1px solid var(--brand-navy); border-radius: 2px; background: var(--brand-navy); color: var(--brand-white); text-decoration: none; text-align: center; font-size: var(--type-cta); font-weight: var(--weight-bold); line-height: var(--leading-cta); letter-spacing: var(--tracking-cta); transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease; }
+.pricing-financing__cta--cream { background: var(--denture-cream); color: var(--brand-navy); border-color: var(--denture-cream); width: 100%; }
+/* Match the shared gold-on-dark CTA states in cta-states.css. */
+.pricing-financing__cta--gold { background: var(--brand-gold); color: var(--brand-white); border-color: var(--brand-gold); }
+@media (hover: hover) and (pointer: fine) {
+  .pricing-financing__cta:hover { background: var(--brand-gold); color: var(--brand-navy); border-color: var(--brand-gold); }
+  .pricing-financing__cta--gold:hover { background: transparent; color: var(--brand-gold); border-color: var(--brand-white); }
+}
+.pricing-financing__cta:active { background: linear-gradient(110deg, #ac8037, #cda75d, #b68a42); color: var(--brand-white); border-color: var(--brand-gold); }
+.pricing-financing__cta--gold:active { background: linear-gradient(90deg, var(--brand-gold), #f4f1ec); color: var(--brand-navy); }
+.pricing-financing__cta:focus-visible { outline: 3px solid var(--brand-navy); outline-offset: 3px; }
+.pricing-financing__offer .pricing-financing__cta:focus-visible, .pricing-financing__cta--gold:focus-visible { outline-color: var(--brand-white); }
+.pricing-financing__offer, .pricing-financing__consultation { background: var(--brand-navy); color: var(--brand-white); }
+.pricing-financing__offer-grid { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 60px; }
+.pricing-financing .pricing-financing__eyebrow { margin: 0 0 20px; color: var(--brand-gold); font-size: var(--type-label); font-weight: var(--weight-bold); letter-spacing: var(--tracking-label); }
+.pricing-financing__offer-summary { container-type: inline-size; min-width: 0; }
+.pricing-financing__offer-summary h2 { font-size: clamp(30px, 10.4cqi, 66px); line-height: 1.08; }
+.pricing-financing .pricing-financing__offer-price { font-family: var(--font-serif); font-size: clamp(64px, 25.5cqi, 160px); line-height: .95; margin-top: 24px; white-space: nowrap; }
+.pricing-financing__price-currency { margin-right: -.045em; }
+.pricing-financing__price-comma { margin-inline: -.06em; }
+.pricing-financing .pricing-financing__per-arch { margin-top: 8px; letter-spacing: var(--tracking-label); }
+.pricing-financing__offer-includes { border-left: 1px solid var(--brand-gold); padding-left: 60px; }
+.pricing-financing__offer-includes ul { padding: 0; margin: 24px 0 0; list-style: none; display: grid; gap: 16px; }
+.pricing-financing__offer-includes li { display: flex; gap: 24px; align-items: baseline; }
+.pricing-financing__offer-includes li span { color: var(--brand-gold); font-size: var(--type-card); font-weight: var(--weight-bold); }
+.pricing-financing__table-title { padding-bottom: 12px; border-bottom: 1px solid var(--brand-gold); margin-bottom: 20px !important; }
+.pricing-financing__table-scroll { max-width: 100%; overflow-x: auto; }
+.pricing-financing__table { width: 100%; min-width: 540px; border-collapse: collapse; table-layout: fixed; }
+.pricing-financing__table thead { background: var(--brand-navy); color: var(--brand-white); }
+.pricing-financing__table thead th { padding: 14px 20px; font-family: var(--font-serif); font-size: var(--type-card); font-weight: var(--weight-regular); }
+.pricing-financing__table th, .pricing-financing__table td { border-right: 1px solid var(--brand-gold); }
+.pricing-financing__table tr > :last-child { border-right: 0; }
+.pricing-financing__table tbody tr + tr { border-top: 1px solid var(--brand-gold); }
+.pricing-financing__table tbody th { padding: 24px; text-align: left; font-weight: var(--weight-regular); }
+.pricing-financing__table td { padding: 20px; text-align: center; }
+.pricing-financing__design { width: min(100%, 260px); height: 180px; margin-inline: auto; display: flex; align-items: center; justify-content: center; }
+.pricing-financing__table img { display: block; width: 100%; height: 100%; object-fit: contain; }
+/* Square implant files include transparent margins around the product. */
+.pricing-financing__design--implant img { width: 200px; height: 200px; max-width: 100%; flex-shrink: 0; }
+.pricing-financing__consultation { position: relative; isolation: isolate; overflow: hidden; }
+.pricing-financing__consultation::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, var(--brand-navy) 36%, transparent 48%); mask-image: linear-gradient(to bottom, #000 35%, transparent 72%); pointer-events: none; }
+.pricing-financing__consultation-grid { display: grid; grid-template-columns: .85fr 1.15fr; align-items: center; gap: 40px; min-height: clamp(360px, 36vw, 520px); }
+.pricing-financing__consultation-copy h2 { font-size: var(--type-h1); line-height: var(--leading-h1); }
+.pricing-financing__consultation-copy h2 span { color: var(--brand-gold); }
+.pricing-financing__consultation-photo { position: absolute; inset: 0 -4% 0 auto; z-index: -2; display: block; width: 66%; height: 100%; object-fit: cover; object-position: left center; }
+.pricing-financing__consultation-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left center; }
+@media (min-width: 1025px) {
+  .pricing-financing__consultation-photo { width: 104%; }
+  .pricing-financing__consultation::before { background: linear-gradient(90deg, var(--brand-navy), transparent 30%); mask-image: none; }
+}
+@media (max-width: 1024px) {
+  .pricing-financing__hero { display: block; min-height: 0; }
+  .pricing-financing__hero-copy { width: 100%; max-width: none; }
+  .pricing-financing__hero-photo { position: static; display: block; width: min(100% - 48px, 1260px); max-height: 360px; height: auto; object-fit: contain; margin: 0 auto 28px; }
+  .pricing-financing__hero::before { display: none; }
+  .pricing-financing__offer-grid { gap: 32px; }
+  .pricing-financing__offer-includes { padding-left: 32px; }
+  .pricing-financing__consultation-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .pricing-financing__consultation-photo { right: 0; width: 62%; }
+  .pricing-financing__consultation-photo img { object-position: right center; }
+  .pricing-financing__consultation-copy h2 { font-size: var(--type-h2); line-height: var(--leading-headline); }
+}
+@media (max-width: 680px) {
+  .pricing-financing__offer-summary h2 { font-size: clamp(30px, 10cqi, 42px); }
+  .pricing-financing .pricing-financing__offer-price { font-size: clamp(64px, 23.8cqi, 102px); margin-top: 20px; }
+  .pricing-financing__container { width: min(100% - 40px, 500px); }
+  .pricing-financing__hero { display: block; min-height: 0; }
+  .pricing-financing__hero-copy { width: 100%; }
+  .pricing-financing__hero-photo { position: static; width: min(100% - 40px, 500px); height: auto; margin: 0 auto 28px; display: block; }
+  .pricing-financing__hero::before { display: none; }
+  .pricing-financing__offer-grid, .pricing-financing__consultation-grid { grid-template-columns: 1fr; gap: 32px; }
+  .pricing-financing__consultation { padding-bottom: 0; }
+  .pricing-financing__consultation-grid { min-height: 0; }
+  .pricing-financing__consultation::before { display: none; }
+  .pricing-financing__consultation-photo { position: relative; inset: auto; width: 100%; height: auto; margin-top: 32px; mask-image: none; }
+  .pricing-financing__consultation-photo img { height: auto; aspect-ratio: 1116 / 866; object-fit: cover; object-position: right center; }
+  .pricing-financing__offer-includes { border-left: 0; border-top: 1px solid var(--brand-gold); padding: 28px 0 0; }
+  .pricing-financing__cta { width: 100%; }
+  .pricing-financing__table tbody th, .pricing-financing__table td { padding: 16px; }
+  .pricing-financing__table-scroll { overflow: visible; }
+  .pricing-financing__table { min-width: 0; display: block; }
+  .pricing-financing__table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .pricing-financing__table tbody { display: grid; gap: 24px; }
+  .pricing-financing__table tbody tr { display: grid; border: 1px solid var(--brand-gold); }
+  .pricing-financing__table tbody th { display: block; background: var(--brand-navy); color: var(--brand-white); text-align: center; border: 0; }
+  .pricing-financing__table td { display: block; border: 0; }
+  .pricing-financing__table td::before { content: attr(data-label); display: block; margin-bottom: 12px; font-size: var(--type-label); font-weight: var(--weight-bold); }
+  .pricing-financing__table td:last-child { border-top: 1px solid var(--brand-gold); }
+  .pricing-financing__design { height: 180px; }
+  .pricing-financing__offer-grid > *, .pricing-financing__consultation-grid > * { min-width: 0; }
+  .pricing-financing__cta { box-sizing: border-box; max-width: 100%; }
+  .pricing-financing h1, .pricing-financing h2, .pricing-financing h3 { overflow-wrap: anywhere; }
+}
+@media (max-width: 360px) { .pricing-financing__container { width: calc(100% - 32px); } }
+@media (prefers-reduced-motion: reduce) { .pricing-financing__cta { transition: none; } }

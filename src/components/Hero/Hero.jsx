@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../../assets/hero.png";
 import video1 from "../../assets/IV/iv-tarkesh.mp4";
 import "./Hero.css";
@@ -17,6 +18,7 @@ function PlayIcon() {
 }
 
 function Hero() {
+  const navigate = useNavigate();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const modalContentRef = useRef(null);
@@ -131,6 +133,7 @@ function Hero() {
           <button
             className="hero__primary-cta"
             type="button"
+            onClick={() => navigate('/contact/schedule-consultation')}
           >
             BOOK AN APPOINTMENT
           </button>

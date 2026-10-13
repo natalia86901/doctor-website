@@ -1,4 +1,3 @@
-import { navItems } from '../../components/Navbar/navConfig'
 import hero from '../../assets/dentures/hero-lab.png'
 import traditional from '../../assets/dentures/foodComparison/traditional-denture-transparent.png'
 import traditional1 from '../../assets/dentures/foodComparison/traditional-denture-customized.png'
@@ -23,7 +22,7 @@ import after3 from '../../assets/dentures/actualPatientJourney/After3.png'
 import './Dentures.css'
 import PatientComparison from './PatientJourneyComparison'
 
-const officeContact = navItems.find(({ path }) => path === '/contact').children.find(({ href }) => href?.startsWith('tel:')).href
+const officeContact = '/contact/schedule-consultation'
 
 function Consultation({ children = 'Book a Free Consultation', variant = 'light' }) {
   return <a className={'dentures__cta dentures__cta--on-' + variant} href={officeContact}>

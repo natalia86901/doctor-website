@@ -32,19 +32,21 @@
 
 .tarkesh h1 {
   font-size: var(--type-h1);
-  line-height: var(--leading-h1);
-  text-transform: uppercase;
+  line-height: var(--leading-headline);
+  text-transform: none;
 }
 
 .tarkesh h2 {
   font-size: var(--type-h2);
   line-height: var(--leading-headline);
+  text-transform: none;
 }
 
 .tarkesh h3 {
   font-size: var(--type-card);
   line-height: var(--leading-card);
   font-weight: var(--weight-bold);
+  text-transform: none;
 }
 
 .tarkesh p {
@@ -99,9 +101,9 @@
 .tarkesh .tarkesh__hero-copy h1 {
   margin-top: 12px;
   max-width: 100%;
-  font-size: clamp(30px, 2.7vw, 40px);
-  line-height: 1.12;
-  letter-spacing: -0.025em;
+  font-size: var(--type-h1);
+  line-height: var(--leading-headline);
+  letter-spacing: 0;
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
@@ -365,16 +367,10 @@
 
 .tarkesh .tarkesh__beyond h2 {
   margin-top: 14px;
-  text-transform: uppercase;
 }
 
 .tarkesh .tarkesh__beyond-copy > p:not(.tarkesh__eyebrow) {
   margin-top: 18px;
-}
-
-.tarkesh .tarkesh__beyond h3 {
-  margin-top: 36px;
-  text-transform: uppercase;
 }
 
 /* Interactive states */
@@ -458,8 +454,8 @@
   }
 
   .tarkesh .tarkesh__hero-copy h1 {
-    font-size: clamp(30px, 3.8vw, 38px);
-    line-height: 1.14;
+    font-size: var(--type-h1);
+    line-height: var(--leading-headline);
   }
 
   .tarkesh .tarkesh__hero-copy > p:not(.tarkesh__eyebrow) {
@@ -529,9 +525,9 @@
   }
 
   .tarkesh .tarkesh__hero-copy h1 {
-    font-size: clamp(28px, 7.6vw, 36px);
-    line-height: 1.16;
-    letter-spacing: -0.02em;
+    font-size: var(--type-h1);
+    line-height: var(--leading-headline);
+    letter-spacing: 0;
   }
 
   .tarkesh .tarkesh__hero-copy > .tarkesh__eyebrow {
@@ -579,14 +575,14 @@
   }
 
   .tarkesh h2 {
-    font-size: min(var(--type-h2), 32px);
-    line-height: 1.2;
+    font-size: var(--type-h2);
+    line-height: var(--leading-headline);
     overflow-wrap: break-word;
   }
 
   .tarkesh h3 {
-    font-size: min(var(--type-card), 22px);
-    line-height: 1.35;
+    font-size: var(--type-card);
+    line-height: var(--leading-card);
   }
 
   .tarkesh .tarkesh__promise h2 {
@@ -620,7 +616,7 @@
   }
 
   .tarkesh .tarkesh__hero-copy h1 {
-    font-size: 27px;
+    font-size: var(--type-h1);
   }
 }
 

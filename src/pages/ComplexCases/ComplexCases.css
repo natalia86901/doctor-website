@@ -52,6 +52,11 @@
 .complex-cases__video-cta:focus-visible { outline: 3px solid var(--brand-gold); outline-offset: 5px; }
 .complex-cases__play { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: var(--brand-gold); }
 .complex-cases__play svg { width: 12px; height: 14px; margin-left: 2px; fill: var(--brand-white); }
+.complex-cases__video-dialog { width: min(960px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 44px 12px 12px; border: 0; border-radius: 6px; background: var(--brand-navy); color: var(--brand-white); }
+.complex-cases__video-dialog::backdrop { background: rgb(0 0 0 / 75%); }
+.complex-cases__video-dialog video { display: block; width: 100%; max-height: calc(100dvh - 100px); }
+.complex-cases__video-close { position: absolute; right: 4px; top: 0; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; font-size: 32px; cursor: pointer; }
+.complex-cases__video-close:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: -4px; }
 .complex-cases__cta {
   display: inline-flex;
   align-items: center;

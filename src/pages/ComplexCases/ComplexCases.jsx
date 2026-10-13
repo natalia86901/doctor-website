@@ -1,14 +1,14 @@
+import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { navItems } from '../../components/Navbar/navConfig'
 import monitor from '../../assets/compleCases/advanced-care-monitor.jpg'
 import standardCase from '../../assets/complexCases/standard-case.jpg'
 import complexCase from '../../assets/complexCases/complex-case.jpg'
 import patientBefore from '../../assets/complexCases/patient-before.jpg'
 import patientAfter from '../../assets/complexCases/patient-after.jpg'
+import treatmentVideo from '../../assets/complexCases/tarkesh-steak.mp4'
 import './ComplexCases.css'
 
-const officeContact = navItems.find(({ path }) => path === '/contact')
-  .children.find(({ href }) => href?.startsWith('tel:')).href
+const officeContact = '/contact/schedule-consultation'
 
 function ConsultationLink({ children = 'Discuss My Case', variant = '' }) {
   return (
@@ -36,6 +36,20 @@ const cases = [
 ]
 
 export default function ComplexCases() {
+  const dialogRef = useRef(null)
+  const videoRef = useRef(null)
+
+  function openTreatmentVideo() {
+    dialogRef.current.showModal()
+    videoRef.current.play().catch(() => {
+      // Native controls remain available if autoplay is blocked.
+    })
+  }
+
+  function pauseTreatmentVideo() {
+    videoRef.current.pause()
+  }
+
   return (
     <main className="complex-cases">
       <section className="complex-cases__hero" aria-labelledby="complex-cases-title">
@@ -49,13 +63,17 @@ export default function ComplexCases() {
               Discuss My Case
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" focusable="false"><path d="M3 12h17M13 5l7 7-7 7" /></svg>
             </a>
-            <Link className="complex-cases__video-cta" to="/why-dr-tarkesh/meet-dr-tarkesh#patient-story-video">
+            <button className="complex-cases__video-cta" type="button" onClick={openTreatmentVideo} aria-haspopup="dialog">
               <span>See How We Treat Complex Cases</span>
               <span className="complex-cases__play" aria-hidden="true"><svg viewBox="0 0 12 14" focusable="false"><path d="m1 1 10 6-10 6V1Z" /></svg></span>
-            </Link>
+            </button>
           </div>
         </div>
         <img className="complex-cases__monitor" src={monitor} alt="Dental planning monitor displaying a skull and implant visualization, with a clinician pointing to the screen" width="1672" height="941" fetchPriority="high" />
+        <dialog ref={dialogRef} className="complex-cases__video-dialog" aria-label="See How We Treat Complex Cases" onClose={pauseTreatmentVideo} onCancel={pauseTreatmentVideo}>
+          <button type="button" className="complex-cases__video-close" onClick={() => dialogRef.current.close()} aria-label="Close video">×</button>
+          <video ref={videoRef} src={treatmentVideo} controls playsInline preload="none" aria-label="Dr. Tarkesh’s complex cases treatment video" />
+        </dialog>
       </section>
 
       <section className="complex-cases__section" aria-labelledby="complex-cases-options">

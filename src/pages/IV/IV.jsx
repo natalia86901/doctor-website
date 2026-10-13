@@ -1,18 +1,16 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { navItems } from '../../components/Navbar/navConfig'
 import heroImage from '../../assets/IV/iv-hero.png'
 import patientImage from '../../assets/IV/iv-patient-consultation.png'
-import videoSource from '../../assets/IV/iv-tarkesh.mp4'
-import videoPoster from '../../assets/IV/iv-video-poster.jpg'
+import videoSource from '../../assets/IV/sedation-dentistry.mp4'
+import videoPoster from '../../assets/IV/sedation-dentistry-poster.jpg'
 import anxietyIcon from '../../assets/IV/iv.svg'
 import toothIcon from '../../assets/IV/iv-tooth.svg'
 import './IV.css'
 
 // Replace this source when the hosted video is available.
 const sedationVideo = { src: videoSource, poster: videoPoster }
-const consultationPhone = navItems.find(({ path }) => path === '/contact')
-  .children.find(({ href }) => href?.startsWith('tel:')).href
+const consultationPhone = '/contact/schedule-consultation'
 
 function CareIcon({ kind = 'tooth' }) {
   return (
