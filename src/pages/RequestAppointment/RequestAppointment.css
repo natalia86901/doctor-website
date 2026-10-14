@@ -20,8 +20,9 @@
 .appointment__field input::placeholder, .appointment__field textarea::placeholder { color: #777b84; opacity: 1; }
 .appointment__field input:focus-visible, .appointment__field textarea:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: 2px; }
 .appointment__submit { display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%; min-height: 58px; padding: 16px 20px; border: 1px solid var(--brand-navy); border-radius: 2px; background: var(--brand-navy); color: var(--brand-white); font-family: inherit; font-size: var(--type-cta); font-weight: var(--weight-bold); line-height: var(--leading-cta); letter-spacing: var(--tracking-cta); cursor: pointer; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease; }
-@media (hover: hover) and (pointer: fine) { .appointment__submit:hover:not(:disabled) { background: var(--brand-gray); border-color: var(--brand-gray); } }
-.appointment__submit:active:not(:disabled) { background: var(--brand-gold); color: var(--brand-navy); border-color: var(--brand-gold); }
+/* Match the homepage CTA palette in cta-states.css. */
+@media (hover: hover) and (pointer: fine) { .appointment__submit:hover:not(:disabled) { background: var(--brand-gold); color: var(--brand-navy); border-color: var(--brand-gold); } }
+.appointment__submit:active:not(:disabled) { background: linear-gradient(110deg, #ac8037, #cda75d, #b68a42); color: var(--brand-white); border-color: var(--brand-gold); }
 .appointment__submit:focus-visible { outline: 3px solid var(--brand-gold); outline-offset: 4px; }
 .appointment__submit:disabled { opacity: .65; cursor: not-allowed; }
 .appointment .appointment__privacy { display: flex; gap: 12px; margin-top: 24px; color: var(--brand-gray, #62656b); font-size: var(--type-caption); }
