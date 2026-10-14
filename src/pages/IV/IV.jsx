@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import heroImage from '../../assets/IV/iv-hero.png'
+import heroImage from '../../assets/IV/iv-hero-1.png'
 import patientImage from '../../assets/IV/iv-patient-consultation.png'
 import videoSource from '../../assets/IV/sedation-dentistry.mp4'
 import videoPoster from '../../assets/IV/sedation-dentistry-poster.jpg'
@@ -60,7 +60,7 @@ function IV() {
   return (
     <main className="iv">
       <section className="iv__section iv__hero" aria-labelledby="iv-title">
-        <img className="iv__hero-image" src={heroImage} alt="Dr. Tarkesh discussing dental care with a patient" fetchPriority="high" />
+        <img className="iv__hero-image" src={heroImage} alt="Dr. Tarkesh discussing dental care with a patient, with a People Not Just Teeth book on the table" width="2910" height="1440" fetchPriority="high" />
         <div className="iv__inner">
           <div className="iv__hero-copy">
             <p className="iv__eyebrow iv__eyebrow--line">IV Sedation</p>

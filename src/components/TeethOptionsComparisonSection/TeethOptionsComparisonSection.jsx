@@ -94,7 +94,7 @@ function TeethOptionsComparisonSection() {
             image={implantsStabilizedRemovable}
             imageAlt="Implant-stabilized removable upper denture supported by dental implants"
             variant="removable"
-            linkTo="/dentures-and-implants/implant-supported-dentures"
+            linkTo="/patient-resources/pricing-financing"
             linkLabel="EXPLORE REMOVABLE"
           />
           <OptionCard
@@ -106,7 +106,7 @@ function TeethOptionsComparisonSection() {
             image={fixedFullArch}
             imageAlt="Fixed full-arch upper implant-supported prosthetic teeth"
             variant="fixed"
-            linkTo="/dentures-and-implants/dental-implants"
+            linkTo="/patient-resources/pricing-financing"
             linkLabel="EXPLORE FIXED TEETH"
           />
         </div>

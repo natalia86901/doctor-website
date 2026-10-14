@@ -1,5 +1,4 @@
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
 import monitor from '../../assets/compleCases/advanced-care-monitor.jpg'
 import standardCase from '../../assets/complexCases/standard-case.jpg'
 import complexCase from '../../assets/complexCases/complex-case.jpg'
@@ -96,7 +95,6 @@ export default function ComplexCases() {
             ))}
           </div>
           <div className="complex-cases__actions">
-            <Link className="complex-cases__cta" to="/services/implants">Explore Implant Options</Link>
             <ConsultationLink variant="outline">Make an Appointment</ConsultationLink>
           </div>
         </div>

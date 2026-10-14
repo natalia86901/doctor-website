@@ -21,7 +21,6 @@ export const navItems = [
     path: '/why-dr-tarkesh',
     children: [
       { label: 'Meet Dr. Tarkesh', path: '/why-dr-tarkesh/meet-dr-tarkesh' },
-      { label: 'Our Approach', path: '/why-dr-tarkesh/our-approach' },
     ],
   },
   {
@@ -35,7 +34,7 @@ export const navItems = [
     label: 'Contact',
     path: '/contact',
     children: [
-      { label: 'Call Our Office', href: 'tel:6611234567' },
+      { label: 'Call Our Office', href: 'tel:6612316323' },
       { label: 'Location & Directions', path: '/contact/location-directions' },
     ],
   },

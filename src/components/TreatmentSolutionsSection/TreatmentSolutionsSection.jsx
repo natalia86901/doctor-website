@@ -17,7 +17,7 @@ const treatments = [
     image: treatmentSolutionImage1,
     imageAlt: "Full-arch dental implant treatment",
     icon: oneDayTeethIcon,
-    path: "/dentures-and-implants/full-partial-dentures",
+    path: "/services/dentures",
   },
   {
     title: "Long-Term Solutions",
@@ -25,7 +25,7 @@ const treatments = [
     image: treatmentSolutionImage2,
     imageAlt: "Long-term dental implant solution",
     icon: longTermSolutionsIcon,
-    path: "/dentures-and-implants/dental-implants",
+    path: "/services/implants",
   },
   {
     title: "Complex Cases & Second Opinions",
@@ -34,7 +34,7 @@ const treatments = [
     image: treatmentSolutionImage3,
     imageAlt: "Advanced dental implant consultation",
     icon: complexCasesIcon,
-    path: "/patient-results/complex-cases",
+    path: "/services/complex-cases",
   },
 ];
 

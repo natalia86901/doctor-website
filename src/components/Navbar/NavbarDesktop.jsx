@@ -87,9 +87,9 @@ function NavbarDesktop() {
         </nav>
 
         <div className="desktop-header__actions">
-          <a className="desktop-header__phone" href="tel:6611234567" aria-label="Call 661 123 4567">
+          <a className="desktop-header__phone" href="tel:6612316323" aria-label="Call 661 231 6323">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" /></svg>
-            <span>661.123.4567</span>
+            <span>661.231.6323</span>
           </a>
           <Link className="desktop-header__cta" to="/contact/schedule-consultation">Book a Consultation</Link>
         </div>

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import VideoButton from '../VideoButton/VideoButton'
+import videoSource from '../../assets/IV/iv-tarkesh.mp4'
 import expertiseDoctor from '../../assets/dentalImplants/ExpertiseDoctor.png'
 import './DentalImplantsExpertiseSection.css'
 
@@ -110,12 +111,13 @@ function DentalImplantsExpertiseSection() {
           “It’s not just a dental change.”
         </blockquote>
 
-        <Link
+        <VideoButton
           className="dental-implants-expertise__cta"
-          to="/patient-results/before-after"
+          src={videoSource}
+          title="Dr. Tarkesh discusses dentures and dental implants"
         >
           SEE WHAT’S POSSIBLE
-        </Link>
+        </VideoButton>
       </div>
     </section>
   )

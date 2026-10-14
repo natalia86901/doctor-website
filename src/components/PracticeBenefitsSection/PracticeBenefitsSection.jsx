@@ -50,13 +50,13 @@ function PracticeBenefitsSection() {
         </div>
 
         <div className="practice-benefits__actions">
-          <Link className="practice-benefits__primary-cta" to="/contact/schedule-consultation">
+          <a className="practice-benefits__primary-cta" href="tel:6612316323">
             BOOK YOUR FREE CONSULTATION
-          </Link>
+          </a>
 
           <Link
             className="practice-benefits__secondary-link"
-            to="/dentures-and-implants/dental-implants"
+            to="/services/dentures"
           >
             <span>How Same-Day Teeth Work</span>
             <span className="practice-benefits__arrow" aria-hidden="true">

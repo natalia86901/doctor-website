@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom'
+import VideoButton from '../VideoButton/VideoButton'
+import videoSource from '../../assets/IV/iv-tarkesh.mp4'
 import patientStoryPreview from '../../assets/dentalImplants/patientStoryPreview.png'
 import './DentalImplantsPatientStorySection.css'
-
-const patientStoryVideoPath = '/why-dr-tarkesh/meet-dr-tarkesh#patient-story-video'
 
 function DentalImplantsPatientStorySection() {
   return (
@@ -11,10 +10,12 @@ function DentalImplantsPatientStorySection() {
       aria-labelledby="dental-implants-patient-story-heading"
     >
       <div className="dental-implants-patient-story__inner">
-        <Link
+        <VideoButton
           className="dental-implants-patient-story__preview-link"
-          to={patientStoryVideoPath}
-          aria-label="Watch the patient story with Dr. Tarkesh"
+          src={videoSource}
+          poster={patientStoryPreview}
+          title="Dr. Tarkesh discusses dentures and dental implants"
+          label="Watch the patient story with Dr. Tarkesh"
         >
           <img
             className="dental-implants-patient-story__image"
@@ -24,7 +25,7 @@ function DentalImplantsPatientStorySection() {
           <span className="dental-implants-patient-story__play" aria-hidden="true">
             <span className="dental-implants-patient-story__play-icon" />
           </span>
-        </Link>
+        </VideoButton>
 
         <div className="dental-implants-patient-story__content">
           <p className="dental-implants-patient-story__eyebrow">PATIENT STORY</p>

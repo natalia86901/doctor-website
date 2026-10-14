@@ -22,11 +22,11 @@ import after3 from '../../assets/dentures/actualPatientJourney/After3.png'
 import './Dentures.css'
 import PatientComparison from './PatientJourneyComparison'
 
-const officeContact = '/contact/schedule-consultation'
+const officeContact = 'tel:6612316323'
 
-function Consultation({ children = 'Book a Free Consultation', variant = 'light' }) {
-  return <a className={'dentures__cta dentures__cta--on-' + variant} href={officeContact}>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" /></svg>
+function Consultation({ children = 'Book a Free Consultation', variant = 'light', href = officeContact }) {
+  return <a className={'dentures__cta dentures__cta--on-' + variant} href={href}>
+    {href.startsWith('tel:') && <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2Z" /></svg>}
     {children}<span aria-hidden="true">→</span>
   </a>
 }
@@ -121,7 +121,7 @@ function FoodComparison() {
       <p className="dentures__food-label">{row === 2 ? 'Enjoy your favorite foods again' : 'Commonly enjoyed foods'}</p>
       <ul className="dentures__foods">{option.foods.map((food, col) => <li key={food}><span className="dentures__food-icon" aria-hidden="true" style={{ backgroundPosition: col * 100 / 3 + '% ' + row * 50 + '%' }} /><span>{food}</span></li>)}</ul>
     </article>)}</div>
-    <div className="dentures__actions"><Consultation>Schedule a Consultation</Consultation><p className="dentures__eyebrow">Discover what may be possible for you.</p></div>
+    <div className="dentures__actions"><Consultation href="/contact/schedule-consultation">Schedule a Consultation</Consultation><p className="dentures__eyebrow">Discover what may be possible for you.</p></div>
   </div></section>
 }
 

@@ -17,8 +17,8 @@ const quickLinks = [
   ['Complex Cases', '/services/complex-cases'],
   ['Patient Results', '/smile-gallery/patient-results'],
   ['Meet Dr. Tarkesh', '/why-dr-tarkesh/meet-dr-tarkesh'],
-  ['New Patients', '/patient-resources/new-patient-forms'],
-  ['Contact', '/contact'],
+  ['New Patients', '/contact/schedule-consultation'],
+  ['Contact', '/contact/location-directions'],
 ]
 
 const routesWithoutTopDivider = new Set([
@@ -79,9 +79,9 @@ function Footer() {
 
               <a
                 className="site-footer__contact-link"
-                href="tel:6611234567"
+                href="tel:6612316323"
               >
-                (661) 123-4567
+                (661) 231-6323
               </a>
 
               <a

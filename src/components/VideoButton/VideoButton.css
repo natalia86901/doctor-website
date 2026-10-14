@@ -1,0 +1,5 @@
+.video-dialog { width: min(960px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 44px 12px 12px; border: 0; border-radius: 6px; background: var(--brand-navy); color: var(--brand-white); }
+.video-dialog::backdrop { background: rgb(0 0 0 / 75%); }
+.video-dialog video { display: block; width: 100%; max-height: calc(100dvh - 100px); }
+.video-dialog__close { position: absolute; right: 4px; top: 0; width: 44px; height: 44px; border: 0; background: transparent; color: inherit; font-size: 32px; cursor: pointer; }
+.video-dialog__close:focus-visible { outline: 2px solid var(--brand-gold); outline-offset: -4px; }

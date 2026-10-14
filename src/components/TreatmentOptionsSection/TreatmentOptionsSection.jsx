@@ -10,19 +10,19 @@ const treatmentOptions = [
     title: "Dentures",
     image: treatmentOptionsImage1,
     imageAlt: "Full denture restoration",
-    path: "/dentures-and-implants/full-partial-dentures",
+    path: "/services/dentures",
   },
   {
     title: "Implants",
     image: treatmentOptionsImage2,
     imageAlt: "Full-arch implant-supported restoration",
-    path: "/dentures-and-implants/dental-implants",
+    path: "/services/implants",
   },
   {
     title: "Complex Cases",
     image: treatmentOptionsImage3,
     imageAlt: "Complex dental implant reconstruction",
-    path: "/patient-results/complex-cases",
+    path: "/services/complex-cases",
   },
 ];
 
