@@ -6,18 +6,18 @@ DirectoryIndex index.html
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # --- Force HTTPS (uncomment once the SSL certificate is active) ---
-  # RewriteCond %{HTTPS} off
-  # RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  # RewriteRule ^ https://bdidental.com%{REQUEST_URI} [L,R=301]
+  # Force HTTPS on the canonical host
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://bdidental.com%{REQUEST_URI} [L,R=301]
 
   # www.bdidental.com -> bdidental.com
   RewriteCond %{HTTP_HOST} ^www\.bdidental\.com$ [NC]
-  RewriteRule ^ %{REQUEST_SCHEME}://bdidental.com%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://bdidental.com%{REQUEST_URI} [L,R=301]
 
   # Any other domain pointed at this hosting -> bdidental.com
   RewriteCond %{HTTP_HOST} (^|\.)bakersfielddenturesandimplants\.com$ [NC]
-  RewriteRule ^ %{REQUEST_SCHEME}://bdidental.com%{REQUEST_URI} [L,R=301]
+  RewriteRule ^ https://bdidental.com%{REQUEST_URI} [L,R=301]
 
   # Never serve git metadata
   RewriteRule (^|/)\.git - [F,L]
