@@ -4,7 +4,7 @@
  * Receives the "Request an Appointment" form and emails it to the clinic.
  */
 
-const RECIPIENT     = 'INFO@3D-DENTISTRY.COM';
+const RECIPIENT     = 'grishina.ermashkevich@gmail.com';
 const FROM_ADDRESS  = 'no-reply@bdidental.com';
 const FROM_NAME     = 'Bakersfield Dentures & Implants Website';
 const ALLOWED_HOSTS = ['bdidental.com', 'www.bdidental.com', 'localhost', '127.0.0.1'];
