@@ -1,7 +1,4 @@
-import { useState } from 'react'
 import './RequestAppointment.css'
-
-const ENDPOINT = '/contact.php'
 
 function BenefitIcon({ kind }) {
   return <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -16,29 +13,6 @@ const benefits = [
 ]
 
 export default function RequestAppointment() {
-  const [status, setStatus] = useState('idle') // idle | sending | success | error
-  const [errorMessage, setErrorMessage] = useState('')
-
-  async function handleSubmit(event) {
-    event.preventDefault()
-    if (status === 'sending') return
-    const form = event.currentTarget
-    setStatus('sending')
-    setErrorMessage('')
-    try {
-      const response = await fetch(ENDPOINT, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-      const result = await response.json().catch(() => ({}))
-      if (!response.ok || !result.ok) throw new Error(result.error || 'Something went wrong. Please try again or call us.')
-      form.reset()
-      setStatus('success')
-    } catch (error) {
-      setErrorMessage(error instanceof TypeError ? 'Network error. Please check your connection and try again.' : error.message)
-      setStatus('error')
-    }
-  }
-
-  const sending = status === 'sending'
-
   return <main className="appointment">
     <div className="appointment__layout">
       <section className="appointment__intro" aria-labelledby="appointment-title">
@@ -51,20 +25,13 @@ export default function RequestAppointment() {
           <div><h3>{title}</h3><p>{copy}</p></div>
         </li>)}</ul>
       </section>
-      <form className="appointment__form" onSubmit={handleSubmit} aria-label="Request an Appointment" aria-busy={sending}>
+      <form className="appointment__form" onSubmit={event => event.preventDefault()} aria-label="Request an Appointment">
         <div className="appointment__field"><label htmlFor="appointment-name">Full Name <span>(Required) *</span></label><input id="appointment-name" name="name" autoComplete="name" placeholder="Your full name" required maxLength={150} /></div>
         <div className="appointment__field"><label htmlFor="appointment-phone">Phone Number <span>(Required) *</span></label><input id="appointment-phone" name="phone" type="tel" autoComplete="tel" placeholder="(661) 123-4567" required maxLength={30} /></div>
         <div className="appointment__field"><label htmlFor="appointment-email">Email Address <span>(Required) *</span></label><input id="appointment-email" name="email" type="email" autoComplete="email" placeholder="you@example.com" required maxLength={254} /></div>
         <div className="appointment__field"><label htmlFor="appointment-notes">Additional Notes <span>(Optional)</span></label><textarea id="appointment-notes" name="message" placeholder="Tell us more about your needs…" rows={4} maxLength={3000} /></div>
         <input type="checkbox" name="botcheck" className="appointment__honeypot" tabIndex={-1} aria-hidden="true" />
-        <button className="appointment__submit" type="submit" disabled={sending}>
-          {sending && <span className="appointment__spinner" aria-hidden="true" />}
-          {sending ? 'Sending…' : 'Send Appointment Request'}
-        </button>
-        <p className={`appointment__status appointment__status--${status}`} role="status" aria-live="polite">
-          {status === 'success' && 'Thank you! Your request has been sent. Our team will contact you shortly to confirm your visit.'}
-          {status === 'error' && errorMessage}
-        </p>
+        <button className="appointment__submit" type="submit" disabled>Send Appointment Request</button>
         <p className="appointment__privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3M5 10h14v12H5Z" fill="none" stroke="currentColor" strokeWidth="2" /></svg><span>Your information is safe and will only be used to contact you about your appointment.</span></p>
 
       </form>

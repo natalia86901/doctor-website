@@ -27,9 +27,6 @@
 .appointment .appointment__privacy { display: flex; gap: 12px; margin-top: 24px; color: var(--brand-gray, #62656b); font-size: var(--type-caption); }
 .appointment__privacy svg { width: 20px; height: 24px; flex-shrink: 0; color: var(--brand-gold); }
 .appointment .appointment__status { margin-top: 16px; font-size: var(--type-caption); }
-.appointment .appointment__status:empty { display: none; }
-.appointment .appointment__status--success { color: var(--brand-navy); font-weight: var(--weight-bold); }
-.appointment .appointment__status--error { color: #b3261e; }
 .appointment__honeypot { display: none; }
 .appointment__spinner { width: 16px; height: 16px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: appointment-spin 800ms linear infinite; }
 @keyframes appointment-spin { to { transform: rotate(360deg); } }
