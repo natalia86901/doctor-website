@@ -4,4 +4,4 @@ deployment:
     - export DEPLOYPATH=$HOME/public_html
     - /bin/rm -rf $DEPLOYPATH/assets
     - /bin/cp -R assets $DEPLOYPATH/
-    - /bin/cp index.html .htaccess $DEPLOYPATH/
+    - /bin/cp index.html .htaccess contact.php $DEPLOYPATH/
