@@ -106,16 +106,44 @@ $headers = [
     'X-Mailer: bdidental-contact',
 ];
 
-$sent = mail(
-    RECIPIENT,
-    '=?UTF-8?B?' . base64_encode($subject) . '?=',
-    $body,
-    implode("\r\n", $headers),
-    '-f' . FROM_ADDRESS
-);
+/**
+ * Hand the message to the server's sendmail directly, with a hard timeout.
+ * (PHP's mail() hangs indefinitely on this GoDaddy server, while calling
+ * sendmail ourselves returns in about a second.)
+ */
+function sendViaSendmail(string $message, int $timeout = 15): bool {
+    $cmd = '/usr/sbin/sendmail -t -i -f' . escapeshellarg(FROM_ADDRESS);
+    $proc = proc_open($cmd, [0 => ['pipe', 'r'], 1 => ['pipe', 'w'], 2 => ['pipe', 'w']], $pipes);
+    if (!is_resource($proc)) return false;
+    fwrite($pipes[0], $message);
+    fclose($pipes[0]);
+    stream_set_blocking($pipes[1], false);
+    stream_set_blocking($pipes[2], false);
+    $start = microtime(true);
+    $stderr = '';
+    while (true) {
+        $status = proc_get_status($proc);
+        stream_get_contents($pipes[1]);
+        $stderr .= (string) stream_get_contents($pipes[2]);
+        if (!$status['running']) { $exit = $status['exitcode']; break; }
+        if (microtime(true) - $start > $timeout) { proc_terminate($proc, 9); $exit = -1; break; }
+        usleep(100000);
+    }
+    fclose($pipes[1]);
+    fclose($pipes[2]);
+    proc_close($proc);
+    if ($exit !== 0) error_log('contact.php: sendmail exit ' . $exit . ' ' . trim($stderr));
+    return $exit === 0;
+}
 
-if (!$sent) {
-    error_log('contact.php: mail() failed for submission from ' . $ip);
+$message = implode("\n", array_merge(
+    ['To: ' . RECIPIENT, 'Subject: =?UTF-8?B?' . base64_encode($subject) . '?='],
+    $headers,
+    ['', $body, '']
+));
+
+if (!sendViaSendmail($message)) {
+    error_log('contact.php: sending failed for submission from ' . $ip);
     respond(500, ['ok' => false, 'error' => 'Sorry, we could not send your request. Please call us instead.']);
 }
 
