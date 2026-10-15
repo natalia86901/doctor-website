@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import palateFreeCoverage from '../../assets/dentalImplants/dentureComparison/palateFreeCoverage.PNG'
-import traditionalFullCoverage from '../../assets/dentalImplants/dentureComparison/traditionalFullCoverage.PNG'
+import { useRef, useState } from 'react'
+import palateFreeCoverage from '../../assets/dentalImplants/client-oct14/without-palate-transparent.png'
+import traditionalFullCoverage from '../../assets/dentalImplants/client-oct14/traditional-coverage-transparent.png'
 import './DentureDesignComparisonSection.css'
 
 const traditionalFeatures = [
@@ -68,10 +68,43 @@ function FeatureGroup({ features, tone, title, isVisible }) {
 }
 
 function DentureDesignComparisonSection() {
-  const [activeDesign, setActiveDesign] = useState('compare')
+  const [position, setPosition] = useState(50)
+  const stageRef = useRef(null)
+  const handleRef = useRef(null)
+  const pointerRef = useRef(null)
+  const activeDesign = position === 0 ? 'palateFree' : position === 100 ? 'traditional' : 'compare'
+
+  function updatePosition(clientX) {
+    const bounds = stageRef.current.getBoundingClientRect()
+    setPosition(Math.max(0, Math.min(100, (clientX - bounds.left) / bounds.width * 100)))
+  }
+
+  function startDrag(event) {
+    if (!event.isPrimary || event.button !== 0 || pointerRef.current !== null) return
+    pointerRef.current = event.pointerId
+    event.currentTarget.setPointerCapture(event.pointerId)
+    handleRef.current.focus({ preventScroll: true })
+    updatePosition(event.clientX)
+  }
+
+  function endDrag(event) {
+    if (pointerRef.current !== event.pointerId) return
+    pointerRef.current = null
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId)
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault()
+      setPosition(event.key === 'Home' ? 0 : 100)
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault()
+      setPosition(value => Math.max(0, Math.min(100, value + (event.key === 'ArrowLeft' ? -2 : 2))))
+    }
+  }
 
   return (
-    <section className={`denture-comparison denture-comparison--${activeDesign}`} aria-labelledby="denture-design-comparison-heading">
+    <section className={`denture-comparison denture-comparison--${activeDesign}`} style={{ '--comparison-position': `${position}%` }} aria-labelledby="denture-design-comparison-heading">
       <div className="denture-comparison__inner">
         <header className="denture-comparison__header">
           <h2 id="denture-design-comparison-heading" className="denture-comparison__title">
@@ -85,47 +118,49 @@ function DentureDesignComparisonSection() {
         <div className="denture-comparison__labels" aria-live="polite">
           <div className={`denture-comparison__label denture-comparison__label--traditional ${activeDesign === 'palateFree' ? 'denture-comparison__label--hidden' : ''}`} aria-hidden={activeDesign === 'palateFree'}>
             <h3>Traditional Full Coverage</h3>
-            <p>Traditional full coverage</p>
           </div>
           <div className={`denture-comparison__label denture-comparison__label--palate-free ${activeDesign === 'traditional' ? 'denture-comparison__label--hidden' : ''}`} aria-hidden={activeDesign === 'traditional'}>
             <h3>Without Palate Coverage</h3>
-            <p>Palate-free (horseshoe design)</p>
           </div>
         </div>
 
-        <div className="denture-comparison__stage">
+        <div ref={stageRef} className="denture-comparison__stage" onPointerDown={startDrag}
+          onPointerMove={event => { if (pointerRef.current === event.pointerId) updatePosition(event.clientX) }}
+          onPointerUp={endDrag} onPointerCancel={endDrag} onLostPointerCapture={() => { pointerRef.current = null }}>
+          <div className="denture-comparison__layer denture-comparison__layer--traditional" aria-hidden={activeDesign === 'palateFree'}>
           <img
             className="denture-comparison__image denture-comparison__image--traditional"
             src={traditionalFullCoverage}
             alt="Traditional full coverage implant-supported upper denture with palate coverage"
             aria-hidden={activeDesign === 'palateFree'}
+            draggable="false"
           />
+          </div>
+          <div className="denture-comparison__layer denture-comparison__layer--palate-free" aria-hidden={activeDesign === 'traditional'}>
           <img
             className="denture-comparison__image denture-comparison__image--palate-free"
             src={palateFreeCoverage}
             alt="Palate-free horseshoe-shaped implant-supported upper denture"
             aria-hidden={activeDesign === 'traditional'}
+            draggable="false"
           />
+          </div>
           <span className="denture-comparison__divider" aria-hidden="true" />
-          <div className="denture-comparison__controls" aria-label="Choose denture design">
-            <button type="button" aria-label="Show palate-free denture design" onClick={() => setActiveDesign('palateFree')}>
-              <span aria-hidden="true">‹</span>
-            </button>
-            <button type="button" aria-label="Show traditional full coverage denture design" onClick={() => setActiveDesign('traditional')}>
-              <span aria-hidden="true">›</span>
-            </button>
+          <div ref={handleRef} className="denture-comparison__controls" role="slider" tabIndex={0}
+            aria-label="Compare denture designs" aria-orientation="horizontal" aria-valuemin={0} aria-valuemax={100}
+            aria-valuenow={Math.round(position)} aria-valuetext={`${Math.round(position)}% Traditional Full Coverage, ${100 - Math.round(position)}% Without Palate Coverage`}
+            onKeyDown={handleKeyDown}>
+            <span className="denture-comparison__handle-circle" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 6-6 6 6 6M15 6l6 6-6 6" /></svg>
+            </span>
           </div>
         </div>
 
         <div className="denture-comparison__features">
           <FeatureGroup features={traditionalFeatures} tone="traditional" title="Traditional Full Coverage" isVisible={activeDesign !== 'palateFree'} />
-          <FeatureGroup features={palateFreeFeatures} tone="palate-free" title="Palate-Free (Horseshoe Design)" isVisible={activeDesign !== 'traditional'} />
+          <FeatureGroup features={palateFreeFeatures} tone="palate-free" title="Without Palate Coverage" isVisible={activeDesign !== 'traditional'} />
         </div>
 
-        <footer className="denture-comparison__conclusion">
-          <h3>Both options are securely supported by implants<br />and customized for your needs</h3>
-          <p>Our goal is the same: to help you eat, speak, and smile with confidence and comfort.</p>
-        </footer>
       </div>
     </section>
   )

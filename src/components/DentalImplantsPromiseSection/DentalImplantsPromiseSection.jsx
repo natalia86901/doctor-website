@@ -1,4 +1,4 @@
-import promiseDoctorImage from '../../assets/dentalImplants/ourPromiseDoctor.png'
+import promiseDoctorImage from '../../assets/dentalImplants/client-oct14/our-promise.png'
 import './DentalImplantsPromiseSection.css'
 
 function DentalImplantsPromiseSection() {
@@ -25,15 +25,14 @@ function DentalImplantsPromiseSection() {
             your complete treatment continues beyond it.
           </p>
           <p className="dental-implants-promise__description">
-            Prosthetic treatment can take time. Our job is to make every stage
-            feel comfortable, considered and livable.
+            Dental treatment can take time. We value your time and work efficiently to make every stage feel comfortable, considered, and livable.
           </p>
         </div>
         <div className="dental-implants-promise__media">
           <img
             className="dental-implants-promise__image"
             src={promiseDoctorImage}
-            alt="Dentist standing in a modern dental treatment room with digital smile planning displayed on a monitor"
+            alt="Dr. Tarkesh standing with the dental practice team"
           />
         </div>
       </div>

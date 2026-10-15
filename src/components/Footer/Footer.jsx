@@ -86,9 +86,9 @@ function Footer() {
 
               <a
                 className="site-footer__contact-link"
-                href="mailto:INFO@3D-DENTISTRY.COM"
+                href="mailto:info@bdidental.com"
               >
-                INFO@3D-DENTISTRY.COM
+                info@bdidental.com
               </a>
             </address>
           </section>

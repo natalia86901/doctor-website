@@ -47,24 +47,31 @@
 
 .teeth-options-comparison__option {
   display: grid;
-  grid-template-rows: clamp(170px, 16vw, 230px) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
   min-width: 0;
 }
 
 .teeth-options-comparison__image-stage {
+  aspect-ratio: 1.5;
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   min-width: 0;
-  padding: 0 4%;
+  padding: 0;
 }
 
 .teeth-options-comparison__image {
   display: block;
-  width: min(88%, 430px);
-  height: 100%;
-  object-fit: contain;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  max-width: none;
+  height: auto;
 }
+.teeth-options-comparison__option--fixed .teeth-options-comparison__image { left: -100%; }
 
 .teeth-options-comparison__card {
   position: relative;
@@ -333,7 +340,7 @@
   }
 
   .teeth-options-comparison__option {
-    grid-template-rows: clamp(170px, 45vw, 230px) auto;
+    grid-template-rows: auto auto;
   }
 
   .teeth-options-comparison__card-header {

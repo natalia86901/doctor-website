@@ -4,14 +4,16 @@ import DentureDesignComparisonSection from '../../components/DentureDesignCompar
 import DentalImplantsPromiseSection from '../../components/DentalImplantsPromiseSection/DentalImplantsPromiseSection'
 import DentalImplantsPatientStorySection from '../../components/DentalImplantsPatientStorySection/DentalImplantsPatientStorySection'
 import TeethOptionsComparisonSection from '../../components/TeethOptionsComparisonSection/TeethOptionsComparisonSection'
+import DentalImplantsTransitionSection from '../../components/DentalImplantsTransitionSection/DentalImplantsTransitionSection'
 import './DentalImplantsPage.css'
 
 function DentalImplantsPage() {
   return (
-    <main>
+    <main className="dental-implants-page">
       <DentalImplantsHeroSection />
       <DentalImplantsExpertiseSection/>
       <DentureDesignComparisonSection />
+      <DentalImplantsTransitionSection />
       <DentalImplantsPromiseSection />
       <TeethOptionsComparisonSection />
       <DentalImplantsPatientStorySection />

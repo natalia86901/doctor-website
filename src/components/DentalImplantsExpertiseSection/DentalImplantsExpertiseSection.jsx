@@ -1,6 +1,6 @@
 import VideoButton from '../VideoButton/VideoButton'
-import videoSource from '../../assets/IV/iv-tarkesh.mp4'
-import expertiseDoctor from '../../assets/dentalImplants/ExpertiseDoctor.png'
+import videoSource from '../../assets/dentalImplants/client-oct14/swiss-tarkesh.mp4'
+import expertiseDoctor from '../../assets/dentalImplants/client-oct14/doctor-patient.png'
 import './DentalImplantsExpertiseSection.css'
 
 function DentalImplantsExpertiseSection() {
@@ -13,7 +13,7 @@ function DentalImplantsExpertiseSection() {
         <img
           className="dental-implants-expertise__image"
           src={expertiseDoctor}
-          alt="Dentist reviewing a digital full-arch implant treatment plan on a clinical monitor"
+          alt="Dr. Tarkesh explaining implant-supported teeth to a patient beside a dental display"
         />
 
         <div className="dental-implants-expertise__callouts">
@@ -114,7 +114,7 @@ function DentalImplantsExpertiseSection() {
         <VideoButton
           className="dental-implants-expertise__cta"
           src={videoSource}
-          title="Dr. Tarkesh discusses dentures and dental implants"
+          title="Dental implant options with Dr. Tarkesh"
         >
           SEE WHAT’S POSSIBLE
         </VideoButton>

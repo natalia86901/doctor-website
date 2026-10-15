@@ -1,5 +1,5 @@
 import VideoButton from '../VideoButton/VideoButton'
-import videoSource from '../../assets/IV/iv-tarkesh.mp4'
+import videoSource from '../../assets/dentalImplants/client-oct14/patient-result.mp4'
 import patientStoryPreview from '../../assets/dentalImplants/patientStoryPreview.png'
 import './DentalImplantsPatientStorySection.css'
 
@@ -14,7 +14,7 @@ function DentalImplantsPatientStorySection() {
           className="dental-implants-patient-story__preview-link"
           src={videoSource}
           poster={patientStoryPreview}
-          title="Dr. Tarkesh discusses dentures and dental implants"
+          title="Patient results and confidence after treatment"
           label="Watch the patient story with Dr. Tarkesh"
         >
           <img

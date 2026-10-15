@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
-import implantsStabilizedRemovable from '../../assets/dentalImplants/teethOptionsComparison/implantsStabilizedRemovable.png'
-import fixedFullArch from '../../assets/dentalImplants/teethOptionsComparison/fixedFullArch.png'
+import teethOptionsImage from '../../assets/dentalImplants/client-oct14/teeth-options.jpeg'
 import './TeethOptionsComparisonSection.css'
 
 const removableFeatures = [
@@ -91,7 +90,7 @@ function TeethOptionsComparisonSection() {
             title={<>Implant-Stabilized<br />Removable Teeth</>}
             description="More secure. More comfortable. More confidence than a traditional denture."
             features={removableFeatures}
-            image={implantsStabilizedRemovable}
+            image={teethOptionsImage}
             imageAlt="Implant-stabilized removable upper denture supported by dental implants"
             variant="removable"
             linkTo="/patient-resources/pricing-financing"
@@ -99,11 +98,11 @@ function TeethOptionsComparisonSection() {
           />
           <OptionCard
             badge="FIXED FULL-ARCH"
-            title={<>Fixed Full-Arch<br />Fixed Teeth</>}
+            title={<>Fixed Full-Arch<br />Permanent Teeth</>}
             description="Designed to feel more stable, more natural and more like your own teeth"
             emphasis="The closest experience to natural teeth"
             features={fixedFeatures}
-            image={fixedFullArch}
+            image={teethOptionsImage}
             imageAlt="Fixed full-arch upper implant-supported prosthetic teeth"
             variant="fixed"
             linkTo="/patient-resources/pricing-financing"

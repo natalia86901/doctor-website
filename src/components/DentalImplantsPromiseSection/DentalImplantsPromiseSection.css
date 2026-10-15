@@ -1,11 +1,13 @@
 .dental-implants-promise {
+  position: relative;
+  isolation: isolate;
   background: var(--brand-navy);
   color: #f7f4ed;
 }
 
 .dental-implants-promise__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(420px, 1fr);
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
   gap: clamp(28px, 3vw, 48px);
   width: min(100% - 48px, 1260px);
   min-height: clamp(520px, 40vw, 650px);
@@ -72,9 +74,12 @@
 }
 
 .dental-implants-promise__media {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   align-self: stretch;
   min-width: 0;
-  padding-left: clamp(24px, 3vw, 48px);
+  padding-left: 0;
 }
 
 .dental-implants-promise__image {
@@ -88,13 +93,18 @@
 
 @media (max-width: 1050px) {
   .dental-implants-promise__inner {
-    grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+    grid-template-columns: 1fr;
     gap: 24px;
+    min-height: 0;
   }
 
   .dental-implants-promise__media {
-    padding-left: 24px;
+    position: static;
+    padding-left: 0;
+    aspect-ratio: 1376 / 768;
   }
+  .dental-implants-promise__image { object-fit: contain; }
+  .dental-implants-promise__content { max-width: none; }
 }
 
 @media (max-width: 760px) {
@@ -111,7 +121,7 @@
   }
 
   .dental-implants-promise__media {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 1376 / 768;
     padding-left: 0;
   }
 

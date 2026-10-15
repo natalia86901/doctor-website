@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import heroImage from '../../assets/hero1.jpeg'
+import heroImage from '../../assets/dentalImplants/client-oct14/hero.png'
 import './DentalImplantsHeroSection.css'
 
 function DentalImplantsHeroSection() {
@@ -36,7 +36,7 @@ function DentalImplantsHeroSection() {
         <img
           className="dental-implants-hero__image"
           src={heroImage}
-          alt="A smiling man in a gray suit standing inside a modern office"
+          alt="Dr. Tarkesh smiling in a navy blazer inside the dental office"
         />
       </div>
     </section>

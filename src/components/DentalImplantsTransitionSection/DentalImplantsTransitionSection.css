@@ -1,0 +1,6 @@
+.implants-transition { padding: var(--section-space) 0; background: var(--brand-white); text-align: center; }
+.implants-transition__inner { width: min(100% - 48px, 1260px); margin-inline: auto; }
+.implants-transition h2 { margin: 0; font-family: var(--font-serif); font-weight: var(--weight-regular); font-size: var(--type-h2); line-height: var(--leading-headline); color: var(--brand-navy); }
+.implants-transition p { margin: 20px 0 0; color: var(--brand-gray); font-family: var(--font-sans); font-size: var(--type-lead); line-height: var(--leading-body); }
+.implants-transition__rule { width: 96px; height: 1px; margin: 32px auto 0; background: var(--brand-gold); }
+@media (max-width: 680px) { .implants-transition__inner { width: calc(100% - 40px); } }
