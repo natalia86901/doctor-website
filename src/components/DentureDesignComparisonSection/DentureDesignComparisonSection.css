@@ -20,9 +20,9 @@
 /* Align the front tooth edges using each original photo's own framing.
    Uniform scaling preserves the supplied dental anatomy and perspective. */
 .denture-comparison__image { position: absolute; top: 84%; left: 50%; display: block; max-width: none; height: auto; pointer-events: none; }
-.denture-comparison__image--traditional { width: 70%; transform: translate(-50%, -72.1%); }
-.denture-comparison__image--palate-free { width: 74%; transform: translate(-50%, -67.5%); }
-.denture-comparison__divider { position: absolute; inset-block: 0; left: var(--comparison-position); width: 1px; background: var(--brand-white); box-shadow: 0 0 3px rgb(10 34 70 / 35%); transform: translateX(-50%); pointer-events: none; }
+.denture-comparison__image--traditional { left: 50.63%; width: 66%; transform: translate(-50%, -72.1%); }
+.denture-comparison__image--palate-free { left: 49.09%; width: 70%; transform: translate(-50%, -67.5%); }
+.denture-comparison__divider { position: absolute; inset-block: 0; left: var(--comparison-position); width: 2px; background: #faf7ef; border-inline: 1px solid var(--brand-gold); transform: translateX(-50%); pointer-events: none; }
 .denture-comparison__controls { position: absolute; top: 50%; left: var(--comparison-position); display: grid; place-items: center; width: 44px; height: 44px; transform: translate(-50%, -50%); touch-action: pan-y pinch-zoom; cursor: ew-resize; }
 .denture-comparison__handle-circle { display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; border: 1px solid var(--brand-white); border-radius: 50%; box-shadow: 0 0 0 3px var(--brand-gold); background: var(--brand-navy); color: var(--brand-white); pointer-events: none; }
 .denture-comparison__controls svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }

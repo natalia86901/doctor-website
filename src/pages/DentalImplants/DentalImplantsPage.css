@@ -67,3 +67,67 @@
     text-wrap: balance;
   }
 }
+
+/* A compact text-only introduction between the hero and clean photograph. */
+.implants-expertise-steps {
+  position: relative;
+  padding: var(--section-space) 24px;
+  background: #f7f4ed;
+  color: var(--brand-navy);
+  font-family: var(--font-sans);
+}
+.implants-expertise-steps::before,
+.implants-expertise-steps::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 1px;
+  background: var(--brand-gold);
+}
+.implants-expertise-steps::before { top: 0; }
+.implants-expertise-steps::after { bottom: 0; }
+.implants-expertise-steps__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.implants-expertise-steps__item { min-width: 0; padding-inline: 32px; }
+.implants-expertise-steps__item:first-child { padding-left: 0; }
+.implants-expertise-steps__item:last-child { padding-right: 0; }
+.implants-expertise-steps__item + .implants-expertise-steps__item { border-left: 1px solid var(--brand-gold); }
+.implants-expertise-steps__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--type-card);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-card);
+}
+.implants-expertise-steps__title span { color: var(--brand-gold); white-space: nowrap; }
+.implants-expertise-steps__description {
+  margin: 12px 0 0;
+  color: var(--brand-navy);
+  font-size: var(--type-body);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-body);
+}
+.dental-implants-page .dental-implants-expertise { padding-top: 0; }
+.dental-implants-page .dental-implants-expertise::before { display: none; }
+.dental-implants-page .dental-implants-expertise__media { padding-bottom: 0; }
+.dental-implants-page .dental-implants-expertise__image { margin-bottom: 0; }
+@media (max-width: 1024px) {
+  .implants-expertise-steps__item { padding-inline: 20px; }
+}
+@media (max-width: 760px) {
+  .implants-expertise-steps { padding-inline: 20px; }
+  .implants-expertise-steps__list { grid-template-columns: 1fr; }
+  .implants-expertise-steps__item { padding: 24px 0; }
+  .implants-expertise-steps__item:first-child { padding-top: 0; }
+  .implants-expertise-steps__item:last-child { padding-bottom: 0; }
+  .implants-expertise-steps__item + .implants-expertise-steps__item {
+    border-left: 0;
+    border-top: 1px solid var(--brand-gold);
+  }
+}

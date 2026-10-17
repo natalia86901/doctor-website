@@ -212,6 +212,11 @@
   text-transform: none;
 }
 
+.dental-implants-expertise__quotation-mark {
+  color: var(--brand-gold);
+  font: inherit;
+}
+
 .dental-implants-expertise__body {
   display: grid;
   gap: 24px;

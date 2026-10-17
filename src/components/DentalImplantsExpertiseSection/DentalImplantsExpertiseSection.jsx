@@ -16,67 +16,7 @@ function DentalImplantsExpertiseSection() {
           alt="Dr. Tarkesh explaining implant-supported teeth to a patient beside a dental display"
         />
 
-        <div className="dental-implants-expertise__callouts">
-          <article className="dental-implants-expertise__callout dental-implants-expertise__callout--planning">
-            <span
-              className="dental-implants-expertise__connector"
-              aria-hidden="true"
-            />
 
-            <h3 className="dental-implants-expertise__callout-title">
-              <span className="dental-implants-expertise__callout-number">
-                01 —
-              </span>{' '}
-              Digital Planning
-            </h3>
-
-            <p className="dental-implants-expertise__callout-description">
-              Every detail considered before
-              <br />
-              treatment begins
-            </p>
-          </article>
-
-          <article className="dental-implants-expertise__callout dental-implants-expertise__callout--clinical">
-            <span
-              className="dental-implants-expertise__connector"
-              aria-hidden="true"
-            />
-
-            <h3 className="dental-implants-expertise__callout-title">
-              <span className="dental-implants-expertise__callout-number">
-                02 —
-              </span>{' '}
-              Clinical Expertise
-            </h3>
-
-            <p className="dental-implants-expertise__callout-description">
-              Advanced decisions guided by
-              <br />
-              experience
-            </p>
-          </article>
-
-          <article className="dental-implants-expertise__callout dental-implants-expertise__callout--craftsmanship">
-            <span
-              className="dental-implants-expertise__connector"
-              aria-hidden="true"
-            />
-
-            <h3 className="dental-implants-expertise__callout-title">
-              <span className="dental-implants-expertise__callout-number">
-                03 —
-              </span>{' '}
-              Custom Craftsmanship
-            </h3>
-
-            <p className="dental-implants-expertise__callout-description">
-              Designed specifically for your
-              <br />
-              anatomy and smile
-            </p>
-          </article>
-        </div>
       </div>
 
       <div className="dental-implants-expertise__content">
@@ -90,9 +30,9 @@ function DentalImplantsExpertiseSection() {
           id="dental-implants-expertise-heading"
           className="dental-implants-expertise__title"
         >
-          Why Didn’t I
+          <span className="dental-implants-expertise__quotation-mark">“</span>Why Didn’t I
           <br />
-          Do This Sooner?
+          Do This Sooner?<span className="dental-implants-expertise__quotation-mark">”</span>
         </h2>
 
         <div className="dental-implants-expertise__body">
