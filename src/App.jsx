@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import PageMetadata from './components/PageMetadata'
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
 import ScrollManager from './components/ScrollManager'
@@ -21,6 +22,7 @@ const dentalImplantsPath = '/services/implants'
 function App() {
   return (
     <>
+      <PageMetadata />
       <Navbar />
       <ScrollManager />
       <Routes>
