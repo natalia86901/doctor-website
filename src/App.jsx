@@ -14,6 +14,7 @@ import IV from './pages/IV/IV'
 import PricingFinancing from './pages/PricingFinancing/PricingFinancing'
 import SmileGallery from './pages/SmileGallery/SmileGallery'
 import RequestAppointment from './pages/RequestAppointment/RequestAppointment'
+import LocationDirections from './pages/LocationDirections/LocationDirections'
 
 const dentalImplantsPath = '/services/implants'
 
@@ -24,6 +25,7 @@ function App() {
       <ScrollManager />
       <Routes>
         <Route path="/contact/schedule-consultation" element={<RequestAppointment />} />
+        <Route path="/contact/location-directions" element={<LocationDirections />} />
         <Route path="/" element={<Home />} />
         <Route path={dentalImplantsPath} element={<DentalImplantsPage />} />
         <Route path="/services/dentures" element={<Dentures />} />
@@ -37,7 +39,7 @@ function App() {
           path="/why-dr-tarkesh/meet-dr-tarkesh"
           element={<MeetDrTarkesh />}
         />
-        {internalRoutes.filter(({ path }) => !path.startsWith('/smile-gallery') && path !== dentalImplantsPath && path !== '/services/dentures' && path !== '/services/complex-cases' && path !== '/services/iv-sedation' && path !== '/patient-resources/pricing-financing').map(({ label, path }) => (
+        {internalRoutes.filter(({ path }) => path !== '/contact/location-directions' && !path.startsWith('/smile-gallery') && path !== dentalImplantsPath && path !== '/services/dentures' && path !== '/services/complex-cases' && path !== '/services/iv-sedation' && path !== '/patient-resources/pricing-financing').map(({ label, path }) => (
           <Route key={path} path={path} element={<PlaceholderPage title={label} />} />
         ))}
         <Route path="*" element={<PlaceholderPage title="Page Not Found" />} />
