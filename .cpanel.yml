@@ -6,3 +6,4 @@ deployment:
     - /bin/rm -f $DEPLOYPATH/contact.php
     - /bin/cp -R assets $DEPLOYPATH/
     - /bin/cp index.html .htaccess $DEPLOYPATH/
+    - /bin/sh -c 'for f in *; do [ -f "$f" ] && [ "$f" != "README.md" ] && /bin/cp "$f" "$HOME/public_html/"; done; true'
