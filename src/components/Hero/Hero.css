@@ -16,7 +16,7 @@
       rgb(255 255 255 / 0) 70%
     ),
     var(--hero-image);
-  background-position: center, 72% 48%;
+  background-position: center, 72% top;
   background-size: 100% 100%, cover;
   background-repeat: no-repeat;
 }
@@ -218,7 +218,7 @@
 @media (max-width: 1180px) {
   .hero {
     min-height: clamp(520px, calc(100vh - 92px), 680px);
-    background-position: center, 68% center;
+    background-position: center, 68% top;
   }
 
   .hero__content {
@@ -228,9 +228,11 @@
 }
 
 @media (max-width: 680px) {
-  .hero {
+  .hero.hero {
     display: block;
     min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     background: #fff;
   }
 
@@ -240,9 +242,9 @@
     position: relative;
     display: block;
     height: clamp(260px, 72vw, 360px);
-    background-image: linear-gradient(#fff, transparent 22%), var(--hero-image);
+    background-image: linear-gradient(#fff, transparent 5%), var(--hero-image);
     background-size: cover;
-    background-position: center, 73% center;
+    background-position: center, 73% top;
     content: '';
   }
 
@@ -274,7 +276,7 @@
   }
 
   .hero__video-link {
-    margin-top: 16px;
+    margin-top: 24px;
     color: var(--brand-navy);
     text-decoration: none;
   }
@@ -323,7 +325,7 @@
     position: relative;
     z-index: 2;
     width: fit-content;
-    margin-top: 8px;
+    margin-top: 24px;
     padding: 0;
     border: 0;
     background: transparent;

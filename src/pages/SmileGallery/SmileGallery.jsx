@@ -16,6 +16,8 @@ import heartIcon from '../../assets/smileGallery/icons/heart.svg'
 import storyPortrait from '../../assets/smileGallery/story-portrait-approved.png'
 import before4 from '../../assets/smileGallery/4 6.PNG'
 import after4 from '../../assets/smileGallery/3 4.PNG'
+import before6 from '../../assets/smileGallery/4 3.png'
+import after6 from '../../assets/smileGallery/3 3.png'
 
 const results = [
   { id: 1, initialPosition: 50.5, beforeImage: before1, afterImage: after1, quote: 'I can eat comfortably again.' },
@@ -23,6 +25,7 @@ const results = [
   { id: 3, beforeImage: before3, afterImage: after3, quote: 'Why didn’t I do it sooner?' },
   { id: 4, initialPosition: 52, beforeImage: before4, afterImage: after4, quote: 'I can smile in photos again.' },
   { id: 5, beforeImage: before5, afterImage: after5, quote: 'It has changed my life.' },
+  { id: 6, beforeImage: before6, afterImage: after6, quote: 'I finally feel confident again.' },
 ]
 
 function GalleryIcon({ kind }) {

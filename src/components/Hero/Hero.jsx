@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../../assets/hero.png";
+import heroImage from "../../assets/home-hero-preview.png";
 import video1 from "../../assets/IV/iv-tarkesh.mp4";
 import "./Hero.css";
 

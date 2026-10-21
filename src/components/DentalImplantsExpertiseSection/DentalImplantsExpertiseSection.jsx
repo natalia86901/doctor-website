@@ -48,7 +48,7 @@ function DentalImplantsExpertiseSection() {
         </div>
 
         <blockquote className="dental-implants-expertise__quote">
-          “It’s not just a dental change.”
+          “It's a life changing experience”
         </blockquote>
 
         <VideoButton
