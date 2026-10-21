@@ -1,0 +1,119 @@
+.smile-gallery { font-family: var(--font-sans); font-weight: var(--weight-regular); background: #f7f4ed; color: var(--brand-navy); }
+.smile-gallery__inner { width: min(100% - 48px, 1260px); margin-inline: auto; }
+.smile-gallery section { padding-block: var(--section-space); }
+.smile-gallery h1, .smile-gallery h2 { margin: 10px 0 16px; font-family: var(--font-serif); font-weight: var(--weight-regular); }
+.smile-gallery h1 { font-size: var(--type-h1); line-height: var(--leading-h1); }
+.smile-gallery h2 { font-size: var(--type-h2); line-height: var(--leading-headline); }
+.smile-gallery h3, .smile-gallery h4 { font-family: var(--font-sans); font-weight: var(--weight-bold); }
+.smile-gallery p { font-family: var(--font-sans); font-weight: var(--weight-regular); font-size: var(--type-body); line-height: var(--leading-body); margin: 0; }
+.smile-gallery .smile-gallery__eyebrow { font-size: var(--type-label); font-weight: var(--weight-bold); line-height: 1.4; letter-spacing: var(--tracking-label); text-transform: uppercase; }
+.smile-gallery__hero, .smile-gallery__story { min-height: 530px; display: grid; align-items: center; background: linear-gradient(100deg, #faf8f2, #eeece5); }
+.smile-gallery__copy { max-width: 650px; }
+.smile-gallery__copy > p:not(.smile-gallery__eyebrow) { max-width: 510px; }
+.smile-gallery__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: 32px; }
+.smile-gallery__cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 12px 19px; border: 1px solid var(--brand-navy); border-radius: 2px; background: var(--brand-navy); color: var(--brand-white); font-size: var(--type-cta); font-weight: var(--weight-bold); line-height: var(--leading-cta); letter-spacing: var(--tracking-cta); text-transform: uppercase; text-decoration: none; transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease; }
+.smile-gallery__text-link { color: var(--brand-navy); font-size: var(--type-label); font-weight: var(--weight-bold); letter-spacing: var(--tracking-cta); text-transform: uppercase; text-underline-offset: 6px; }
+.smile-gallery__or { font-size: var(--type-label); text-transform: uppercase; }
+.smile-gallery__cta:active { background: linear-gradient(110deg, #ac8037, #cda75d, #b68a42); border-color: var(--brand-gold); color: white; }
+.smile-gallery__cta:focus-visible, .smile-gallery__text-link:focus-visible { outline: 3px solid var(--brand-navy); outline-offset: 4px; }
+.smile-gallery__values { background: var(--brand-navy); color: white; }
+.smile-gallery__three > div { min-width: 0; }
+.smile-gallery__three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); text-align: center; gap: 24px; }
+.smile-gallery__value-icon { display: block; width: 72px; height: 72px; margin: 0 auto 12px; object-fit: contain; }
+.smile-gallery__values h3 { margin: 0 0 4px; font-size: var(--type-card); line-height: var(--leading-card); text-transform: uppercase; }
+.smile-gallery__values p { text-transform: uppercase; }
+.smile-gallery__results { scroll-margin-top: 110px; }
+.smile-gallery__results header { text-align: center; }
+.smile-gallery__results .smile-gallery__eyebrow { color: var(--brand-gold); }
+.smile-gallery__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 38px 30px; margin-top: 36px; }
+.smile-gallery__grid article { min-width: 0; }
+.smile-gallery blockquote { display: flex; justify-content: center; gap: 10px; position: relative; margin: 22px 0 0; padding-bottom: 22px; }
+.smile-gallery blockquote > span { color: var(--brand-gold); font: 44px/1 var(--font-serif); }
+.smile-gallery blockquote::after { content: ''; position: absolute; width: 42px; height: 1px; background: var(--brand-gold); bottom: 0; left: calc(50% - 21px); }
+.smile-gallery__story { border-top: 5px solid var(--brand-navy); }
+.smile-gallery__story .smile-gallery__copy { max-width: 510px; }
+.smile-gallery__benefits { margin-top: 30px; gap: 14px; }
+.smile-gallery__benefits > div + div { border-left: 1px solid #ded8cd; }
+.smile-gallery__benefits span { display: grid; place-items: center; margin-inline: auto; width: 58px; height: 58px; border-radius: 50%; background: #efe7d8; color: var(--brand-gold); }
+.smile-gallery__benefits svg { width: 36px; height: 36px; }
+.smile-gallery__benefits h4 { margin: 10px 8px 0; font-size: var(--type-label); letter-spacing: var(--tracking-label); line-height: 1.4; text-transform: uppercase; }
+@media (hover: hover) and (pointer: fine) { .smile-gallery__cta:hover { background: var(--brand-gold); border-color: var(--brand-gold); color: var(--brand-navy); } .smile-gallery__text-link:hover { color: #886a32; } }
+@media (max-width: 1024px) { .smile-gallery__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .smile-gallery__hero, .smile-gallery__story { min-height: 450px; } }
+@media (max-width: 680px) { .smile-gallery__inner { width: min(100% - 40px, 500px); } .smile-gallery__grid { grid-template-columns: 1fr; } .smile-gallery__values .smile-gallery__three { grid-template-columns: 1fr; gap: 32px; } .smile-gallery__hero, .smile-gallery__story { min-height: 0; } .smile-gallery__actions { align-items: flex-start; gap: 16px; } .smile-gallery__cta { width: 100%; white-space: normal; } }
+@media (prefers-reduced-motion: reduce) { .smile-gallery__cta { transition: none; } }
+/* Supplied portraits already include the soft light area behind the copy. */
+.smile-gallery__hero, .smile-gallery__story { background-image: var(--gallery-portrait); background-size: cover; background-repeat: no-repeat; background-position: center; min-height: clamp(530px, 45vw, 650px); }
+.smile-gallery__hero .smile-gallery__copy { max-width: 56%; }
+.smile-gallery__story .smile-gallery__copy { max-width: 44%; }
+@media (min-width: 1025px) { .smile-gallery__hero .smile-gallery__actions { max-width: 650px; } }
+@media (max-width: 1024px) {
+  .smile-gallery__hero, .smile-gallery__story { display: block; min-height: 0; background: #f7f4ed; }
+  .smile-gallery__hero .smile-gallery__copy, .smile-gallery__story .smile-gallery__copy { max-width: 100%; }
+  .smile-gallery__hero::after, .smile-gallery__story::after { content: ''; display: block; height: clamp(260px, 72vw, 360px); margin-top: 24px; background-image: linear-gradient(#f7f4ed, transparent 20%), var(--gallery-portrait); background-size: cover; background-position: center, right center; }
+}
+
+/* Match the reference hero action typography. */
+.smile-gallery__hero .smile-gallery__or { font-weight: var(--weight-bold); }
+.smile-gallery__hero .smile-gallery__text-link { font-size: 16px; }
+
+/* Keep tablet copy clear of portraits, with the same section spacing as Home. */
+@media (min-width: 681px) and (max-width: 1024px) {
+  .smile-gallery__hero::after, .smile-gallery__story::after {
+    height: clamp(340px, 45vw, 460px);
+    background-size: 100% 100%, cover;
+    background-position: center;
+  }
+}
+@media (max-width: 680px) {
+  .smile-gallery__actions { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; }
+  .smile-gallery__cta { grid-column: 1 / -1; min-height: 50px; }
+  .smile-gallery__text-link { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 480px) {
+  .smile-gallery__benefits { grid-template-columns: 1fr; gap: 24px; }
+  .smile-gallery__benefits > div + div { border-left: 0; }
+}
+@media (max-width: 360px) {
+  .smile-gallery__inner { width: min(100% - 32px, 500px); }
+}
+
+/* Story typography matches the hero; benefits start at the copy's left edge. */
+.smile-gallery__story h2 {
+  font-size: var(--type-h1);
+  line-height: var(--leading-h1);
+  margin: 10px 0 16px;
+}
+.smile-gallery__story .smile-gallery__eyebrow { font-size: var(--type-label); }
+.smile-gallery__story .smile-gallery__copy > p:not(.smile-gallery__eyebrow) {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+.smile-gallery__benefits {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 30px;
+  gap: 0;
+}
+.smile-gallery__benefits > div { flex: 1 1 0; min-width: 0; padding-inline: 20px; }
+.smile-gallery__benefits > div:first-child { flex: 0 1 108px; padding-left: 0; }
+.smile-gallery__benefits span { width: 64px; height: 64px; }
+.smile-gallery__benefits svg { width: 36px; height: 36px; stroke-width: 2.6; }
+.smile-gallery__benefits h4 {
+  max-width: 150px;
+  margin: 10px auto 0;
+  font-size: var(--type-label);
+}
+.smile-gallery__benefits > div:first-child span { margin-left: 0; }
+.smile-gallery__benefits > div:first-child h4 { width: 64px; margin-left: 0; margin-right: 0; }
+@media (max-width: 480px) {
+  .smile-gallery__benefits { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .smile-gallery__benefits > div, .smile-gallery__benefits > div:first-child { flex: 0 1 auto; padding: 0; }
+  .smile-gallery__benefits span, .smile-gallery__benefits h4 { margin-left: 0; }
+}
+/* Preserve the approved portrait's full hairstyle at every viewport. */
+@media (min-width: 1025px) {
+  .smile-gallery__story { background-size: auto 100%; background-position: right top; background-color: #fafaf7; }
+}
+@media (max-width: 1024px) {
+  .smile-gallery__story::after { background-position: center, right top; }
+}

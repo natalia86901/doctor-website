@@ -22,6 +22,8 @@ const quickLinks = [
 ]
 
 const routesWithoutTopDivider = new Set([
+  '/smile-gallery',
+  '/smile-gallery/patient-results',
   '/services/dentures',
   '/services/implants',
   '/services/complex-cases',

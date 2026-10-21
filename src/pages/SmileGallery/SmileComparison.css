@@ -1,0 +1,124 @@
+.smile-compare__surface {
+  position: relative;
+  aspect-ratio: 2271 / 1516;
+  overflow: hidden;
+  border: 1px solid #ded8cd;
+  border-radius: 0;
+  user-select: none;
+}
+
+.smile-compare__image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  /* Match Home: crop the rounded corners baked into the source photos. */
+  transform: scale(1.04);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.smile-compare__layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.smile-compare__layer[data-image="before"] {
+  clip-path: inset(0 calc(100% - var(--comparison-position)) 0 0);
+}
+
+.smile-compare__divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--comparison-position);
+  width: 1px;
+  background: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.smile-compare__handle {
+  position: absolute;
+  top: 50%;
+  left: var(--comparison-position);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  transform: translate(-50%, -50%);
+  touch-action: pan-y pinch-zoom;
+  cursor: ew-resize;
+}
+
+.smile-compare__handle-circle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 1px solid white;
+  box-shadow: 0 0 0 3px var(--brand-gold);
+  border-radius: 50%;
+  background: var(--brand-navy);
+  color: white;
+  pointer-events: none;
+}
+
+.smile-compare__handle:focus-visible {
+  outline: 3px solid var(--brand-gold);
+  outline-offset: -3px;
+  border-radius: 50%;
+}
+
+.smile-compare__handle svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.smile-compare__labels {
+  position: relative;
+  height: calc(7px + var(--type-label) * 1.4);
+}
+
+.smile-compare__label {
+  position: absolute;
+  left: 25%;
+  margin-top: 7px;
+  color: var(--brand-gray);
+  text-align: center;
+  font-family: var(--font-sans);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-label);
+  line-height: 1.4;
+  letter-spacing: var(--tracking-label);
+  word-spacing: normal;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.smile-compare__label:nth-child(2) {
+  left: 75%;
+}
+
+/* Endpoint labels share the existing fixed-height label area. */
+.smile-compare__comparison[data-endpoint="before"] .smile-compare__label:first-child,
+.smile-compare__comparison[data-endpoint="after"] .smile-compare__label:nth-child(2) {
+  left: 50%;
+}
+
+.smile-compare__comparison[data-endpoint="before"] .smile-compare__label:nth-child(2),
+.smile-compare__comparison[data-endpoint="after"] .smile-compare__label:first-child {
+  visibility: hidden;
+}
+
