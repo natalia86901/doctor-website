@@ -5,12 +5,21 @@ import DentalImplantsPromiseSection from '../../components/DentalImplantsPromise
 import DentalImplantsPatientStorySection from '../../components/DentalImplantsPatientStorySection/DentalImplantsPatientStorySection'
 import TeethOptionsComparisonSection from '../../components/TeethOptionsComparisonSection/TeethOptionsComparisonSection'
 import DentalImplantsTransitionSection from '../../components/DentalImplantsTransitionSection/DentalImplantsTransitionSection'
+import PatientResultsSection from '../../components/PatientResultsSection/PatientResultsSection'
+import { useSanityQuery } from '../../lib/useSanityQuery'
+import { DENTAL_IMPLANTS_PAGE_QUERY } from '../../lib/queries'
+import { mapSanityCases } from '../../lib/mapCases'
+import { urlFor } from '../../lib/sanity'
 import './DentalImplantsPage.css'
 
 function DentalImplantsPage() {
+  const data = useSanityQuery(DENTAL_IMPLANTS_PAGE_QUERY)
+  const heroImage = data?.heroImage ? urlFor(data.heroImage).width(1600).url() : undefined
+  const cases = mapSanityCases(data?.selectedCases)
+
   return (
     <main className="dental-implants-page">
-      <DentalImplantsHeroSection />
+      <DentalImplantsHeroSection heroImageOverride={heroImage} />
       <section className="implants-expertise-steps" aria-label="Our approach to implant treatment">
         <ol className="implants-expertise-steps__list">
           {[
@@ -30,6 +39,7 @@ function DentalImplantsPage() {
       <DentalImplantsTransitionSection />
       <DentalImplantsPromiseSection />
       <TeethOptionsComparisonSection />
+      {cases && <PatientResultsSection cases={cases} />}
       <DentalImplantsPatientStorySection />
     </main>
   )

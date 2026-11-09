@@ -8,17 +8,25 @@ import PatientResultsSection from '../../components/PatientResultsSection/Patien
 import PracticeBenefitsSection from '../../components/PracticeBenefitsSection/PracticeBenefitsSection'
 import TreatmentProcessSection from '../../components/TreatmentProcessSection/TreatmentProcessSection'
 import FinancingOptionsSection from '../../components/FinancingOptionsSection/FinancingOptionsSection'
+import { useSanityQuery } from '../../lib/useSanityQuery'
+import { HOME_PAGE_QUERY } from '../../lib/queries'
+import { mapSanityCases } from '../../lib/mapCases'
+import { urlFor } from '../../lib/sanity'
 
 function Home() {
+  const data = useSanityQuery(HOME_PAGE_QUERY)
+  const heroImage = data?.heroImage ? urlFor(data.heroImage).width(2400).url() : undefined
+  const cases = mapSanityCases(data?.selectedCases)
+
   return (
     <>
-      <Hero />
+      <Hero heroImageOverride={heroImage} />
       <TreatmentPromiseBanner />
       <TreatmentSolutionsSection />
       <ComplexCasesBanner />
       <WhyItsPossibleSection />
       <TreatmentOptionsSection />
-      <PatientResultsSection />
+      <PatientResultsSection cases={cases} />
       <PracticeBenefitsSection />
       <TreatmentProcessSection />
       <FinancingOptionsSection />

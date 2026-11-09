@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import heroImage from '../../assets/dentalImplants/client-oct14/hero.png'
 import './DentalImplantsHeroSection.css'
 
-function DentalImplantsHeroSection() {
+function DentalImplantsHeroSection({ heroImageOverride }) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const modalContentRef = useRef(null);
@@ -130,7 +130,7 @@ function DentalImplantsHeroSection() {
       <div className="dental-implants-hero__media">
         <img
           className="dental-implants-hero__image"
-          src={heroImage}
+          src={heroImageOverride ?? heroImage}
           alt="Dr. Tarkesh smiling in a navy blazer inside the dental office"
         />
       </div>
