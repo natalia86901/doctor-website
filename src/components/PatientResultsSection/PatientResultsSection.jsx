@@ -1,41 +1,9 @@
 import { useRef, useState } from "react";
 import "./PatientResultsSection.css";
 
-import after1Image from "../../assets/patientResults/home-patient-1-after.webp";
-import after2Image from "../../assets/patientResults/home-patient-2-after.webp";
-import after3Image from "../../assets/patientResults/home-patient-3-after.webp";
-import before1Image from "../../assets/patientResults/home-patient-1-before.webp";
-import before2Image from "../../assets/patientResults/home-patient-2-before.webp";
-import before3Image from "../../assets/patientResults/home-patient-3-before.webp";
-import comparison1Image from "../../assets/patientResults/home-patient-1-comparison.webp";
-import comparison2Image from "../../assets/patientResults/home-patient-2-comparison.webp";
-import comparison3Image from "../../assets/patientResults/home-patient-3-comparison.webp";
+import { defaultPatientResults } from "./defaultCases";
 
-const patientResults = [
-  {
-    id: 1,
-    comparisonImage: comparison1Image,
-    beforeImage: before1Image,
-    afterImage: after1Image,
-    quote: "I can eat comfortably again.",
-  },
-  {
-    id: 2,
-    comparisonImage: comparison2Image,
-    beforeImage: before2Image,
-    afterImage: after2Image,
-    quote: "I feel like myself when I smile."
-  },
-  {
-    id: 3,
-    comparisonImage: comparison3Image,
-    beforeImage: before3Image,
-    afterImage: after3Image,
-    quote: "Why didn't I do it sooner?",
-  },
-];
-
-function PatientComparison({ result }) {
+export function PatientComparison({ result }) {
   const [position, setPosition] = useState(50);
   const surfaceRef = useRef(null);
   const pointerRef = useRef(null);
@@ -73,8 +41,12 @@ function PatientComparison({ result }) {
   }
 
   const images = [
-    { mode: "comparison", src: result.comparisonImage, width: 1200, height: 896,
-      alt: `Before and after dental treatment comparison, patient result ${result.id}` },
+    // The combined "comparison" layer is hidden by CSS and optional —
+    // the visible slider is built from the before/after pair.
+    ...(result.comparisonImage
+      ? [{ mode: "comparison", src: result.comparisonImage, width: 1200, height: 896,
+          alt: `Before and after dental treatment comparison, patient result ${result.id}` }]
+      : []),
     { mode: "after", src: result.afterImage, width: 1600, height: 1068,
       alt: `Teeth after dental treatment, patient result ${result.id}` },
     { mode: "before", src: result.beforeImage, width: 1600, height: 1068,
@@ -118,7 +90,13 @@ function PatientComparison({ result }) {
   );
 }
 
-function PatientResultsSection() {
+function PatientResultsSection({
+  eyebrow = "PATIENT RESULTS",
+  title = "Real Patients. Meaningful Change",
+  cases,
+}) {
+  const patientResults = cases?.length ? cases : defaultPatientResults;
+
   return (
     <section
       className="patient-results"
@@ -126,9 +104,9 @@ function PatientResultsSection() {
     >
       <div className="patient-results__inner">
         <header className="patient-results__header">
-          <p className="patient-results__eyebrow">PATIENT RESULTS</p>
+          <p className="patient-results__eyebrow">{eyebrow}</p>
           <h2 id="patient-results-heading" className="patient-results__title">
-            Real Patients. Meaningful Change
+            {title}
           </h2>
         </header>
 
@@ -148,6 +126,7 @@ function PatientResultsSection() {
                   </footer>
                 )}
               </blockquote>
+
             </article>
           ))}
         </div>

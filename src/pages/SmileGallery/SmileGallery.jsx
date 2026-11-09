@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import PatientComparison from './SmileComparison'
+import { useSanityQuery } from '../../lib/useSanityQuery'
+import { GALLERY_CASES_QUERY } from '../../lib/queries'
+import { mapGalleryCases } from '../../lib/mapCases'
 import './SmileGallery.css'
 import before1 from '../../assets/smileGallery/1 1.PNG'
 import after1 from '../../assets/smileGallery/1 3F.PNG'
@@ -37,6 +40,9 @@ function GalleryIcon({ kind }) {
 }
 
 export default function SmileGallery() {
+  const docs = useSanityQuery(GALLERY_CASES_QUERY)
+  const cases = mapGalleryCases(docs) ?? results
+
   return <main className="smile-gallery">
     <section className="smile-gallery__hero" style={{ "--gallery-portrait": `url("${heroPortrait}")` }}>
       <div className="smile-gallery__inner">
@@ -61,7 +67,7 @@ export default function SmileGallery() {
       <div className="smile-gallery__inner">
         <header><p className="smile-gallery__eyebrow">Real Patient Results</p><h2 id="gallery-heading">Real Patients. Meaningful Change.</h2><p>Explore real before and after results from patients who have regained their smiles and their confidence.</p></header>
         <div className="smile-gallery__grid">
-          {results.map(result => <article key={result.id}><PatientComparison result={result} /><blockquote><span aria-hidden="true">“</span><p>{result.quote}</p></blockquote></article>)}
+          {cases.map(result => <article key={result.id}><PatientComparison result={result} /><blockquote><span aria-hidden="true">“</span><p>{result.quote}</p></blockquote></article>)}
         </div>
       </div>
     </section>

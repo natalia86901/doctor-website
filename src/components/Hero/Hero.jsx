@@ -17,7 +17,7 @@ function PlayIcon() {
   );
 }
 
-function Hero() {
+function Hero({ heroImageOverride }) {
   const navigate = useNavigate();
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
@@ -114,7 +114,7 @@ function Hero() {
         className="hero"
         aria-labelledby="hero-heading"
         style={{
-          "--hero-image": `url(${heroImage})`,
+          "--hero-image": `url(${heroImageOverride ?? heroImage})`,
         }}
       >
         <div className="hero__content">
