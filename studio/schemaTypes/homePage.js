@@ -16,12 +16,12 @@ export default defineType({
     defineField({
       name: 'selectedCases',
       title: 'Patient Results — Selected Cases',
-      description: 'Choose which Smile Gallery cases appear in the "Real Patients. Meaningful Change" section. The layout shows exactly 3 cases.',
+      description: 'Choose which Smile Gallery cases appear in the "Real Patients. Meaningful Change" section. The layout shows 3 to 6 cases (4–6 wrap onto a second row).',
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'patientCase' }] }],
       validation: (rule) => [
         rule.required().min(3).error('The homepage must show 3 cases — add a case before publishing.'),
-        rule.max(3).error('The homepage layout fits exactly 3 cases — remove one before publishing.'),
+        rule.max(6).error('The homepage layout fits at most 6 cases — remove one before publishing.'),
         rule.unique().error('The same case is selected twice.'),
       ],
     }),

@@ -1,9 +1,11 @@
 import { defineField, defineType } from 'sanity'
+import { CaseInputWithDelete } from '../components/CaseDeleteButton'
 
 export default defineType({
   name: 'patientCase',
   title: 'Patient Case',
   type: 'document',
+  components: { input: CaseInputWithDelete },
   fields: [
     defineField({
       name: 'title',
